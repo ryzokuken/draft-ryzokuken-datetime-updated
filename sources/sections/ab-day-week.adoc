@@ -7,7 +7,7 @@ The following is a sample C subroutine loosely based on Zeller's
 Congruence [<<ZELLER>>] which may be used to obtain the day of the week
 for dates on or after 0000-03-01:
 
-[source]
+[source,c]
 --
 char *day_of_week(int day, int month, int year)
 {

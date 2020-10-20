@@ -1,0 +1,62 @@
+= Date and Time on the Internet: Timestamps
+:doctype: rfc
+:abbrev: Date and Time on the Internet: Timestamps
+:docnumber: 3339
+:intended-series: full-standard
+:ipr: trust200902
+:area: Internet
+:workgroup: Network Working Group
+:docnumber: 3339
+:keyword:
+:ipr: trust200902
+:revdate: 2002-07-01
+:fullname: Chris Klyne
+:forename_initials: G.
+:lastname: Klyne
+:email: GK@ACM.ORG
+:organization: Clearswift Corporation
+:uri:
+:street: 1310 Waterside\nArlington Business Park
+:city: Theale, Reading
+:code: RG7 4SA
+:country: UK
+:fullname_2: Chris Newman
+:forename_initials_2: C.
+:lastname_2: Newman
+:email_2: chris.newman@sun.com
+:organization_2: Sun Microsystems
+:uri_2:
+:street_2: 1050 Lakes Drive, Suite 250
+:city: West Covina
+:state: CA
+:code: 91790
+:country: USA
+:docfile: rfc-3339.adoc
+:mn-document-class: ietf
+:mn-output-extensions: xml,rfc,txt,html,rxl
+
+// :updates: 3339
+
+include::sections/00-front-area.adoc[]
+
+include::sections/01-intro.adoc[]
+
+include::sections/02-definitions.adoc[]
+
+include::sections/03-two-digit-years.adoc[]
+
+include::sections/04-local-time.adoc[]
+
+include::sections/05-date-time-format.adoc[]
+
+include::sections/06-references.adoc[]
+
+include::sections/07-security.adoc[]
+
+include::sections/aa-iso-8601.adoc[]
+
+include::sections/ab-day-week.adoc[]
+
+include::sections/ac-leap-years.adoc[]
+
+include::sections/ad-leap-seconds.adoc[]

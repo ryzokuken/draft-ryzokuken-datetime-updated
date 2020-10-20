@@ -13,7 +13,7 @@ zones of the dates and times are the same (e.g., all in UTC),
 expressed using the same string (e.g., all "Z" or all "+00:00"), and
 all times have the same number of fractional second digits, then the
 date and time strings may be sorted as strings (e.g., using the
-strcmp() function in C) and a time-ordered sequence will result. The
+`strcmp()` function in C) and a time-ordered sequence will result. The
 presence of optional punctuation would violate this characteristic.
 
 === Human Readability
@@ -30,7 +30,7 @@ date format in [<<IMAIL>>] has resulted in interoperability problems when
 people assumed any text string was permitted and translated the three
 letter abbreviations to other languages or substituted date formats
 which were easier to generate (e.g. the format used by the C function
-ctime). For this reason, a balance must be struck between human
+`ctime`). For this reason, a balance must be struck between human
 readability and interoperability.
 
 Because no date and time format is readable according to the
@@ -87,6 +87,8 @@ The following profile of ISO 8601 [<<ISO8601>>] dates SHOULD be used in
 new protocols on the Internet. This is specified using the syntax
 description notation defined in [<<ABNF>>].
 
+[source%unnumbered]
+----
 date-fullyear = 4DIGIT +
 date-month = 2DIGIT ; 01-12  +
 date-mday = 2DIGIT ; 01-28, 01-29, 01-30, 01-31 based on month/year +
@@ -95,13 +97,14 @@ time-minute = 2DIGIT ; 00-59 +
 time-second = 2DIGIT ; 00-58, 00-59, 00-60 based on leap second rules +
 time-secfrac = "." 1*DIGIT +
 time-numoffset = ("+" / "-") time-hour ":" time-minute +
-time-offset = "Z" / time-numoffset 
+time-offset = "Z" / time-numoffset
 
 partial-time = time-hour ":" time-minute ":" time-second [time-secfrac] +
 full-date = date-fullyear "-" date-month "-" date-mday +
 full-time = partial-time time-offset +
 
 date-time = full-date "T" full-time
+----
 
 NOTE: Per [<<ABNF>>] and ISO8601, the "T" and "Z" characters in this
 syntax may alternatively be lower case "t" or "z" respectively.
@@ -120,6 +123,7 @@ readability, to specify a full-date and full-time separated by
 (say) a space character.
 
 
+[[restrictions]]
 === Restrictions
 
 The grammar element date-mday represents the day number within the
@@ -168,6 +172,7 @@ Although ISO 8601 permits the hour to be "24", this profile of ISO
 8601 only allows values between "00" and "23" for the hour in order
 to reduce confusion.
 
+[[date-time-examples]]
 === Examples
 
 Here are some examples of Internet date/time format.

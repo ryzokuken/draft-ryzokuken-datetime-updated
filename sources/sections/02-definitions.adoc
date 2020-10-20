@@ -3,7 +3,7 @@
 
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
 "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
-document are to be interpreted as described in RFC 2119 [RFC2119].
+document are to be interpreted as described in <<RFC2119>>.
 
 
 UTC:: Coordinated Universal Time as maintained by the Bureau
@@ -17,7 +17,7 @@ cesium-133 atoms in their ground state undisturbed by
 external fields.
 
 minute::    A period of time of 60 seconds.  However, see also the
-restrictions in section 5.7 and <<annexD>> for how
+restrictions in section <<restrictions>> and <<annexD>> for how
 leap seconds are denoted within minutes.
 
 hour:: A period of time of 60 minutes.
@@ -37,7 +37,7 @@ defined in [<<ABNF>>].
 
 Email Date/Time Format::
 The date/time format used by Internet Mail as defined
-by RFC 2822 [<<IMAIL-UPDATE>>].
+by <<IMAIL-UPDATE>>.
 
 Internet Date/Time Format::
 The date format defined in section 5 of this document.

@@ -16,7 +16,7 @@ When required, insertion of a leap second occurs as an extra second
 at the end of a day in UTC, represented by a timestamp of the form
 YYYY-MM-DDT23:59:60Z.  A leap second occurs simultaneously in all
 time zones, so that time zone relationships are not affected.  See
-section 5.8 for some examples of leap second times.
+section <<date-time-examples>> for some examples of leap second times.
 
 The following table is an excerpt from the table maintained by the
 United States Naval Observatory.  The source data is located at:

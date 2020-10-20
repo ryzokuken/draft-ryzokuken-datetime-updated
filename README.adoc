@@ -1,0 +1,73 @@
+= Metanorma RFC 3339 sample
+
+image:https://github.com/metanorma/ietf-rfc-3339/workflows/ubuntu/badge.svg["Build Status", link="https://github.com/metanorma/ietf-rfc-3339/actions?workflow=ubuntu"]
+image:https://github.com/metanorma/ietf-rfc-3339/workflows/macos/badge.svg["Build Status", link="https://github.com/metanorma/ietf-rfc-3339/actions?workflow=macos"]
+image:https://github.com/metanorma/ietf-rfc-3339/workflows/windows/badge.svg["Build Status", link="https://github.com/metanorma/ietf-rfc-3339/actions?workflow=windows"]
+image:https://github.com/metanorma/ietf-rfc-3339/workflows/docker/badge.svg["Build Status", link="https://github.com/metanorma/ietf-rfc-3339/actions?workflow=docker"]
+
+This document is available in its rendered forms here:
+
+* https://metanorma.github.io/ietf-rfc-3339/[Metanorma IETF samples (HTML)]
+
+
+== Fetching the document
+
+[source,sh]
+----
+git clone https://github.com/metanorma/ietf-rfc-3339/
+----
+
+== Installing Build Tools
+
+See https://www.metanorma.com/author/topics/install/
+
+
+== Running via Docker or locally
+
+If you have installed the build tools locally, and wish to run the
+locally-installed compilation tools, there is nothing further to set.
+
+If you don't want to deal with local dependencies, use the docker
+version by:
+
+[source,sh]
+----
+export METANORMA_DOCKER=1
+----
+
+The `Makefile` will automatically choose the proper command to
+execute.
+
+
+== Building The Document
+
+[source,sh]
+----
+make clean all
+----
+
+The following outputs will be built:
+
+* Metanorma XML (https://github.com/metanorma/metanorma-model-iso) (`[filename].xml`)
+* RFC XML v3 (`[filename].rfc.xml`)
+* HTML (`[filename].html`)
+* TXT (`[filename].txt`)
+
+
+== Iterating the document
+
+[source,sh]
+----
+make html
+open *.html
+----
+
+
+== Notes
+
+WARNING: RFC XML v2 is no longer supported by Metanorma.
+
+These Metanorma-IETF v1 documents provided here are purely for reference, and can only be run with metanorma-ietf 1.x.x with older xml2rfc installations:
+
+* `sources/antioch-v2/document.adoc`
+* `sources/example-v2/document.adoc`

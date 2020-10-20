@@ -13,6 +13,7 @@ and status of this protocol.  Distribution of this memo is unlimited.
 Copyright (C) The Internet Society (2002).  All Rights Reserved.
 
 
+[abstract]
 == Abstract
 
 This document defines a date and time format for use in Internet
