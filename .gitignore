@@ -1,3 +1,5 @@
 Gemfile.lock
 .bundle
 sources/*.err
+documents
+documents*
