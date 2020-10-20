@@ -1,0 +1,27 @@
+
+[bibliography]
+== References
+
+* [[[ZELLER,ZELLER]]], Zeller, C., "Kalender-Formeln", Acta Mathematica, Vol. 9, Nov 1886.
+
+* [[[IMAIL,RFC 822]]], Crocker, D., "Standard for the Format of Arpa Internet Text Messages", STD 11, RFC 822, August 1982.
+
+* [[[IMAIL-UPDATE,IMAIL-UPDATE]]] Resnick, P., "Internet Message Format", RFC 2822, April 2001.
+
+* [[[ABNF,RFC 2234]]], Crocker, D. and P. Overell, "Augmented BNF for Syntax Specifications: ABNF", RFC 2234, November 1997.
+
+* [[[ISO8601,ISO 8601:1988]]], "Data elements and interchange formats -- Information interchange -- Representation of dates and times", ISO 8601:1988(E), International Organization for Standardization, June, 1988.
+
+* [[[ISO8601,ISO 8601:2000]]], "Data elements and interchange formats -- Information interchange -- Representation of dates and times", ISO 8601:2000, International Organization for Standardization, December, 2000.
+
+* [[[HOST-REQ,HOST-REQ]]], Braden, R., "Requirements for Internet Hosts -- Application and Support", STD 3, RFC 1123, October 1989.
+
+* [[[IERS,RFC 1305]]], International Earth Rotation Service Bulletins, <http://hpiers.obspm.fr/eop-pc/products/bulletins.html>.
+
+* [[[NTP,RFC 1305]]], Mills, D, "Network Time Protocol (Version 3) Specification, Implementation and Analysis", RFC 1305, March 1992.
+
+* [[[ITU-R-TF,ITU-R TF.460-6]]], International Telecommunication Union Recommendations for Time Signals and Frequency Standards Emissions. <http://www.itu.ch/publications/itu-r/iturtf.htm>
+
+* [[[RFC2119,RFC 2119]]], Bradner, S, "Key words for use in RFCs to Indicate Requirement Levels", BCP 14, RFC 2119, March 1997.
+
+

@@ -1,0 +1,54 @@
+
+== Definitions
+
+The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+"SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
+document are to be interpreted as described in RFC 2119 [RFC2119].
+
+
+UTC:: Coordinated Universal Time as maintained by the Bureau
+International des Poids et Mesures (BIPM).
+
+second:: A basic unit of measurement of time in the
+International System of Units.  It is defined as the
+duration of 9,192,631,770 cycles of microwave light
+absorbed or emitted by the hyperfine transition of
+cesium-133 atoms in their ground state undisturbed by
+external fields.
+
+minute::    A period of time of 60 seconds.  However, see also the
+restrictions in section 5.7 and <<annexD>> for how
+leap seconds are denoted within minutes.
+
+hour:: A period of time of 60 minutes.
+
+day:: A period of time of 24 hours.
+
+leap year:: In the Gregorian calendar, a year which has 366 days.
+A leap year is a year whose number is divisible by
+four an integral number of times, except that if it is
+a centennial year (i.e. divisible by one hundred) it
+shall also be divisible by four hundred an integral
+number of times.
+
+ABNF:: Augmented Backus-Naur Form, a format used to represent
+permissible strings in a protocol or language, as
+defined in [<<ABNF>>].
+
+Email Date/Time Format::
+The date/time format used by Internet Mail as defined
+by RFC 2822 [<<IMAIL-UPDATE>>].
+
+Internet Date/Time Format::
+The date format defined in section 5 of this document.
+
+Timestamp:: This term is used in this document to refer to an
+unambiguous representation of some instant in time.
+
+Z:: A suffix which, when applied to a time, denotes a UTC
+offset of 00:00; often spoken "Zulu" from the ICAO
+phonetic alphabet representation of the letter "Z".
+
+
+For more information about time scales, see Appendix E of [<<NTP>>],
+Section 3 of [<<ISO8601>>], and the appropriate ITU documents [<<ITU-R-TF>>].

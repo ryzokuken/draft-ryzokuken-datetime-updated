@@ -1,0 +1,38 @@
+
+
+== Introduction
+
+Date and time formats cause a lot of confusion and interoperability
+problems on the Internet. This document addresses many of the
+problems encountered and makes recommendations to improve consistency
+and interoperability when representing and using date and time in
+Internet protocols.
+
+This document includes an Internet profile of the ISO 8601 [<<ISO8601>>]
+standard for representation of dates and times using the Gregorian
+calendar.
+
+There are many ways in which date and time values might appear in
+Internet protocols:  this document focuses on just one common usage,
+viz. timestamps for Internet protocol events.  This limited
+consideration has the following consequences:
+
+* All dates and times are assumed to be in the "current era",
+somewhere between 0000AD and 9999AD.
+
+* All times expressed have a stated relationship (offset) to
+Coordinated Universal Time (UTC). (This is distinct from some
+usage in scheduling applications where a local time and location
+may be known, but the actual relationship to UTC may be dependent
+on the unknown or unknowable actions of politicians or
+administrators.  The UTC time corresponding to 17:00 on 23rd March
+2005 in New York may depend on administrative decisions about
+daylight savings time.  This specification steers well clear of
+such considerations.)
+
+* Timestamps can express times that occurred before the introduction
+of UTC.  Such timestamps are expressed relative to universal time,
+using the best available practice at the stated time.
+
+* Date and time expressions indicate an instant in time.
+Description of time periods, or intervals, is not covered here.

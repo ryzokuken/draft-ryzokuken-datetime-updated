@@ -1,0 +1,69 @@
+
+
+== Local Time
+
+=== Coordinated Universal Time (UTC)
+
+Because the daylight saving rules for local time zones are so
+convoluted and can change based on local law at unpredictable times,
+true interoperability is best achieved by using Coordinated Universal
+Time (UTC).  This specification does not cater to local time zone
+rules.
+
+
+=== Local Offsets
+
+The offset between local time and UTC is often useful information.
+For example, in electronic mail (RFC2822, [<<IMAIL-UPDATE>>]) the local
+offset provides a useful heuristic to determine the probability of a
+prompt response.  Attempts to label local offsets with alphabetic
+strings have resulted in poor interoperability in the past [<<IMAIL>>],
+[<<HOST-REQ>>]. As a result, RFC2822 [<<IMAIL-UPDATE>>] has made numeric
+offsets mandatory.
+
+Numeric offsets are calculated as "local time minus UTC".  So the
+equivalent time in UTC can be determined by subtracting the offset
+from the local time.  For example, 18:50:00-04:00 is the same time as
+22:50:00Z.  (This example shows negative offsets handled by adding
+the absolute value of the offset.)
+
+NOTE: Following ISO 8601, numeric offsets represent only time
+zones that differ from UTC by an integral number of minutes.
+However, many historical time zones differ from UTC by a non-
+integral number of minutes.  To represent such historical time
+stamps exactly, applications must convert them to a representable
+time zone.
+
+
+=== Unknown Local Offset Convention
+
+If the time in UTC is known, but the offset to local time is unknown,
+this can be represented with an offset of "-00:00".  This differs
+semantically from an offset of "Z" or "+00:00", which imply that UTC
+is the preferred reference point for the specified time.  RFC2822
+[<<IMAIL-UPDATE>>] describes a similar convention for email.
+
+
+=== Unqualified Local Time
+
+A number of devices currently connected to the Internet run their
+internal clocks in local time and are unaware of UTC.  While the
+Internet does have a tradition of accepting reality when creating
+specifications, this should not be done at the expense of
+interoperability.  Since interpretation of an unqualified local time
+zone will fail in approximately 23/24 of the globe, the
+interoperability problems of unqualified local time are deemed
+unacceptable for the Internet.  Systems that are configured with a
+local time, are unaware of the corresponding UTC offset, and depend
+on time synchronization with other Internet systems, MUST use a
+mechanism that ensures correct synchronization with UTC.  Some
+suitable mechanisms are:
+
+* Use Network Time Protocol [<<NTP>>] to obtain the time in UTC.
+
+* Use another host in the same local time zone as a gateway to the
+Internet.  This host MUST correct unqualified local times that are
+transmitted to other hosts.
+
+* Prompt the user for the local time zone and daylight saving rule
+settings.

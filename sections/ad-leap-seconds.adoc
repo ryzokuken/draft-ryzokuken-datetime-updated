@@ -1,0 +1,58 @@
+
+[[annexD]]
+[appendix]
+== Leap Seconds
+
+Information about leap seconds can be found at: <link:http://tycho.usno.navy.mil/leapsec.html[http://tycho.usno.navy.mil/leapsec.html]>.  In particular, it notes
+that:
+
+The decision to introduce a leap second in UTC is the
+responsibility of the International Earth Rotation Service (IERS).
+According to the CCIR Recommendation, first preference is given to
+the opportunities at the end of December and June, and second
+preference to those at the end of March and September.
+
+When required, insertion of a leap second occurs as an extra second
+at the end of a day in UTC, represented by a timestamp of the form
+YYYY-MM-DDT23:59:60Z.  A leap second occurs simultaneously in all
+time zones, so that time zone relationships are not affected.  See
+section 5.8 for some examples of leap second times.
+
+The following table is an excerpt from the table maintained by the
+United States Naval Observatory.  The source data is located at:
+
+<link:ftp://maia.usno.navy.mil/ser7/tai-utc.dat[ftp://maia.usno.navy.mil/ser7/tai-utc.dat]>
+
+
+This table shows the date of the leap second, and the difference
+between the time standard TAI (which isn't adjusted by leap seconds)
+and UTC after that leap second.
+
+
+[cols="2",options="unnumbered,header"]
+|===
+| UTC Date  | TAI - UTC After Leap Second
+
+| 1972-06-30    | 11
+| 1972-12-31    | 12
+| 1973-12-31    | 13
+| 1974-12-31    | 14
+| 1975-12-31    | 15
+| 1976-12-31    | 16
+| 1977-12-31    | 17
+| 1978-12-31    | 18
+| 1979-12-31    | 19
+| 1981-06-30    | 20
+| 1982-06-30    | 21
+| 1983-06-30    | 22
+| 1985-06-30    | 23
+| 1987-12-31    | 24
+| 1989-12-31    | 25
+| 1990-12-31    | 26
+| 1992-06-30    | 27
+| 1993-06-30    | 28
+| 1994-06-30    | 29
+| 1995-12-31    | 30
+| 1997-06-30    | 31
+| 1998-12-31    | 32
+|===

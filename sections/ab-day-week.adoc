@@ -1,0 +1,31 @@
+
+[[annexB]]
+[appendix]
+== Day of the Week
+
+The following is a sample C subroutine loosely based on Zeller's
+Congruence [<<ZELLER>>] which may be used to obtain the day of the week
+for dates on or after 0000-03-01:
+
+[source]
+--
+char *day_of_week(int day, int month, int year)
+{
+    int cent;
+    char *dayofweek[] = {
+        "Sunday", "Monday", "Tuesday", "Wednesday",
+        "Thursday", "Friday", "Saturday"
+    };
+
+    /* adjust months so February is the last one */
+    month -= 2;
+    if (month < 1) {
+        month += 12;
+        --year;
+    }
+    /* split by century */
+    cent = year / 100;
+    year %= 100;
+    return (dayofweek[((26 * month - 2) / 10 + day + year
+                    + year / 4 + cent / 4 + 5 * cent) % 7]);
+--

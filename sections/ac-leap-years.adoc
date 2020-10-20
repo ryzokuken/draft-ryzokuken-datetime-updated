@@ -1,0 +1,18 @@
+
+[[annexC]]
+[appendix]
+== Leap Years
+
+Here is a sample C subroutine to calculate if a year is a leap year:
+
+[source]
+--
+/* This returns non-zero if year is a leap year.  Must use 4 digit
+    year.
+*/
+int leap_year(int year)
+{
+    return (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0));
+}
+--
+
