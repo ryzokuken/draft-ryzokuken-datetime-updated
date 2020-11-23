@@ -2,11 +2,11 @@
 [bibliography]
 == Informative references
 
-* [[[ZELLER,ZELLER]]], Zeller, C., "Kalender-Formeln", Acta Mathematica, Vol. 9, Nov 1886, <https://doi.org/10.1007/BF02406733>.
+* [[[ZELLER,path:(https://doi.org/10.1007/BF02406733,ZELLER)]]], Zeller, C., "Kalender-Formeln", Acta Mathematica, Vol. 9, Nov 1886.
 
 * [[[IMAIL,RFC 822]]], Crocker, D., "Standard for the Format of Arpa Internet Text Messages", STD 11, RFC 822, August 1982.
 
-* [[[IMAIL-UPDATE,RFC 2822]]] Resnick, P., "Internet Message Format", RFC 2822, April 2001.
+* [[[IMAIL-UPDATE,RFC 2822]]], Resnick, P., "Internet Message Format", RFC 2822, April 2001.
 
 * [[[ABNF,RFC 2234]]], Crocker, D. and P. Overell, "Augmented BNF for Syntax Specifications: ABNF", RFC 2234, November 1997.
 
@@ -16,7 +16,7 @@
 
 * [[[HOST-REQ,RFC 1123]]], Braden, R., "Requirements for Internet Hosts -- Application and Support", STD 3, RFC 1123, October 1989.
 
-* [[[IERS,IERS]]], International Earth Rotation Service Bulletins, <https://www.iers.org/IERS/EN/Publications/Bulletins/bulletins.html>.
+* [[[IERS,path:(https://www.iers.org/IERS/EN/Publications/Bulletins/bulletins.html,IERS)]]], International Earth Rotation Service Bulletins.
 
 * [[[NTP,RFC 1305]]], Mills, D, "Network Time Protocol (Version 3) Specification, Implementation and Analysis", RFC 1305, March 1992.
 
