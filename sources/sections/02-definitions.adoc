@@ -33,7 +33,7 @@ number of times.
 
 ABNF:: Augmented Backus-Naur Form, a format used to represent
 permissible strings in a protocol or language, as
-defined in [<<ABNF>>].
+defined in <<ABNF>>.
 
 Email Date/Time Format::
 The date/time format used by Internet Mail as defined
@@ -50,5 +50,5 @@ offset of 00:00; often spoken "Zulu" from the ICAO
 phonetic alphabet representation of the letter "Z".
 
 
-For more information about time scales, see Appendix E of [<<NTP>>],
-Section 3 of [<<ISO8601>>], and the appropriate ITU documents [<<ITU-R-TF>>].
+For more information about time scales, see Appendix E of <<NTP>>,
+Section 3 of <<ISO8601>>, and the appropriate ITU documents <<ITU-R-TF>>.
