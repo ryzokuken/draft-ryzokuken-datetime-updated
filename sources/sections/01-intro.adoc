@@ -22,15 +22,21 @@ consideration has the following consequences:
 * All dates and times are assumed to be in the "current era",
 somewhere between 0000AD and 9999AD.
 
+// * All times expressed have a stated relationship (offset) to
+// Coordinated Universal Time (UTC). (This is distinct from some
+// usage in scheduling applications where a local time and location
+// may be known, but the actual relationship to UTC may be dependent
+// on the unknown or unknowable actions of politicians or
+// administrators.  The UTC time corresponding to 17:00 on 23rd March
+// 2005 in New York may depend on administrative decisions about
+// daylight savings time.  This specification steers well clear of
+// such considerations.)
+
 * All times expressed have a stated relationship (offset) to
-Coordinated Universal Time (UTC). (This is distinct from some
-usage in scheduling applications where a local time and location
-may be known, but the actual relationship to UTC may be dependent
-on the unknown or unknowable actions of politicians or
-administrators.  The UTC time corresponding to 17:00 on 23rd March
-2005 in New York may depend on administrative decisions about
-daylight savings time.  This specification steers well clear of
-such considerations.)
+Coordinated Universal Time (UTC). Certain applications require the
+presence of a time zone for scheduling applications as well as for
+handling Daylight Savings Time transitions properly. In that case,
+an optional time zone ID may be included.
 
 * Timestamps can express times that occurred before the introduction
 of UTC.  Such timestamps are expressed relative to universal time,

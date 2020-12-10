@@ -5,9 +5,10 @@
 Because the daylight saving rules for local time zones are so
 convoluted and can change based on local law at unpredictable times,
 true interoperability is best achieved by using Coordinated Universal
-Time (UTC).  This specification does not cater to local time zone
-rules.
-
+Time (UTC). This specification by itself does not cater to local
+time zone rules. However, certain implementations may be expected to.
+For these situations, a timestamp may additionally include a local time
+zone that can be interpreted by the implementations
 
 === Local Offsets
 
