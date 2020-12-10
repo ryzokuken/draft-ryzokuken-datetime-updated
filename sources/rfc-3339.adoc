@@ -1,22 +1,22 @@
 = Date and Time on the Internet: Timestamps with additional information
 :doctype: internet-draft
-:abbrev: Timestamps with additional information
-:intended-series: full-standard
-:ipr: trust200902
+:docnumber: 01
+:abbrev: Timestamps Extended
+:name: draft-ryzokuken-datetime-extended-01
+:intended-series: standard
 :area: Internet
 :workgroup: Calendaring Extensions Working Group
-:obsoletes: RFC 3339
-:ipr: trust200902
-:revdate: 2020-10-21
+:obsoletes: 3339
+:revdate: 2020-10-21T00:00:00Z
 :fullname: Ujjwal Sharma
-:forename_initials: U.
-:lastname: Sharma
+:initials: U.
+:surname: Sharma
 :email: ryzokuken@igalia.com
-:organization: Igalia, S.L.
+:affiliation: Igalia, S.L.
 :uri: https://www.igalia.com/
 :street: Bugallal Marchesi, 22, 1º
 :city: A Coruña
-:state: Galicia
+:region: Galicia
 :code: 15008
 :country: Spain
 :docfile: rfc-3339.adoc
