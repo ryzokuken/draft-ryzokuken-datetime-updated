@@ -7,7 +7,7 @@
 :area: Internet
 :workgroup: Calendaring Extensions Working Group
 :obsoletes: 3339
-:revdate: 2020-10-21T00:00:00Z
+:revdate: 2020-10-21
 :fullname: Ujjwal Sharma
 :initials: U.
 :surname: Sharma
@@ -24,15 +24,26 @@
 :mn-output-extensions: xml,rfc,txt,html,rxl
 
 include::sections/00-front-area.adoc[]
+
 include::sections/01-intro.adoc[]
+
 include::sections/02-definitions.adoc[]
+
 include::sections/03-two-digit-years.adoc[]
+
 include::sections/04-local-time.adoc[]
+
 include::sections/05-date-time-format.adoc[]
+
 include::sections/06-references.adoc[]
+
 include::sections/07-security.adoc[]
+
 include::sections/aa-iso-8601.adoc[]
+
 include::sections/ab-day-week.adoc[]
+
 include::sections/ac-leap-years.adoc[]
+
 include::sections/ad-leap-seconds.adoc[]
 
