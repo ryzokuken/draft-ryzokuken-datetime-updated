@@ -1,0 +1,775 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ietf-standard xmlns="https://www.metanorma.org/ns/ietf">
+<bibdata type="standard">
+<title language="en" format="text/plain" type="main">Date and Time on the Internet: Timestamps with additional information</title>
+<title language="en" format="text/plain" type="abbrev">Timestamps Extended</title>
+<uri>https://www.igalia.com/</uri>
+<docidentifier>01</docidentifier>
+<docnumber>01</docnumber>
+<contributor>
+<role type="author"/>
+<person>
+<name>
+<completename>Ujjwal Sharma</completename>
+</name>
+<affiliation>
+<organization>
+<name>Igalia, S.L.</name>
+</organization>
+</affiliation>
+<email>ryzokuken@igalia.com</email>
+</person>
+</contributor>
+<contributor>
+<role type="publisher"/>
+<organization>
+<name>Internet Engineering Task Force</name>
+<abbreviation>IETF</abbreviation>
+</organization>
+</contributor>
+<version>
+<revision-date>2020-10-21</revision-date>
+</version>
+<language>en</language>
+<script>Latn</script><abstract>
+<p>This document defines a date and time format for use in Internet
+protocols that is a profile of the ISO 8601 standard for
+representation of dates and times using the Proleptic Gregorian
+calendar, with optional extensions representing additional
+information including a time zone and a calendaring system.</p>
+</abstract>
+<status>
+<stage>published</stage>
+</status>
+<copyright>
+<from>2020</from>
+<owner>
+<organization>
+<name>Internet Engineering Task Force</name>
+<abbreviation>IETF</abbreviation>
+</organization>
+</owner>
+</copyright>
+<relation type="obsoletes">
+<bibitem>
+<title>--</title>
+<docidentifier>3339</docidentifier>
+</bibitem>
+</relation>
+<series type="stream">
+<title>IETF</title>
+</series>
+<series type="intended">
+<title>standard</title>
+</series>
+<ext>
+<doctype>internet-draft</doctype>
+<editorialgroup>
+<workgroup>Calendaring Extensions Working Group</workgroup>
+</editorialgroup>
+<area>Internet</area>
+<ipr>trust200902</ipr>
+<pi>
+<toc>yes</toc>
+</pi>
+</ext>
+</bibdata>
+<preface><abstract id="_abstract"><title>Abstract</title>
+<p id="_7cd07c31-5f45-41e6-aef3-ddf178a7dfab">This document defines a date and time format for use in Internet
+protocols that is a profile of the ISO 8601 standard for
+representation of dates and times using the Proleptic Gregorian
+calendar, with optional extensions representing additional
+information including a time zone and a calendaring system.</p>
+</abstract></preface><sections><clause id="_status_of_this_memo" inline-header="false" obligation="normative">
+<title>Status of this Memo</title>
+<p id="_c9d650c5-c437-46bf-8330-41e79e510fcb">This document specifies an Internet standards track protocol for the
+Internet community, and requests discussion and suggestions for
+improvements.  Please refer to the current edition of the "Internet
+Official Protocol Standards" (STD 1) for the standardization state
+and status of this protocol.  Distribution of this memo is unlimited.</p>
+</clause>
+<clause id="_copyright_notice" inline-header="false" obligation="normative">
+<title>Copyright Notice</title>
+<p id="_1f41d4a4-241a-4275-8550-13b42cba720a">Copyright © The Internet Society (2020).  All Rights Reserved.</p>
+</clause>
+
+<clause id="_introduction" inline-header="false" obligation="normative"><title>Introduction</title><p id="_067212a9-c4a1-46e6-81e1-b9a4af475a45">Date and time formats cause a lot of confusion and interoperability
+problems on the Internet. This document addresses many of the
+problems encountered and makes recommendations to improve consistency
+and interoperability when representing and using date and time in
+Internet protocols.</p>
+<p id="_28139fcd-e42b-41e6-83a9-cd8eb3856681">This document includes an Internet profile of the <eref type="inline" bibitemid="ISO8601" citeas="ISO 8601:1988"/>
+standard for representation of dates and times using the Proleptic
+Gregorian calendar. For any dates and times in a different calendar
+system the ID of the calendar that they are expected to be in is
+required to be included which the implementation would then project
+them to. In the absence of a calendar ID, the Proleptic Gregorian
+calendar system is assumed.</p>
+<p id="_b0524305-8f36-40f2-9892-0117cec43b32">There are many ways in which date and time values might appear in
+Internet protocols:  this document focuses on just one common usage,
+viz. timestamps for Internet protocol events.  This limited
+consideration has the following consequences:</p>
+<ul id="_d4ba14c9-7807-4067-b2ee-b26993f7c9a9">
+<li>
+<p id="_4392801f-f7ad-4e23-991a-df896659a65d">All dates and times are assumed to be in the "current era",
+somewhere between 0000AD and 9999AD.</p>
+</li>
+</ul>
+<ul id="_da123ded-3c6a-4762-b13b-b59854bfb53d">
+<li>
+<p id="_2718cb78-3d8d-4345-a435-e047f624137c">All times expressed have a stated relationship (offset) to
+Coordinated Universal Time (UTC). Certain applications require the
+presence of a time zone for scheduling applications as well as for
+handling Daylight Savings Time transitions properly. In that case,
+an optional time zone ID may be included.</p>
+</li>
+<li>
+<p id="_4076e73b-9f89-485d-aa9a-237798b54bf7">Timestamps can express times that occurred before the introduction
+of UTC.  Such timestamps are expressed relative to universal time,
+using the best available practice at the stated time.</p>
+</li>
+<li>
+<p id="_b4b8ce59-abf7-4a9c-ae7f-063d087328aa">Date and time expressions indicate an instant in time.
+Description of time periods, or intervals, is not covered here.</p>
+</li>
+</ul></clause>
+<clause id="_definitions" inline-header="false" obligation="normative"><title>Definitions</title><p id="_e9092fcc-f42b-4889-8f91-d415b0063acc">The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+"SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
+document are to be interpreted as described in <eref type="inline" bibitemid="RFC2119" citeas="RFC 2119"/>.</p>
+<dl id="_009cfe3f-758f-45f3-8146-3ffbbb535c86">
+<dt>UTC</dt>
+<dd>
+<p id="_d3b45b68-53fc-4c8e-ad95-4420ee13fca3">Coordinated Universal Time as maintained by the Bureau
+International des Poids et Mesures (BIPM).</p>
+</dd>
+<dt>second</dt>
+<dd>
+<p id="_aa101110-1fd3-415b-a778-976ac4d1b600">A basic unit of measurement of time in the
+International System of Units.  It is defined as the
+duration of 9,192,631,770 cycles of microwave light
+absorbed or emitted by the hyperfine transition of
+cesium-133 atoms in their ground state undisturbed by
+external fields.</p>
+</dd>
+<dt>minute</dt>
+<dd>
+<p id="_2cd3bfdf-ec29-4c5d-b67a-de993523cf6d">A period of time of 60 seconds.  However, see also the
+restrictions in section <xref target="restrictions"/> and <xref target="annexD"/> for how
+leap seconds are denoted within minutes.</p>
+</dd>
+<dt>hour</dt>
+<dd>
+<p id="_2101ea5b-0031-48af-b918-469baf786930">A period of time of 60 minutes.</p>
+</dd>
+<dt>day</dt>
+<dd>
+<p id="_7c2aebb5-9c4c-4ba1-9e67-9f0455e2b095">A period of time of 24 hours.</p>
+</dd>
+<dt>leap year</dt>
+<dd>
+<p id="_7c049516-c216-447d-816c-8ca925832302">In the Proleptic Gregorian calendar, a year which has
+366 days. A leap year is a year whose number is divisible by
+four an integral number of times, except that if it is
+a centennial year (i.e. divisible by one hundred) it
+shall also be divisible by four hundred an integral
+number of times.</p>
+</dd>
+<dt>ABNF</dt>
+<dd>
+<p id="_08de36aa-f1c7-425d-aec4-1383ddde1c97">Augmented Backus-Naur Form, a format used to represent
+permissible strings in a protocol or language, as
+defined in <eref type="inline" bibitemid="RFC2234" citeas="RFC 2234"/>.</p>
+</dd>
+<dt>Email Date/Time Format</dt>
+<dd>
+<p id="_fc5d2870-9566-4c9d-9ae3-710580b10454">The date/time format used by Internet Mail as defined
+by <eref type="inline" bibitemid="RFC2822" citeas="RFC 2822"/>.</p>
+</dd>
+<dt>Internet Date/Time Format</dt>
+<dd>
+<p id="_306cac30-0549-4714-bec1-7577da005315">The date format defined in section 5 of this document.</p>
+</dd>
+<dt>Timestamp</dt>
+<dd>
+<p id="_fcbbe975-9894-42fe-957d-927747e52663">This term is used in this document to refer to an
+unambiguous representation of some instant in time.</p>
+</dd>
+<dt>Z</dt>
+<dd>
+<p id="_a09716da-6500-4212-9dab-a92693f8279b">A suffix which, when applied to a time, denotes a UTC
+offset of 00:00; often spoken "Zulu" from the ICAO
+phonetic alphabet representation of the letter "Z".</p>
+</dd>
+</dl>
+<p id="_004b1bbd-d468-490f-a22d-d07ff40c9ac1">For more information about time scales, see Appendix E of <eref type="inline" bibitemid="RFC1305" citeas="RFC 1305"/>,
+Section 3 of <eref type="inline" bibitemid="ISO8601" citeas="ISO 8601:1988"/>, and the appropriate ITU documents (ITU-R-TF).</p></clause>
+<clause id="_two_digit_years" inline-header="false" obligation="normative"><title>Two Digit Years</title><p id="_f15c4239-ee1f-4e36-b529-0a76a388ddf3">The following requirements are to address the problems of ambiguity
+of 2-digit years:</p>
+<ul id="_d5db9a01-3d9a-468b-9a4e-4aa52768540d">
+<li>
+<p id="_67acf1ab-b88d-4cf1-8489-d12b8cb442b4">Internet Protocols MUST generate four digit years in dates.</p>
+</li>
+<li>
+<p id="_9a97a313-43c5-4052-95a3-d911c5bae8a2">The use of 2-digit years is deprecated.  If a 2-digit year is
+received, it should be accepted ONLY if an incorrect
+interpretation will not cause a protocol or processing failure
+(e.g. if used only for logging or tracing purposes).</p>
+</li>
+<li>
+<p id="_8d70195a-bf7e-4e12-8d9b-27fba115dd21">It is possible that a program using two digit years will
+represent years after 1999 as three digits.  This occurs if the
+program simply subtracts 1900 from the year and doesn't check
+the number of digits.  Programs wishing to robustly deal with
+dates generated by such broken software may add 1900 to three
+digit years.</p>
+</li>
+<li>
+<p id="_80f7c834-34a4-4a5a-a07b-09a9d469e244">It is possible that a program using two digit years will
+represent years after 1999 as ":0", ":1", …​ ":9", ";0", …​
+This occurs if the program simply subtracts 1900 from the year
+and adds the decade to the US-ASCII character zero.  Programs
+wishing to robustly deal with dates generated by such broken
+software should detect non-numeric decades and interpret
+appropriately.</p>
+</li>
+</ul>
+<p id="_c29a8329-59f5-4ac9-a8d6-fae69461b8df">The problems with two digit years amply demonstrate why all dates and
+times used in Internet protocols MUST be fully qualified.</p></clause>
+<clause id="_local_time" inline-header="false" obligation="normative"><title>Local Time</title><clause id="_coordinated_universal_time_utc" inline-header="false" obligation="normative">
+<title>Coordinated Universal Time (UTC)</title>
+<p id="_79f68374-3774-45f3-8caa-fab68d773664">Because the daylight saving rules for local time zones are so
+convoluted and can change based on local law at unpredictable times,
+true interoperability is best achieved by using Coordinated Universal
+Time (UTC). This specification by itself does not cater to local
+time zone rules. However, certain implementations may be expected to.
+For these situations, a timestamp may additionally include a local time
+zone that can be interpreted by the implementations</p>
+</clause>
+<clause id="_local_offsets" inline-header="false" obligation="normative"><title>Local Offsets</title><p id="_f9be611e-2320-4108-ae5c-9a4938081e61">The offset between local time and UTC is often useful information.
+For example, in electronic mail (RFC2822, <eref type="inline" bibitemid="RFC2822" citeas="RFC 2822"/>) the local
+offset provides a useful heuristic to determine the probability of a
+prompt response.  Attempts to label local offsets with alphabetic
+strings have resulted in poor interoperability in the past <eref type="inline" bibitemid="RFC1123" citeas="RFC 1123"/>.
+As a result, RFC2822 <eref type="inline" bibitemid="RFC2822" citeas="RFC 2822"/> has made numeric offsets mandatory.</p>
+<p id="_5e95f8f2-86bf-4feb-9e3b-dbac9679d649">Numeric offsets are calculated as "local time minus UTC".  So the
+equivalent time in UTC can be determined by subtracting the offset
+from the local time.  For example, 18:50:00-04:00 is the same time as
+22:50:00Z.  (This example shows negative offsets handled by adding
+the absolute value of the offset.)</p>
+<note id="_16ba8295-fba3-4291-bcba-3ace4b98818b">
+<p id="_895bc092-36ad-4c04-aa55-10ce11735d48">Following ISO 8601, numeric offsets represent only time
+zones that differ from UTC by an integral number of minutes.
+However, many historical time zones differ from UTC by a non-
+integral number of minutes.  To represent such historical time
+stamps exactly, applications must convert them to a representable
+time zone.</p>
+</note></clause>
+<clause id="_unknown_local_offset_convention" inline-header="false" obligation="normative">
+<title>Unknown Local Offset Convention</title>
+<p id="_b0daaff0-95d8-4605-bfaa-7f105e484372">If the time in UTC is known, but the offset to local time is unknown,
+this can be represented with an offset of "-00:00".  This differs
+semantically from an offset of "Z" or "+00:00", which imply that UTC
+is the preferred reference point for the specified time.  RFC2822
+<eref type="inline" bibitemid="RFC2822" citeas="RFC 2822"/> describes a similar convention for email.</p>
+</clause>
+<clause id="_unqualified_local_time" inline-header="false" obligation="normative"><title>Unqualified Local Time</title><p id="_7525cd28-e9ae-4955-9108-d3d7e436500a">A number of devices currently connected to the Internet run their
+internal clocks in local time and are unaware of UTC.  While the
+Internet does have a tradition of accepting reality when creating
+specifications, this should not be done at the expense of
+interoperability.  Since interpretation of an unqualified local time
+zone will fail in approximately 23/24 of the globe, the
+interoperability problems of unqualified local time are deemed
+unacceptable for the Internet.  Systems that are configured with a
+local time, are unaware of the corresponding UTC offset, and depend
+on time synchronization with other Internet systems, MUST use a
+mechanism that ensures correct synchronization with UTC.  Some
+suitable mechanisms are:</p>
+<ul id="_be3710b6-0ba8-4bd6-8f79-050a947701eb">
+<li>
+<p id="_7af0b02c-bc87-4f70-87ca-fea9444d52ac">Use Network Time Protocol <eref type="inline" bibitemid="RFC1305" citeas="RFC 1305"/> to obtain the time in UTC.</p>
+</li>
+<li>
+<p id="_6d6c0a57-5ce6-4510-9e9a-8e8dbb4d5dd8">Use another host in the same local time zone as a gateway to the
+Internet.  This host MUST correct unqualified local times that are
+transmitted to other hosts.</p>
+</li>
+<li>
+<p id="_1e565da2-19b0-4421-9d1a-a3a6d50d07bd">Prompt the user for the local time zone and daylight saving rule
+settings.</p>
+</li>
+</ul></clause></clause>
+<clause id="_date_and_time_format" inline-header="false" obligation="normative"><title>Date and Time format</title><p id="_c557de30-a337-4bdf-a701-070134f93af8">This section discusses desirable qualities of date and time formats
+and defines a profile of ISO 8601 for use in Internet protocols.</p>
+<clause id="_ordering" inline-header="false" obligation="normative">
+<title>Ordering</title>
+<p id="_e81551b8-31af-45c7-b1bf-64b40a1b5d12">If date and time components are ordered from least precise to most
+precise, then a useful property is achieved. Assuming that the time
+zones of the dates and times are the same (e.g., all in UTC),
+expressed using the same string (e.g., all "Z" or all "+00:00"), and
+all times have the same number of fractional second digits, then the
+date and time strings may be sorted as strings (e.g., using the
+<tt>strcmp()</tt> function in C) and a time-ordered sequence will result. The
+presence of optional punctuation would violate this characteristic.</p>
+</clause>
+<clause id="_human_readability" inline-header="false" obligation="normative"><title>Human Readability</title><p id="_059bd839-d1d3-444f-be29-40b10ee96689">Human readability has proved to be a valuable feature of Internet
+protocols. Human readable protocols greatly reduce the costs of
+debugging since telnet often suffices as a test client and network
+analyzers need not be modified with knowledge of the protocol. On
+the other hand, human readability sometimes results in
+interoperability problems. For example, the date format "10/11/1996"
+is completely unsuitable for global interchange because it is
+interpreted differently in different countries. In addition, the
+date format in (RFC822) has resulted in interoperability problems when
+people assumed any text string was permitted and translated the three
+letter abbreviations to other languages or substituted date formats
+which were easier to generate (e.g. the format used by the C function
+<tt>ctime</tt>). For this reason, a balance must be struck between human
+readability and interoperability.</p>
+<p id="_1d02766b-3f10-4afc-80b5-4d65cd082b19">Because no date and time format is readable according to the
+conventions of all countries, Internet clients SHOULD be prepared to
+transform dates into a display format suitable for the locality.
+This may include translating UTC to local time.</p></clause>
+<clause id="_rarely_used_options" inline-header="false" obligation="normative"><title>Rarely Used Options</title><p id="_516f80fb-b7f6-41a2-b126-338c0a063b83">A format which includes rarely used options is likely to cause
+interoperability problems. This is because rarely used options are
+less likely to be used in alpha or beta testing, so bugs in parsing
+are less likely to be discovered. Rarely used options should be made
+mandatory or omitted for the sake of interoperability whenever
+possible.</p>
+<p id="_0bcc72d4-d617-4f14-83a7-5de729915f86">The format defined below includes only one rarely used option:
+fractions of a second. It is expected that this will be used only by
+applications which require strict ordering of date/time stamps or
+which have an unusual precision requirement.</p></clause>
+<clause id="_redundant_information" inline-header="false" obligation="normative">
+<title>Redundant Information</title>
+<p id="_55787fbe-de7f-4482-b0f0-94a40ce5dd00">If a date/time format includes redundant information, that introduces
+the possibility that the redundant information will not correlate.
+For example, including the day of the week in a date/time format
+introduces the possibility that the day of week is incorrect but the
+date is correct, or vice versa. Since it is not difficult to compute
+the day of week from a date (see <xref target="annexB"/>), the day of week should
+not be included in a date/time format.</p>
+</clause>
+<clause id="_simplicity" inline-header="false" obligation="normative"><title>Simplicity</title><p id="_a8b46c7c-dea7-4a1d-8b6b-9bec4014dbc2">The complete set of date and time formats specified in ISO 8601
+<eref type="inline" bibitemid="ISO8601" citeas="ISO 8601:1988"/> is quite complex in an attempt to provide multiple
+representations and partial representations. <xref target="annexA"/> contains an
+attempt to translate the complete syntax of ISO 8601 into <eref type="inline" bibitemid="RFC2234" citeas="RFC 2234"/>.
+Internet protocols have somewhat different requirements and
+simplicity has proved to be an important characteristic. In
+addition, Internet protocols usually need complete specification of
+data in order to achieve true interoperability. Therefore, the
+complete grammar for ISO 8601 is deemed too complex for most Internet
+protocols.</p>
+<p id="_1d465b2c-c865-4e34-a621-fabfe1b6ab66">The following section defines a profile of ISO 8601 for use on the
+Internet. It is a conformant subset of the ISO 8601 extended format.
+Simplicity is achieved by making most fields and punctuation
+mandatory.</p></clause>
+<clause id="_internet_datetime_format" inline-header="false" obligation="normative"><title>Internet Date/Time Format</title><p id="_3c95a633-e9e1-46c6-84f0-b7864189fe8a">The following profile of <eref type="inline" bibitemid="ISO8601" citeas="ISO 8601:1988"/> dates SHOULD be used in
+new protocols on the Internet. This is specified using the syntax
+description notation defined in <eref type="inline" bibitemid="RFC2234" citeas="RFC 2234"/>.</p>
+<sourcecode id="_971ef3d5-bf88-43d2-8958-a28ded9fd0d1" unnumbered="true">date-fullyear = 4DIGIT +
+date-month = 2DIGIT ; 01-12  +
+date-mday = 2DIGIT ; 01-28, 01-29, 01-30, 01-31 based on month/year +
+time-hour = 2DIGIT ; 00-23 +
+time-minute = 2DIGIT ; 00-59 +
+time-second = 2DIGIT ; 00-58, 00-59, 00-60 based on leap second rules +
+time-secfrac = "." 1*DIGIT +
+time-numoffset = ("+" / "-") time-hour ":" time-minute +
+time-offset = "Z" / time-numoffset
+
+partial-time = time-hour ":" time-minute ":" time-second [time-secfrac] +
+full-date = date-fullyear "-" date-month "-" date-mday +
+full-time = partial-time time-offset +
+
+date-time = full-date "T" full-time</sourcecode>
+
+<note id="_14199df0-12b3-4d06-a52e-d371957d3759">
+<p id="_5961025c-ca3e-4664-a6d9-f3950e6f7222">Per <eref type="inline" bibitemid="RFC2234" citeas="RFC 2234"/> and ISO8601, the "T" and "Z" characters in this
+syntax may alternatively be lower case "t" or "z" respectively.</p>
+</note>
+<p id="_901f7eec-ec88-4716-bd03-d199ab5499ad">This date/time format may be used in some environments or contexts
+that distinguish between the upper- and lower-case letters 'A'-'Z'
+and 'a'-'z' (e.g. XML). Specifications that use this format in
+such environments MAY further limit the date/time syntax so that
+the letters 'T' and 'Z' used in the date/time syntax must always
+be upper case. Applications that generate this format SHOULD use
+upper case letters.</p>
+<note id="_87903e65-0d0f-4c88-8c9d-f63534b049f4">
+<p id="_4a0de1f8-8328-4d96-be10-d60038bd9765">ISO 8601 defines date and time separated by "T".
+Applications using this syntax may choose, for the sake of
+readability, to specify a full-date and full-time separated by
+(say) a space character.</p>
+</note></clause>
+<clause id="restrictions" inline-header="false" obligation="normative"><title>Restrictions</title><p id="_bd4c6113-796c-43ba-9d32-64532124d910">The grammar element date-mday represents the day number within the
+current month. The maximum value varies based on the month and year
+as follows:</p>
+<table id="_02be5d69-57e6-4711-bdb7-41ff55bc2ebb" unnumbered="true">
+<thead>
+<tr>
+<th valign="top" align="left">Month Number</th>
+<th valign="top" align="left">Month/Year</th>
+<th valign="top" align="left">Maximum value of date-mday</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top" align="left">01</td>
+<td valign="top" align="left">January</td>
+<td valign="top" align="left">31</td>
+</tr>
+<tr>
+<td valign="top" align="left">02</td>
+<td valign="top" align="left">February, normal</td>
+<td valign="top" align="left">28</td>
+</tr>
+<tr>
+<td valign="top" align="left">02</td>
+<td valign="top" align="left">February, leap year</td>
+<td valign="top" align="left">29</td>
+</tr>
+<tr>
+<td valign="top" align="left">03</td>
+<td valign="top" align="left">March</td>
+<td valign="top" align="left">31</td>
+</tr>
+<tr>
+<td valign="top" align="left">04</td>
+<td valign="top" align="left">April</td>
+<td valign="top" align="left">30</td>
+</tr>
+<tr>
+<td valign="top" align="left">05</td>
+<td valign="top" align="left">May</td>
+<td valign="top" align="left">31</td>
+</tr>
+<tr>
+<td valign="top" align="left">06</td>
+<td valign="top" align="left">June</td>
+<td valign="top" align="left">30</td>
+</tr>
+<tr>
+<td valign="top" align="left">07</td>
+<td valign="top" align="left">July</td>
+<td valign="top" align="left">31</td>
+</tr>
+<tr>
+<td valign="top" align="left">08</td>
+<td valign="top" align="left">August</td>
+<td valign="top" align="left">31</td>
+</tr>
+<tr>
+<td valign="top" align="left">09</td>
+<td valign="top" align="left">September</td>
+<td valign="top" align="left">30</td>
+</tr>
+<tr>
+<td valign="top" align="left">10</td>
+<td valign="top" align="left">October</td>
+<td valign="top" align="left">31</td>
+</tr>
+<tr>
+<td valign="top" align="left">11</td>
+<td valign="top" align="left">November</td>
+<td valign="top" align="left">30</td>
+</tr>
+<tr>
+<td valign="top" align="left">12</td>
+<td valign="top" align="left">December</td>
+<td valign="top" align="left">31</td>
+</tr>
+</tbody>
+</table>
+<p id="_c791b5fa-9b1b-495b-b844-10302e994e1d"><xref target="annexC"/> contains sample C code to determine if a year is a leap
+year.</p>
+<p id="_c2159dfe-533e-4ad1-a50d-83e8b73371cc">The grammar element time-second may have the value "60" at the end of
+months in which a leap second occurs — to date: June (XXXX-06-
+30T23:59:60Z) or December (XXXX-12-31T23:59:60Z); see <xref target="annexD"/> for
+a table of leap seconds. It is also possible for a leap second to be
+subtracted, at which times the maximum value of time-second is "58".
+At all other times the maximum value of time-second is "59".
+Further, in time zones other than "Z", the leap second point is
+shifted by the zone offset (so it happens at the same instant around
+the globe).</p>
+<p id="_723b5ce9-9d38-49dd-a25e-f2cf71935d7e">Leap seconds cannot be predicted far into the future. The
+International Earth Rotation Service publishes bulletins (IERS) that
+announce leap seconds with a few weeks' warning. Applications should
+not generate timestamps involving inserted leap seconds until after
+the leap seconds are announced.</p>
+<p id="_57005b80-314c-4c2a-a754-4ddf1a9860c9">Although ISO 8601 permits the hour to be "24", this profile of ISO
+8601 only allows values between "00" and "23" for the hour in order
+to reduce confusion.</p></clause>
+<clause id="date-time-examples" inline-header="false" obligation="normative"><title>Examples</title><p id="_167a58e4-0e90-4fb0-9672-f46f9c3e645e">Here are some examples of Internet date/time format.</p>
+<sourcecode id="_cd9860ea-41b7-4656-bb06-5e14e45da95e" unnumbered="true">1985-04-12T23:20:50.52Z</sourcecode>
+
+<p id="_ad6b1727-ae7b-40c0-b3fc-7e519b878918">This represents 20 minutes and 50.52 seconds after the 23rd hour of
+April 12th, 1985 in UTC.</p>
+<sourcecode id="_5a9bdaeb-6b8b-40a8-aede-1e3026a5a662" unnumbered="true">1996-12-19T16:39:57-08:00</sourcecode>
+
+<p id="_bbacd5d4-2c17-4c42-8b5a-7b241d4d394c">This represents 39 minutes and 57 seconds after the 16th hour of
+December 19th, 1996 with an offset of -08:00 from UTC (Pacific
+Standard Time). Note that this is equivalent to 1996-12-20T00:39:57Z
+in UTC.</p>
+<sourcecode id="_0569422f-88e6-41f4-81c8-491486aa7574" unnumbered="true">1990-12-31T23:59:60Z</sourcecode>
+
+<p id="_9ffc2fc1-138f-47eb-b956-b08ce364bb6a">This represents the leap second inserted at the end of 1990.</p>
+<sourcecode id="_f78dadac-3dca-4090-aee0-6740eb048ab1" unnumbered="true">1990-12-31T15:59:60-08:00</sourcecode>
+
+<p id="_475b245a-33a0-4784-9a41-3d0ce9083cc0">This represents the same leap second in Pacific Standard Time, 8
+hours behind UTC.</p>
+<sourcecode id="_74f27ce7-0c36-4756-99dc-7218c1baf34c" unnumbered="true">1937-01-01T12:00:27.87+00:20</sourcecode>
+
+<p id="_4792319a-db4f-4e06-bd8b-2c2850c8bf81">This represents the same instant of time as noon, January 1, 1937,
+Netherlands time. Standard time in the Netherlands was exactly 19
+minutes and 32.13 seconds ahead of UTC by law from 1909-05-01 through
+1937-06-30. This time zone cannot be represented exactly using the
+HH:MM format, and this timestamp uses the closest representable UTC
+offset.</p></clause></clause>
+
+
+<clause id="_security_considerations" inline-header="false" obligation="normative">
+<title>Security Considerations</title>
+<p id="_2ed0214c-862d-40b5-950e-62b77535853b">Since the local time zone of a site may be useful for determining a
+time when systems are less likely to be monitored and might be more
+susceptible to a security probe, some sites may wish to emit times in
+UTC only.  Others might consider this to be loss of useful
+functionality at the hands of paranoia.</p>
+</clause>
+
+
+
+</sections><annex id="annexA" inline-header="false" obligation="normative"><title>ISO 8601 Collected ABNF</title><p id="_8c85c961-3277-4396-be44-9855c96237b9">This information is based on the 1988 version of ISO 8601.  There may
+be some changes in the 2000 revision.</p>
+<p id="_636c2302-8502-4dd0-8d36-4769d35df081">ISO 8601 does not specify a formal grammar for the date and time
+formats it defines.  The following is an attempt to create a formal
+grammar from ISO 8601.  This is informational only and may contain
+errors.  ISO 8601 remains the authoritative reference.</p>
+<p id="_29898f13-d687-4d7b-9d68-8602b2b3be31">Note that due to ambiguities in ISO 8601, some interpretations had to
+be made.  First, ISO 8601 is not clear if mixtures of basic and
+extended format are permissible.  This grammar permits mixtures. ISO
+8601 is not clear on whether an hour of 24 is permissible only if
+minutes and seconds are 0.  This assumes that an hour of 24 is
+permissible in any context.  Restrictions on date-mday in section <xref target="restrictions"/>
+apply.  ISO 8601 states that the "T" may be omitted under some
+circumstances.  This grammar requires the "T" to avoid ambiguity.
+ISO 8601 also requires (in section 5.3.1.3) that a decimal fraction
+be proceeded by a "0" if less than unity.  Annex B.2 of ISO 8601
+gives examples where the decimal fractions are not preceded by a "0".
+This grammar assumes section 5.3.1.3 is correct and that Annex B.2 is
+in error.</p>
+<sourcecode id="_df161041-3e1b-4b7a-9b2b-af7030b4d3b9" unnumbered="true">date-century::   = 2DIGIT  ; 00-99
+date-decade::    =  DIGIT  ; 0-9
+date-subdecade:: =  DIGIT  ; 0-9
+date-year::      = date-decade date-subdecade
+date-fullyear::  = date-century date-year
+date-month::     = 2DIGIT  ; 01-12
+date-wday::      =  DIGIT  ; 1-7  ; 1 is Monday, 7 is Sunday
+date-mday::      = 2DIGIT  ; 01-28, 01-29, 01-30, 01-31 based on ; month/year
+date-yday::      = 3DIGIT  ; 001-365, 001-366 based on year
+date-week::      = 2DIGIT  ; 01-52, 01-53 based on year
+
+datepart-fullyear:: = [date-century] date-year ["-"]
+datepart-ptyear::  = "-" [date-subdecade ["-"]]
+datepart-wkyear::  = datepart-ptyear / datepart-fullyear
+
+dateopt-century::  = "-" / date-century
+dateopt-fullyear:: = "-" / datepart-fullyear
+dateopt-year::     = "-" / (date-year ["-"])
+dateopt-month::    = "-" / (date-month ["-"])
+dateopt-week::     = "-" / (date-week ["-"])
+
+datespec-full::    = datepart-fullyear date-month ["-"] date-mday
+datespec-year::    = date-century / dateopt-century date-year
+datespec-month::   = "-" dateopt-year date-month [["-"] date-mday]
+datespec-mday::    = "--" dateopt-month date-mday
+datespec-week::    = datepart-wkyear "W"
+                    (date-week / dateopt-week date-wday)
+datespec-wday::    = "---" date-wday
+datespec-yday::    = dateopt-fullyear date-yday
+
+date:: = datespec-full / datespec-year  / datespec-month / datespec-mday / datespec-week / datespec-wday / datespec-yday</sourcecode>
+
+<p id="_f5f0386e-6645-4ca4-b97e-13027edfc248">Time:</p>
+<sourcecode id="_a03e3eb2-0c7f-4f49-a408-fdd1ad3408e7" unnumbered="true">time-hour::        = 2DIGIT ; 00-24
+time-minute::      = 2DIGIT ; 00-59
+time-second::      = 2DIGIT ; 00-58, 00-59, 00-60 based on ; leap-second rules
+time-fraction::    = ("," / ".") 1*DIGIT
+time-numoffset::   = ("+" / "-") time-hour [[":"] time-minute]
+time-zone::        = "Z" / time-numoffset
+
+timeopt-hour::     = "-" / (time-hour [":"])
+timeopt-minute::   = "-" / (time-minute [":"])
+
+timespec-hour::    = time-hour [[":"] time-minute [[":"] time-second]]
+timespec-minute::  = timeopt-hour time-minute [[":"] time-second]
+timespec-second::  = "-" timeopt-minute time-second
+timespec-base::    = timespec-hour / timespec-minute / timespec-second
+
+time::             = timespec-base [time-fraction] [time-zone]
+
+iso-date-time::     = date "T" time</sourcecode>
+
+<p id="_9a495f42-5a4a-4a10-af65-fcbca54a110b">Durations:</p>
+<sourcecode id="_492a76fd-bac2-4142-8d38-2377995d2e3b" unnumbered="true">dur-second::       = 1*DIGIT "S"
+dur-minute::       = 1*DIGIT "M" [dur-second]
+dur-hour::         = 1*DIGIT "H" [dur-minute]
+dur-time::         = "T" (dur-hour / dur-minute / dur-second)
+dur-day::          = 1*DIGIT "D"
+dur-week::         = 1*DIGIT "W"
+dur-month::        = 1*DIGIT "M" [dur-day]
+dur-year::         = 1*DIGIT "Y" [dur-month]
+dur-date::         = (dur-day / dur-month / dur-year) [dur-time]
+
+duration::          = "P" (dur-date / dur-time / dur-week)</sourcecode>
+
+<p id="_981c1218-b376-45f6-a571-87491d2eb50f">Periods:</p>
+<sourcecode id="_5e881251-6116-477f-8341-09752f744abd" unnumbered="true">period-explicit::  = iso-date-time "/" iso-date-time
+period-start::     = iso-date-time "/" duration
+period-end::       = duration "/" iso-date-time
+
+period::            = period-explicit / period-start / period-end</sourcecode>
+</annex><annex id="annexB" inline-header="false" obligation="normative"><title>Day of the Week</title><p id="_c0bd5b70-2c92-44b8-96d4-ec2ccda7559d">The following is a sample C subroutine loosely based on Zeller's
+Congruence (ZELLER) which may be used to obtain the day of the week
+for dates on or after 0000-03-01:</p>
+<sourcecode lang="c" id="_7c7c57ef-5e60-4e7c-ac20-d3204182dd9a">char *day_of_week(int day, int month, int year)
+{
+    int cent;
+    char *dayofweek[] = {
+        "Sunday", "Monday", "Tuesday", "Wednesday",
+        "Thursday", "Friday", "Saturday"
+    };
+
+    /* adjust months so February is the last one */
+    month -= 2;
+    if (month &lt; 1) {
+        month += 12;
+        --year;
+    }
+    /* split by century */
+    cent = year / 100;
+    year %= 100;
+    return (dayofweek[((26 * month - 2) / 10 + day + year
+                    + year / 4 + cent / 4 + 5 * cent) % 7]);</sourcecode>
+</annex><annex id="annexC" inline-header="false" obligation="normative"><title>Leap Years</title><p id="_c71fb197-279a-4c38-a961-317fbd0e2965">Here is a sample C subroutine to calculate if a year is a leap year:</p>
+<sourcecode lang="c" id="_30c01a1d-406f-42d0-990b-4457a5dbcf61">/* This returns non-zero if year is a leap year.  Must use 4 digit
+    year.
+*/
+int leap_year(int year)
+{
+    return (year % 4 == 0 &amp;&amp; (year % 100 != 0 || year % 400 == 0));
+}</sourcecode>
+</annex><annex id="annexD" inline-header="false" obligation="normative"><title>Leap Seconds</title><p id="_62c14954-051c-4d80-aad3-05a5011edde4">Information about leap seconds can be found at: &lt;<link target="http://tycho.usno.navy.mil/leapsec.html"/>&gt;.  In particular, it notes
+that:</p>
+<p id="_83baed82-a7cb-4a58-9e3b-92a94006c6b8">The decision to introduce a leap second in UTC is the
+responsibility of the International Earth Rotation Service (IERS).
+According to the CCIR Recommendation, first preference is given to
+the opportunities at the end of December and June, and second
+preference to those at the end of March and September.</p>
+<p id="_6945606e-1b55-4841-a03f-b32f87e60280">When required, insertion of a leap second occurs as an extra second
+at the end of a day in UTC, represented by a timestamp of the form
+YYYY-MM-DDT23:59:60Z.  A leap second occurs simultaneously in all
+time zones, so that time zone relationships are not affected.  See
+section <xref target="date-time-examples"/> for some examples of leap second times.</p>
+<p id="_af1b9edf-eee7-4f9c-8e6d-36108697a050">The following table is an excerpt from the table maintained by the
+United States Naval Observatory.  The source data is located at:</p>
+<p id="_1251c88f-5753-4f7a-aafb-9b45c8a19a05">&lt;<link target="ftp://maia.usno.navy.mil/ser7/tai-utc.dat"/>&gt;</p>
+<p id="_9985377a-fe24-4e96-aef9-fdf3d6a1d21d">This table shows the date of the leap second, and the difference
+between the time standard TAI (which isn't adjusted by leap seconds)
+and UTC after that leap second.</p>
+<table id="_1c721fea-b96f-4158-ad9e-59ea14b26f7f" unnumbered="true">
+<thead>
+<tr>
+<th valign="top" align="left">UTC Date</th>
+<th valign="top" align="left">TAI - UTC After Leap Second</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top" align="left">1972-06-30</td>
+<td valign="top" align="left">11</td>
+</tr>
+<tr>
+<td valign="top" align="left">1972-12-31</td>
+<td valign="top" align="left">12</td>
+</tr>
+<tr>
+<td valign="top" align="left">1973-12-31</td>
+<td valign="top" align="left">13</td>
+</tr>
+<tr>
+<td valign="top" align="left">1974-12-31</td>
+<td valign="top" align="left">14</td>
+</tr>
+<tr>
+<td valign="top" align="left">1975-12-31</td>
+<td valign="top" align="left">15</td>
+</tr>
+<tr>
+<td valign="top" align="left">1976-12-31</td>
+<td valign="top" align="left">16</td>
+</tr>
+<tr>
+<td valign="top" align="left">1977-12-31</td>
+<td valign="top" align="left">17</td>
+</tr>
+<tr>
+<td valign="top" align="left">1978-12-31</td>
+<td valign="top" align="left">18</td>
+</tr>
+<tr>
+<td valign="top" align="left">1979-12-31</td>
+<td valign="top" align="left">19</td>
+</tr>
+<tr>
+<td valign="top" align="left">1981-06-30</td>
+<td valign="top" align="left">20</td>
+</tr>
+<tr>
+<td valign="top" align="left">1982-06-30</td>
+<td valign="top" align="left">21</td>
+</tr>
+<tr>
+<td valign="top" align="left">1983-06-30</td>
+<td valign="top" align="left">22</td>
+</tr>
+<tr>
+<td valign="top" align="left">1985-06-30</td>
+<td valign="top" align="left">23</td>
+</tr>
+<tr>
+<td valign="top" align="left">1987-12-31</td>
+<td valign="top" align="left">24</td>
+</tr>
+<tr>
+<td valign="top" align="left">1989-12-31</td>
+<td valign="top" align="left">25</td>
+</tr>
+<tr>
+<td valign="top" align="left">1990-12-31</td>
+<td valign="top" align="left">26</td>
+</tr>
+<tr>
+<td valign="top" align="left">1992-06-30</td>
+<td valign="top" align="left">27</td>
+</tr>
+<tr>
+<td valign="top" align="left">1993-06-30</td>
+<td valign="top" align="left">28</td>
+</tr>
+<tr>
+<td valign="top" align="left">1994-06-30</td>
+<td valign="top" align="left">29</td>
+</tr>
+<tr>
+<td valign="top" align="left">1995-12-31</td>
+<td valign="top" align="left">30</td>
+</tr>
+<tr>
+<td valign="top" align="left">1997-06-30</td>
+<td valign="top" align="left">31</td>
+</tr>
+<tr>
+<td valign="top" align="left">1998-12-31</td>
+<td valign="top" align="left">32</td>
+</tr>
+</tbody>
+</table></annex><bibliography><references id="_normative_references" normative="true" obligation="informative"><title>Normative references</title> <bibitem id="RFC2822" type="standard">  <fetched>2020-11-24</fetched>  <title format="text/plain" language="en" script="Latn">Internet Message Format</title>  <uri type="xml">https://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.2822.xml</uri>  <uri type="src">https://www.rfc-editor.org/info/rfc2822</uri>  <docidentifier type="IETF">RFC 2822</docidentifier>  <docidentifier type="rfc-anchor">RFC2822</docidentifier>  <docidentifier type="DOI">10.17487/RFC2822</docidentifier>  <date type="published">    <on>2001-04</on>  </date>  <contributor>    <role type="editor"/>    <person>      <name>        <completename language="en">P. Resnick</completename>      </name>      <affiliation>        <organization>          <name>Internet Engineering Task Force</name>          <abbreviation>IETF</abbreviation>        </organization>      </affiliation>    </person>  </contributor>  <contributor>    <role type="publisher"/>    <organization>      <name>Internet Engineering Task Force</name>      <abbreviation>IETF</abbreviation>    </organization>  </contributor>  <language>en</language>  <script>Latn</script>  <abstract format="text/plain" language="en" script="Latn">This document specifies a syntax for text messages that are sent between computer users, within the framework of "electronic mail" messages. [STANDARDS-TRACK]</abstract>  <series type="main">    <title format="text/plain" language="en" script="Latn">RFC</title>    <number>2822</number>  </series>  <place>Fremont, CA</place></bibitem> <bibitem id="RFC2234" type="standard">  <fetched>2020-11-24</fetched>  <title format="text/plain" language="en" script="Latn">Augmented BNF for Syntax Specifications: ABNF</title>  <uri type="xml">https://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.2234.xml</uri>  <uri type="src">https://www.rfc-editor.org/info/rfc2234</uri>  <docidentifier type="IETF">RFC 2234</docidentifier>  <docidentifier type="rfc-anchor">RFC2234</docidentifier>  <docidentifier type="DOI">10.17487/RFC2234</docidentifier>  <date type="published">    <on>1997-11</on>  </date>  <contributor>    <role type="editor"/>    <person>      <name>        <completename language="en">D. Crocker</completename>      </name>      <affiliation>        <organization>          <name>Internet Engineering Task Force</name>          <abbreviation>IETF</abbreviation>        </organization>      </affiliation>    </person>  </contributor>  <contributor>    <role type="author"/>    <person>      <name>        <completename language="en">P. Overell</completename>      </name>      <affiliation>        <organization>          <name>Internet Engineering Task Force</name>          <abbreviation>IETF</abbreviation>        </organization>      </affiliation>    </person>  </contributor>  <contributor>    <role type="publisher"/>    <organization>      <name>Internet Engineering Task Force</name>      <abbreviation>IETF</abbreviation>    </organization>  </contributor>  <language>en</language>  <script>Latn</script>  <abstract format="text/plain" language="en" script="Latn">In the early days of the Arpanet, each specification contained its own definition of ABNF.  This included the email specifications, RFC733 and then RFC822 which have come to be the common citations for defining ABNF.  The current document separates out that definition, to permit selective reference.  Predictably, it also provides some modifications and enhancements.  [STANDARDS-TRACK]</abstract>  <series type="main">    <title format="text/plain" language="en" script="Latn">RFC</title>    <number>2234</number>  </series>  <place>Fremont, CA</place></bibitem> <bibitem id="RFC1123" type="standard">  <fetched>2020-11-24</fetched>  <title format="text/plain" language="en" script="Latn">Requirements for Internet Hosts — Application and Support</title>  <uri type="xml">https://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.1123.xml</uri>  <uri type="src">https://www.rfc-editor.org/info/rfc1123</uri>  <docidentifier type="IETF">RFC 1123</docidentifier>  <docidentifier type="rfc-anchor">RFC1123</docidentifier>  <docidentifier type="DOI">10.17487/RFC1123</docidentifier>  <date type="published">    <on>1989-10</on>  </date>  <contributor>    <role type="editor"/>    <person>      <name>        <completename language="en">R. Braden</completename>      </name>      <affiliation>        <organization>          <name>Internet Engineering Task Force</name>          <abbreviation>IETF</abbreviation>        </organization>      </affiliation>    </person>  </contributor>  <contributor>    <role type="publisher"/>    <organization>      <name>Internet Engineering Task Force</name>      <abbreviation>IETF</abbreviation>    </organization>  </contributor>  <language>en</language>  <script>Latn</script>  <abstract format="text/plain" language="en" script="Latn">This RFC is an official specification for the Internet community.  It incorporates by reference, amends, corrects, and supplements the primary protocol standards documents relating to hosts.  [STANDARDS-TRACK]</abstract>  <series type="main">    <title format="text/plain" language="en" script="Latn">STD</title>    <number>3</number>  </series>  <series type="main">    <title format="text/plain" language="en" script="Latn">RFC</title>    <number>1123</number>  </series>  <place>Fremont, CA</place></bibitem> <bibitem id="RFC1305" type="standard">  <fetched>2020-11-24</fetched>  <title format="text/plain" language="en" script="Latn">Network Time Protocol (Version 3) Specification, Implementation and Analysis</title>  <uri type="xml">https://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.1305.xml</uri>  <uri type="src">https://www.rfc-editor.org/info/rfc1305</uri>  <docidentifier type="IETF">RFC 1305</docidentifier>  <docidentifier type="rfc-anchor">RFC1305</docidentifier>  <docidentifier type="DOI">10.17487/RFC1305</docidentifier>  <date type="published">    <on>1992-03</on>  </date>  <contributor>    <role type="author"/>    <person>      <name>        <completename language="en">D. Mills</completename>      </name>      <affiliation>        <organization>          <name>Internet Engineering Task Force</name>          <abbreviation>IETF</abbreviation>        </organization>      </affiliation>    </person>  </contributor>  <contributor>    <role type="publisher"/>    <organization>      <name>Internet Engineering Task Force</name>      <abbreviation>IETF</abbreviation>    </organization>  </contributor>  <language>en</language>  <script>Latn</script>  <abstract format="text/plain" language="en" script="Latn">This document describes the Network Time Protocol (NTP), specifies its formal structure and summarizes information useful for its implementation.  [STANDARDS-TRACK]</abstract>  <series type="main">    <title format="text/plain" language="en" script="Latn">RFC</title>    <number>1305</number>  </series>  <place>Fremont, CA</place></bibitem> <bibitem id="RFC2119" type="standard">  <fetched>2020-11-24</fetched>  <title format="text/plain" language="en" script="Latn">Key words for use in RFCs to Indicate Requirement Levels</title>  <uri type="xml">https://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.2119.xml</uri>  <uri type="src">https://www.rfc-editor.org/info/rfc2119</uri>  <docidentifier type="IETF">RFC 2119</docidentifier>  <docidentifier type="rfc-anchor">RFC2119</docidentifier>  <docidentifier type="DOI">10.17487/RFC2119</docidentifier>  <date type="published">    <on>1997-03</on>  </date>  <contributor>    <role type="author"/>    <person>      <name>        <completename language="en">S. Bradner</completename>      </name>      <affiliation>        <organization>          <name>Internet Engineering Task Force</name>          <abbreviation>IETF</abbreviation>        </organization>      </affiliation>    </person>  </contributor>  <contributor>    <role type="publisher"/>    <organization>      <name>Internet Engineering Task Force</name>      <abbreviation>IETF</abbreviation>    </organization>  </contributor>  <language>en</language>  <script>Latn</script>  <abstract format="text/plain" language="en" script="Latn">In many standards track documents several words are used to signify the requirements in the specification.  These words are often capitalized. This document defines these words as they should be interpreted in IETF documents.  This document specifies an Internet Best Current Practices for the Internet Community, and requests discussion and suggestions for improvements.</abstract>  <series type="main">    <title format="text/plain" language="en" script="Latn">BCP</title>    <number>14</number>  </series>  <series type="main">    <title format="text/plain" language="en" script="Latn">RFC</title>    <number>2119</number>  </series>  <place>Fremont, CA</place></bibitem></references><references id="_informative_references" normative="false" obligation="informative"><title>Bibliography</title><bibitem id="ISO8601" type="standard">  <fetched>2020-11-24</fetched>  <title type="title-intro" format="text/plain" language="en" script="Latn">Data elements and interchange formats</title>  <title type="title-main" format="text/plain" language="en" script="Latn">Information interchange</title>  <title type="title-part" format="text/plain" language="en" script="Latn">Representation of dates and times</title>  <title type="main" format="text/plain" language="en" script="Latn">Data elements and interchange formats — Information interchange — Representation of dates and times</title>  <title type="title-intro" format="text/plain" language="fr" script="Latn">Éléments de données et formats d'échange</title>  <title type="title-main" format="text/plain" language="fr" script="Latn">Échange d'information</title>  <title type="title-part" format="text/plain" language="fr" script="Latn">Représentation de la date et de l'heure</title>  <title type="main" format="text/plain" language="fr" script="Latn">Éléments de données et formats d'échange — Échange d'information — Représentation de la date et de l'heure</title>  <uri type="src">https://www.iso.org/standard/15903.html</uri>  <uri type="rss">https://www.iso.org/contents/data/standard/01/59/15903.detail.rss</uri>  <docidentifier type="ISO">ISO 8601:1988</docidentifier>  <docnumber>8601</docnumber>  <date type="published">    <on>1988</on>  </date>  <contributor>    <role type="publisher"/>    <organization>      <name>International Organization for Standardization</name>      <abbreviation>ISO</abbreviation>      <uri>www.iso.org</uri>    </organization>  </contributor>  <edition>1</edition>  <language>en</language>  <language>fr</language>  <script>Latn</script>  <status>    <stage>95</stage>    <substage>99</substage>  </status>  <copyright>    <from>1988</from>    <owner>      <organization>        <name>ISO</name>      </organization>    </owner>  </copyright>  <relation type="obsoletes">    <bibitem type="standard">      <formattedref format="text/plain">ISO 2014:1976</formattedref>    </bibitem>  </relation>  <relation type="obsoletes">    <bibitem type="standard">      <formattedref format="text/plain">ISO 2015:1976</formattedref>    </bibitem>  </relation>  <relation type="obsoletes">    <bibitem type="standard">      <formattedref format="text/plain">ISO 2711:1973</formattedref>    </bibitem>  </relation>  <relation type="obsoletes">    <bibitem type="standard">      <formattedref format="text/plain">ISO 3307:1975</formattedref>    </bibitem>  </relation>  <relation type="obsoletes">    <bibitem type="standard">      <formattedref format="text/plain">ISO 4031:1978</formattedref>    </bibitem>  </relation>  <relation type="updates">    <bibitem type="standard">      <formattedref format="text/plain">ISO 8601:1988/Cor 1:1991</formattedref>      <date type="circulated">        <on>2000</on>      </date>    </bibitem>  </relation>  <relation type="updates">    <bibitem type="standard">      <formattedref format="text/plain">ISO 8601:2000</formattedref>      <date type="circulated">        <on>2000</on>      </date>    </bibitem>  </relation>  <place>Geneva</place></bibitem><bibitem id="ISO8601-2000" type="standard">  <fetched>2020-11-24</fetched>  <title type="title-intro" format="text/plain" language="en" script="Latn">Data elements and interchange formats</title>  <title type="title-main" format="text/plain" language="en" script="Latn">Information interchange</title>  <title type="title-part" format="text/plain" language="en" script="Latn">Representation of dates and times</title>  <title type="main" format="text/plain" language="en" script="Latn">Data elements and interchange formats — Information interchange — Representation of dates and times</title>  <title type="title-intro" format="text/plain" language="fr" script="Latn">Éléments de données et formats d'échange</title>  <title type="title-main" format="text/plain" language="fr" script="Latn">Échange d'information</title>  <title type="title-part" format="text/plain" language="fr" script="Latn">Représentation de la date et de l'heure</title>  <title type="main" format="text/plain" language="fr" script="Latn">Éléments de données et formats d'échange — Échange d'information — Représentation de la date et de l'heure</title>  <uri type="src">https://www.iso.org/standard/26780.html</uri>  <uri type="rss">https://www.iso.org/contents/data/standard/02/67/26780.detail.rss</uri>  <docidentifier type="ISO">ISO 8601:2000</docidentifier>  <docnumber>8601</docnumber>  <date type="published">    <on>2000</on>  </date>  <contributor>    <role type="publisher"/>    <organization>      <name>International Organization for Standardization</name>      <abbreviation>ISO</abbreviation>      <uri>www.iso.org</uri>    </organization>  </contributor>  <edition>2</edition>  <language>en</language>  <language>fr</language>  <script>Latn</script>  <status>    <stage>95</stage>    <substage>99</substage>  </status>  <copyright>    <from>2000</from>    <owner>      <organization>        <name>ISO</name>      </organization>    </owner>  </copyright>  <relation type="obsoletes">    <bibitem type="standard">      <formattedref format="text/plain">ISO 8601:1988</formattedref>    </bibitem>  </relation>  <relation type="obsoletes">    <bibitem type="standard">      <formattedref format="text/plain">ISO 8601:1988/Cor 1:1991</formattedref>    </bibitem>  </relation>  <relation type="updates">    <bibitem type="standard">      <formattedref format="text/plain">ISO 8601:2004</formattedref>      <date type="circulated">        <on>2004</on>      </date>    </bibitem>  </relation>  <place>Geneva</place></bibitem>  </references></bibliography>
+</ietf-standard>
