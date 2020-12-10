@@ -6,9 +6,13 @@ problems encountered and makes recommendations to improve consistency
 and interoperability when representing and using date and time in
 Internet protocols.
 
-This document includes an Internet profile of the ISO 8601 [<<ISO8601>>]
-standard for representation of dates and times using the Gregorian
-calendar.
+This document includes an Internet profile of the <<ISO8601>>
+standard for representation of dates and times using the Proleptic
+Gregorian calendar. For any dates and times in a different calendar
+system the ID of the calendar that they are expected to be in is
+required to be included which the implementation would then project
+them to. In the absence of a calendar ID, the Proleptic Gregorian
+calendar system is assumed.
 
 There are many ways in which date and time values might appear in
 Internet protocols:  this document focuses on just one common usage,

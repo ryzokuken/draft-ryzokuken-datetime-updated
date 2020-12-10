@@ -23,8 +23,8 @@ hour:: A period of time of 60 minutes.
 
 day:: A period of time of 24 hours.
 
-leap year:: In the Gregorian calendar, a year which has 366 days.
-A leap year is a year whose number is divisible by
+leap year:: In the Proleptic Gregorian calendar, a year which has
+366 days. A leap year is a year whose number is divisible by
 four an integral number of times, except that if it is
 a centennial year (i.e. divisible by one hundred) it
 shall also be divisible by four hundred an integral
