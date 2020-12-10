@@ -12,12 +12,11 @@ rules.
 === Local Offsets
 
 The offset between local time and UTC is often useful information.
-For example, in electronic mail (RFC2822, <<IMAIL-UPDATE>>) the local
+For example, in electronic mail (RFC2822, <<RFC2822>>) the local
 offset provides a useful heuristic to determine the probability of a
 prompt response.  Attempts to label local offsets with alphabetic
-strings have resulted in poor interoperability in the past. <<IMAIL>>,
-<<HOST-REQ>>. As a result, RFC2822 <<IMAIL-UPDATE>> has made numeric
-offsets mandatory.
+strings have resulted in poor interoperability in the past <<RFC1123>>.
+As a result, RFC2822 <<RFC2822>> has made numeric offsets mandatory.
 
 Numeric offsets are calculated as "local time minus UTC".  So the
 equivalent time in UTC can be determined by subtracting the offset
@@ -39,7 +38,7 @@ If the time in UTC is known, but the offset to local time is unknown,
 this can be represented with an offset of "-00:00".  This differs
 semantically from an offset of "Z" or "+00:00", which imply that UTC
 is the preferred reference point for the specified time.  RFC2822
-<<IMAIL-UPDATE>> describes a similar convention for email.
+<<RFC2822>> describes a similar convention for email.
 
 
 === Unqualified Local Time
@@ -57,7 +56,7 @@ on time synchronization with other Internet systems, MUST use a
 mechanism that ensures correct synchronization with UTC.  Some
 suitable mechanisms are:
 
-* Use Network Time Protocol <<NTP>> to obtain the time in UTC.
+* Use Network Time Protocol <<RFC1305>> to obtain the time in UTC.
 
 * Use another host in the same local time zone as a gateway to the
 Internet.  This host MUST correct unqualified local times that are

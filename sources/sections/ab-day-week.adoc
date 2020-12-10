@@ -4,7 +4,7 @@
 == Day of the Week
 
 The following is a sample C subroutine loosely based on Zeller's
-Congruence <<ZELLER>> which may be used to obtain the day of the week
+Congruence (ZELLER) which may be used to obtain the day of the week
 for dates on or after 0000-03-01:
 
 [source,c]

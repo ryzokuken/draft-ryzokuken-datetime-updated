@@ -6,7 +6,7 @@ Information about leap seconds can be found at: <link:http://tycho.usno.navy.mil
 that:
 
 The decision to introduce a leap second in UTC is the
-responsibility of the International Earth Rotation Service <<IERS>>.
+responsibility of the International Earth Rotation Service (IERS).
 According to the CCIR Recommendation, first preference is given to
 the opportunities at the end of December and June, and second
 preference to those at the end of March and September.

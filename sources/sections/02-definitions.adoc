@@ -32,11 +32,11 @@ number of times.
 
 ABNF:: Augmented Backus-Naur Form, a format used to represent
 permissible strings in a protocol or language, as
-defined in <<ABNF>>.
+defined in <<RFC2234>>.
 
 Email Date/Time Format::
 The date/time format used by Internet Mail as defined
-by <<IMAIL-UPDATE>>.
+by <<RFC2822>>.
 
 Internet Date/Time Format::
 The date format defined in section 5 of this document.
@@ -49,5 +49,5 @@ offset of 00:00; often spoken "Zulu" from the ICAO
 phonetic alphabet representation of the letter "Z".
 
 
-For more information about time scales, see Appendix E of <<NTP>>,
-Section 3 of <<ISO8601>>, and the appropriate ITU documents <<ITU-R-TF>>.
+For more information about time scales, see Appendix E of <<RFC1305>>,
+Section 3 of <<ISO8601>>, and the appropriate ITU documents (ITU-R-TF).
