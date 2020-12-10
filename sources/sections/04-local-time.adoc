@@ -1,5 +1,3 @@
-
-
 == Local Time
 
 === Coordinated Universal Time (UTC)

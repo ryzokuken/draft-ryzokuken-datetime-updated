@@ -1,4 +1,3 @@
-
 == Two Digit Years
 
 The following requirements are to address the problems of ambiguity

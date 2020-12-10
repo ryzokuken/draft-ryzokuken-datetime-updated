@@ -1,4 +1,3 @@
-
 == Definitions
 
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
