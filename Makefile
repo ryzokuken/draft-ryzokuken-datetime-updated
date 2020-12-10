@@ -97,6 +97,7 @@ documents.rxl: $(XML) $(HTML)
 
 documents.html: documents.rxl
 	$(PREFIX_CMD) relaton xml2html documents.rxl
+	cp documents.html index.html
 
 %.adoc:
 

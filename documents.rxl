@@ -1,0 +1,73 @@
+<relaton-collection xmlns="https://open.ribose.com/relaton-xml"><title>IETF RFC 3339</title><contributor><role type='author'/><organization><name>Internet Engineering Task Force</name></organization></contributor><relation type='partOf'><bibdata type="standard">
+  <title type="main" format="text/plain" language="en">Date and Time on the Internet: Timestamps with additional information</title>
+  <title type="abbrev" format="text/plain" language="en">Timestamps Extended</title>
+  <uri>https://www.igalia.com/</uri>
+  <uri type="xml">documents/rfc-3339.xml</uri>
+  <uri type="pdf">documents/rfc-3339.pdf</uri>
+  <uri type="html">documents/rfc-3339.html</uri>
+  <uri type="rxl">documents/rfc-3339.rxl</uri>
+  <uri type="txt">documents/rfc-3339.txt</uri>
+  <docidentifier>01</docidentifier>
+  <docnumber>01</docnumber>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename>Ujjwal Sharma</completename>
+      </name>
+      <affiliation>
+        <organization>
+          <name>Igalia, S.L.</name>
+        </organization>
+      </affiliation>
+      <email>ryzokuken@igalia.com</email>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="publisher"/>
+    <organization>
+      <name>Internet Engineering Task Force</name>
+      <abbreviation>IETF</abbreviation>
+    </organization>
+  </contributor>
+  <version>
+    <revision-date>2020-10-21</revision-date>
+  </version>
+  <language>en</language>
+  <script>Latn</script>
+  <abstract>
+This document defines a date and time format for use in Internet
+protocols that is a profile of the ISO 8601 standard for
+representation of dates and times using the Proleptic Gregorian
+calendar, with optional extensions representing additional
+information including a time zone and a calendaring system.
+</abstract>
+  <status>
+    <stage>published</stage>
+  </status>
+  <copyright>
+    <from>2020</from>
+    <owner>
+      <organization>
+        <name>Internet Engineering Task Force</name>
+        <abbreviation>IETF</abbreviation>
+      </organization>
+    </owner>
+  </copyright>
+  <relation type="obsoletes">
+    <bibitem>
+      <title>--</title>
+      <docidentifier>3339</docidentifier>
+    </bibitem>
+  </relation>
+  <series type="stream">
+    <title>IETF</title>
+  </series>
+  <series type="intended">
+    <title>standard</title>
+  </series>
+  <ext>
+    <doctype>internet-draft</doctype>
+  </ext>
+</bibdata></relation>
+</relaton-collection>
