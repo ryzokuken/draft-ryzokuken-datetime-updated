@@ -6,7 +6,7 @@ Official Protocol Standards" (STD 1) for the standardization state
 and status of this protocol.  Distribution of this memo is unlimited.
 
 == Copyright Notice
-Copyright (C) The Internet Society (2002).  All Rights Reserved.
+Copyright (C) The Internet Society (2020).  All Rights Reserved.
 
 [abstract]
 == Abstract
