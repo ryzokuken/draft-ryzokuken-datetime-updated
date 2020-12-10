@@ -1,0 +1,118 @@
+<bibdata type="standard">
+<title language="en" format="text/plain" type="main">Date and Time on the Internet: Timestamps with additional information</title>
+<title language="en" format="text/plain" type="abbrev">Timestamps with additional information</title>
+<uri>https://www.igalia.com/</uri>
+
+
+<contributor>
+<role type="author"/>
+<person>
+<name>
+<completename>Ujjwal Sharma</completename>
+</name>
+<email>ryzokuken@igalia.com</email>
+</person>
+</contributor>
+<contributor>
+<role type="publisher"/>
+<organization>
+<name>Internet Engineering Task Force</name>
+<abbreviation>IETF</abbreviation>
+</organization>
+</contributor>
+<version>
+<revision-date>2020-10-21</revision-date>
+</version>
+<language>en</language>
+<script>Latn</script><abstract>
+<p>This document defines a date and time format for use in Internet
+protocols that is a profile of the ISO 8601 standard for
+representation of dates and times using the Gregorian calendar.</p>
+</abstract>
+<status>
+<stage>published</stage>
+</status>
+<copyright>
+<from>2020</from>
+<owner>
+<organization>
+<name>Internet Engineering Task Force</name>
+<abbreviation>IETF</abbreviation>
+</organization>
+</owner>
+</copyright>
+<relation type="obsoletes">
+<bibitem type="standard">
+  <fetched>2020-10-21</fetched>
+  <title format="text/plain" language="en" script="Latn">Date and Time on the Internet: Timestamps</title>
+  <uri type="xml">https://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.3339.xml</uri>
+  <uri type="src">https://www.rfc-editor.org/info/rfc3339</uri>
+  <docidentifier type="IETF">RFC 3339</docidentifier>
+  <docidentifier type="rfc-anchor">RFC3339</docidentifier>
+  <docidentifier type="DOI">10.17487/RFC3339</docidentifier>
+  <date type="published">
+    <on>2002-07</on>
+  </date>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en">G. Klyne</completename>
+      </name>
+      <affiliation>
+        <organization>
+          <name>Internet Engineering Task Force</name>
+          <abbreviation>IETF</abbreviation>
+        </organization>
+      </affiliation>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en">C. Newman</completename>
+      </name>
+      <affiliation>
+        <organization>
+          <name>Internet Engineering Task Force</name>
+          <abbreviation>IETF</abbreviation>
+        </organization>
+      </affiliation>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="publisher"/>
+    <organization>
+      <name>Internet Engineering Task Force</name>
+      <abbreviation>IETF</abbreviation>
+    </organization>
+  </contributor>
+  <language>en</language>
+  <script>Latn</script>
+  <abstract format="text/plain" language="en" script="Latn">This document defines a date and time format for use in Internet protocols that is a profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar.</abstract>
+  <series type="main">
+    <title format="text/plain" language="en" script="Latn">RFC</title>
+    <number>3339</number>
+  </series>
+  <place>Fremont, CA</place>
+</bibitem>
+</relation>
+<series type="stream">
+<title>IETF</title>
+</series>
+<series type="intended">
+<title>full-standard</title>
+</series>
+<ext>
+<doctype>internet-draft</doctype>
+<editorialgroup>
+<workgroup>Calendaring Extensions Working Group</workgroup>
+</editorialgroup>
+<area>Internet</area>
+<ipr>trust200902</ipr>
+<pi>
+<toc>yes</toc>
+</pi>
+</ext>
+</bibdata>
