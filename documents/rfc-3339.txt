@@ -257,7 +257,7 @@ Internet-Draft             Timestamps Extended              January 2021
    Time (UTC).  This specification by itself does not cater to local
    time zone rules.  However, certain implementations may be expected
    to.  For these situations, a timestamp may additionally include a
-   local time zone that can be interpreted by the implementations
+   local time zone that the implementations can take into account.
 
 6.2.  Local Offsets
 
