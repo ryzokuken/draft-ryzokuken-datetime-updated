@@ -1,4 +1,4 @@
-<relaton-collection xmlns="https://open.ribose.com/relaton-xml"><title>IETF RFC 3339</title><contributor><role type='author'/><organization><name>Internet Engineering Task Force</name></organization></contributor><relation type='partOf'><bibdata type="standard">
+<relaton-collection xmlns="https://open.ribose.com/relaton-xml"><title>IETF Draft Timezones Extended</title><contributor><role type='author'/><organization><name>Internet Engineering Task Force</name></organization></contributor><relation type='partOf'><bibdata type="standard">
   <title type="main" format="text/plain" language="en">Date and Time on the Internet: Timestamps with additional information</title>
   <title type="abbrev" format="text/plain" language="en">Timestamps Extended</title>
   <uri>https://www.igalia.com/</uri>
