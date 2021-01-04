@@ -6,23 +6,23 @@ sources/rfc-3339.err errors
 (XML Line 000231): Hanging paragraph in clause
 	<clause id="_local_time" inline-header="false" obligation="normative"><title>Local Time</title><clause id="_coordinated_universal_time_utc" inline-header="false" obligation="normative">
 	<title>Coordinated Universal Time (UTC)</title>
-	<p id="_6fd3a03d-b83f-4368-bd40-c35ee229b9d3">Because the daylight saving rules for local time zones are so
+	<p id="_7d80500d-c24b-42fd-a77b-5b2679738c40">Because the daylight saving rules for local time zones are so
 	convoluted and can change based on local law at unpredictable times,
 	true interoperability is best achieved by using Coordinated Universal
 (XML Line 000294): Hanging paragraph in clause
-	<clause id="_date_and_time_format" inline-header="false" obligation="normative"><title>Date and Time format</title><p id="_87e2e884-0b9a-464d-a78b-33eec1d8f8e5">This section discusses desirable qualities of date and time formats
+	<clause id="_date_and_time_format" inline-header="false" obligation="normative"><title>Date and Time format</title><p id="_67a13003-d07f-4d05-8781-7643de2459f6">This section discusses desirable qualities of date and time formats
 	and defines a profile of ISO 8601 for use in Internet protocols.</p>
 	<clause id="_ordering" inline-header="false" obligation="normative">
 	<title>Ordering</title>
-	<p id="_f74a729b-3d10-45b4-9d1a-6ea94831334b">If date and time components are ordered from least precise to most
+	<p id="_17b0fed4-a6db-4cb9-9374-6e76ea13e293">If date and time components are ordered from least precise to most
 (XML Line 000398): Table should have title
-	<table id="_18b94f53-7d99-441d-82f8-bf63afee0636" unnumbered="true">
+	<table id="_2876aa35-4dff-4343-9d14-57cdf60e8fcf" unnumbered="true">
 	<thead>
 	<tr>
 	<th valign="top" align="left">Month Number</th>
 	<th valign="top" align="left">Month/Year</th>
 (XML Line 000670): Table should have title
-	<table id="_2f090ece-c08f-421a-8ef3-068f3e772d10" unnumbered="true">
+	<table id="_40b09ee8-8784-42eb-9ed8-50bf7d1281e3" unnumbered="true">
 	<thead>
 	<tr>
 	<th valign="top" align="left">UTC Date</th>

@@ -5,10 +5,10 @@ by allowing additional information like the timezone and calendar to be specifie
 
 ## Status
 
-- [ ] `00-front-area.adoc`
-- [ ] `01-intro.adoc`
+- [X] `00-front-area.adoc`
+- [X] `01-intro.adoc`
 - [ ] `02-definitions.adoc`
-- [ ] `03-two-digit-years.adoc`
+- [X] `03-two-digit-years.adoc`
 - [ ] `04-local-time.adoc`
 - [ ] `05-date-time-format.adoc`
 - [ ] `06-references.adoc`

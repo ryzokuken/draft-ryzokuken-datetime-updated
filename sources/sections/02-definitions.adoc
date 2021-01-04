@@ -4,7 +4,6 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
 "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
 document are to be interpreted as described in <<RFC2119>>.
 
-
 UTC:: Coordinated Universal Time as maintained by the Bureau
 International des Poids et Mesures (BIPM).
 
@@ -15,7 +14,7 @@ absorbed or emitted by the hyperfine transition of
 cesium-133 atoms in their ground state undisturbed by
 external fields.
 
-minute::    A period of time of 60 seconds.  However, see also the
+minute:: A period of time of 60 seconds. However, see also the
 restrictions in section <<restrictions>> and <<annexD>> for how
 leap seconds are denoted within minutes.
 
@@ -48,6 +47,7 @@ Z:: A suffix which, when applied to a time, denotes a UTC
 offset of 00:00; often spoken "Zulu" from the ICAO
 phonetic alphabet representation of the letter "Z".
 
+// TODO: Add definitions for calendar and timezone.
 
 For more information about time scales, see Appendix E of <<RFC1305>>,
 Section 3 of <<ISO8601>>, and the appropriate ITU documents (ITU-R-TF).

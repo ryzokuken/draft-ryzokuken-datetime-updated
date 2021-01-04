@@ -32,7 +32,6 @@ integral number of minutes.  To represent such historical time
 stamps exactly, applications must convert them to a representable
 time zone.
 
-
 === Unknown Local Offset Convention
 
 If the time in UTC is known, but the offset to local time is unknown,
@@ -40,7 +39,6 @@ this can be represented with an offset of "-00:00".  This differs
 semantically from an offset of "Z" or "+00:00", which imply that UTC
 is the preferred reference point for the specified time.  RFC2822
 <<RFC2822>> describes a similar convention for email.
-
 
 === Unqualified Local Time
 
