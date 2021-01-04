@@ -17,3 +17,9 @@ by allowing additional information like the timezone and calendar to be specifie
 - [ ] `ab-day-week.adoc`
 - [ ] `ac-leap-years.adoc`
 - [ ] `ad-leap-seconds.adoc`
+
+## Building
+
+```shell
+$ make clean all
+```
