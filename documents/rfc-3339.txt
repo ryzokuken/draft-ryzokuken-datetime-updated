@@ -4,9 +4,9 @@
 
 Calendaring Extensions Working Group                           U. Sharma
 Internet-Draft                                              Igalia, S.L.
-Obsoletes: 3339 (if approved)                           10 December 2020
+Obsoletes: 3339 (if approved)                             4 January 2021
 Intended status: Standards Track                                        
-Expires: 13 June 2021
+Expires: 8 July 2021
 
 
  Date and Time on the Internet: Timestamps with additional information
@@ -15,9 +15,8 @@ Expires: 13 June 2021
 Abstract
 
    This document defines a date and time format for use in Internet
-   protocols that is a profile of the ISO 8601 standard for
-   representation of dates and times using the Proleptic Gregorian
-   calendar, with optional extensions representing additional
+   protocols for representation of dates and times using the proleptic
+   Gregorian calendar, with optional extensions representing additional
    information including a time zone and a calendaring system.
 
 Status of This Memo
@@ -35,11 +34,11 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 13 June 2021.
+   This Internet-Draft will expire on 8 July 2021.
 
 Copyright Notice
 
-   Copyright (c) 2020 IETF Trust and the persons identified as the
+   Copyright (c) 2021 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -53,9 +52,10 @@ Copyright Notice
 
 
 
-Sharma                    Expires 13 June 2021                  [Page 1]
+
+Sharma                     Expires 8 July 2021                  [Page 1]
 
-Internet-Draft             Timestamps Extended             December 2020
+Internet-Draft             Timestamps Extended              January 2021
 
 
 Table of Contents
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Sharma                    Expires 13 June 2021                  [Page 2]
+Sharma                     Expires 8 July 2021                  [Page 2]
 
-Internet-Draft             Timestamps Extended             December 2020
+Internet-Draft             Timestamps Extended              January 2021
 
 
 3.  Introduction
@@ -123,11 +123,11 @@ Internet-Draft             Timestamps Extended             December 2020
    Internet protocols.
 
    This document includes an Internet profile of the [ISO8601] standard
-   for representation of dates and times using the Proleptic Gregorian
+   for representation of dates and times using the proleptic Gregorian
    calendar.  For any dates and times in a different calendar system the
    ID of the calendar that they are expected to be in is required to be
    included which the implementation would then project them to.  In the
-   absence of a calendar ID, the Proleptic Gregorian calendar system is
+   absence of a calendar ID, the proleptic Gregorian calendar system is
    assumed.
 
    There are many ways in which date and time values might appear in
@@ -165,9 +165,9 @@ Internet-Draft             Timestamps Extended             December 2020
 
 
 
-Sharma                    Expires 13 June 2021                  [Page 3]
+Sharma                     Expires 8 July 2021                  [Page 3]
 
-Internet-Draft             Timestamps Extended             December 2020
+Internet-Draft             Timestamps Extended              January 2021
 
 
       System of Units.  It is defined as the duration of 9,192,631,770
@@ -183,7 +183,7 @@ Internet-Draft             Timestamps Extended             December 2020
 
    day  A period of time of 24 hours.
 
-   leap year  In the Proleptic Gregorian calendar, a year which has 366
+   leap year  In the proleptic Gregorian calendar, a year which has 366
       days.  A leap year is a year whose number is divisible by four an
       integral number of times, except that if it is a centennial year
       (i.e. divisible by one hundred) it shall also be divisible by four
@@ -221,9 +221,9 @@ Internet-Draft             Timestamps Extended             December 2020
 
 
 
-Sharma                    Expires 13 June 2021                  [Page 4]
+Sharma                     Expires 8 July 2021                  [Page 4]
 
-Internet-Draft             Timestamps Extended             December 2020
+Internet-Draft             Timestamps Extended              January 2021
 
 
    *  The use of 2-digit years is deprecated.  If a 2-digit year is
@@ -277,9 +277,9 @@ Internet-Draft             Timestamps Extended             December 2020
 
 
 
-Sharma                    Expires 13 June 2021                  [Page 5]
+Sharma                     Expires 8 July 2021                  [Page 5]
 
-Internet-Draft             Timestamps Extended             December 2020
+Internet-Draft             Timestamps Extended              January 2021
 
 
       |  NOTE: Following ISO 8601, numeric offsets represent only time
@@ -333,9 +333,9 @@ Internet-Draft             Timestamps Extended             December 2020
 
 
 
-Sharma                    Expires 13 June 2021                  [Page 6]
+Sharma                     Expires 8 July 2021                  [Page 6]
 
-Internet-Draft             Timestamps Extended             December 2020
+Internet-Draft             Timestamps Extended              January 2021
 
 
 7.1.  Ordering
@@ -389,9 +389,9 @@ Internet-Draft             Timestamps Extended             December 2020
 
 
 
-Sharma                    Expires 13 June 2021                  [Page 7]
+Sharma                     Expires 8 July 2021                  [Page 7]
 
-Internet-Draft             Timestamps Extended             December 2020
+Internet-Draft             Timestamps Extended              January 2021
 
 
 7.4.  Redundant Information
@@ -445,9 +445,9 @@ Internet-Draft             Timestamps Extended             December 2020
 
 
 
-Sharma                    Expires 13 June 2021                  [Page 8]
+Sharma                     Expires 8 July 2021                  [Page 8]
 
-Internet-Draft             Timestamps Extended             December 2020
+Internet-Draft             Timestamps Extended              January 2021
 
 
    date-fullyear = 4DIGIT +
@@ -501,9 +501,9 @@ Internet-Draft             Timestamps Extended             December 2020
 
 
 
-Sharma                    Expires 13 June 2021                  [Page 9]
+Sharma                     Expires 8 July 2021                  [Page 9]
 
-Internet-Draft             Timestamps Extended             December 2020
+Internet-Draft             Timestamps Extended              January 2021
 
 
     +==============+=====================+============================+
@@ -557,9 +557,9 @@ Internet-Draft             Timestamps Extended             December 2020
 
 
 
-Sharma                    Expires 13 June 2021                 [Page 10]
+Sharma                     Expires 8 July 2021                 [Page 10]
 
-Internet-Draft             Timestamps Extended             December 2020
+Internet-Draft             Timestamps Extended              January 2021
 
 
    Leap seconds cannot be predicted far into the future.  The
@@ -613,9 +613,9 @@ Internet-Draft             Timestamps Extended             December 2020
 
 
 
-Sharma                    Expires 13 June 2021                 [Page 11]
+Sharma                     Expires 8 July 2021                 [Page 11]
 
-Internet-Draft             Timestamps Extended             December 2020
+Internet-Draft             Timestamps Extended              January 2021
 
 
    This represents the same instant of time as noon, January 1, 1937,
@@ -669,9 +669,9 @@ Internet-Draft             Timestamps Extended             December 2020
 
 
 
-Sharma                    Expires 13 June 2021                 [Page 12]
+Sharma                     Expires 8 July 2021                 [Page 12]
 
-Internet-Draft             Timestamps Extended             December 2020
+Internet-Draft             Timestamps Extended              January 2021
 
 
    [ISO8601-2000]
@@ -725,9 +725,9 @@ Appendix A.  ISO 8601 Collected ABNF
 
 
 
-Sharma                    Expires 13 June 2021                 [Page 13]
+Sharma                     Expires 8 July 2021                 [Page 13]
 
-Internet-Draft             Timestamps Extended             December 2020
+Internet-Draft             Timestamps Extended              January 2021
 
 
    date-century::   = 2DIGIT  ; 00-99
@@ -781,9 +781,9 @@ Internet-Draft             Timestamps Extended             December 2020
 
 
 
-Sharma                    Expires 13 June 2021                 [Page 14]
+Sharma                     Expires 8 July 2021                 [Page 14]
 
-Internet-Draft             Timestamps Extended             December 2020
+Internet-Draft             Timestamps Extended              January 2021
 
 
    time-hour::        = 2DIGIT ; 00-24
@@ -837,9 +837,9 @@ Internet-Draft             Timestamps Extended             December 2020
 
 
 
-Sharma                    Expires 13 June 2021                 [Page 15]
+Sharma                     Expires 8 July 2021                 [Page 15]
 
-Internet-Draft             Timestamps Extended             December 2020
+Internet-Draft             Timestamps Extended              January 2021
 
 
 Appendix B.  Day of the Week
@@ -893,9 +893,9 @@ Appendix D.  Leap Seconds
 
 
 
-Sharma                    Expires 13 June 2021                 [Page 16]
+Sharma                     Expires 8 July 2021                 [Page 16]
 
-Internet-Draft             Timestamps Extended             December 2020
+Internet-Draft             Timestamps Extended              January 2021
 
 
    The decision to introduce a leap second in UTC is the responsibility
@@ -949,9 +949,9 @@ Internet-Draft             Timestamps Extended             December 2020
 
 
 
-Sharma                    Expires 13 June 2021                 [Page 17]
+Sharma                     Expires 8 July 2021                 [Page 17]
 
-Internet-Draft             Timestamps Extended             December 2020
+Internet-Draft             Timestamps Extended              January 2021
 
 
                | 1985-06-30 | 23                          |
@@ -1005,4 +1005,4 @@ Author's Address
 
 
 
-Sharma                    Expires 13 June 2021                 [Page 18]
+Sharma                     Expires 8 July 2021                 [Page 18]

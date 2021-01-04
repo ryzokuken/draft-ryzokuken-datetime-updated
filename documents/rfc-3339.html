@@ -8,16 +8,15 @@
 <meta content="Ujjwal Sharma" name="author">
 <meta content="
        This document defines a date and time format for use in Internet
-protocols that is a profile of the ISO 8601 standard for
-representation of dates and times using the Proleptic Gregorian
-calendar, with optional extensions representing additional
+protocols for representation of dates and times using the proleptic
+Gregorian calendar, with optional extensions representing additional
 information including a time zone and a calendaring system. 
     " name="description">
 <meta content="xml2rfc 3.5.0" name="generator">
 <meta content="01" name="ietf.draft">
 <!-- Generator version information:
   xml2rfc 3.5.0
-    Python 3.9.0
+    Python 3.9.1
     appdirs 1.4.4
     ConfigArgParse 1.2.3
     google-i18n-address 2.4.0
@@ -30,8 +29,8 @@ information including a time zone and a calendaring system.
     pycountry 20.7.3
     pyflakes 2.2.0
     PyYAML 5.3.1
-    requests 2.25.0
-    setuptools 50.3.2
+    requests 2.25.1
+    setuptools 51.1.1
     six 1.15.0
     WeasyPrint 52.2
 -->
@@ -1173,11 +1172,11 @@ dt+dd:empty::before{
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">Timestamps Extended</td>
-<td class="right">December 2020</td>
+<td class="right">January 2021</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Sharma</td>
-<td class="center">Expires 13 June 2021</td>
+<td class="center">Expires 8 July 2021</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1195,12 +1194,12 @@ dt+dd:empty::before{
 <a href="https://www.rfc-editor.org/rfc/rfc3339" class="eref">3339</a> (if approved)</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2020-12-10" class="published">10 December 2020</time>
+<time datetime="2021-01-04" class="published">4 January 2021</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Standards Track</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2021-06-13">13 June 2021</time></dd>
+<dd class="expires"><time datetime="2021-07-08">8 July 2021</time></dd>
 <dt class="label-authors">Author:</dt>
 <dd class="authors">
 <div class="author">
@@ -1214,11 +1213,10 @@ dt+dd:empty::before{
 <div id="_abstract">
 <section id="section-abstract">
       <h2 id="abstract"><a href="#abstract" class="selfRef">Abstract</a></h2>
-<div id="_8eb7568c-58e9-4123-8f6c-f78508798aa9">
+<div id="_95ca9d45-ab43-4e49-8027-6af9f3665659">
 <p id="section-abstract-1">This document defines a date and time format for use in Internet
-protocols that is a profile of the ISO 8601 standard for
-representation of dates and times using the Proleptic Gregorian
-calendar, with optional extensions representing additional
+protocols for representation of dates and times using the proleptic
+Gregorian calendar, with optional extensions representing additional
 information including a time zone and a calendaring system.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
 </div>
 </section>
@@ -1242,7 +1240,7 @@ information including a time zone and a calendaring system.<a href="#section-abs
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 13 June 2021.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 8 July 2021.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1251,7 +1249,7 @@ information including a time zone and a calendaring system.<a href="#section-abs
 <a href="#name-copyright-notice" class="section-name selfRef">Copyright Notice</a>
         </h2>
 <p id="section-boilerplate.2-1">
-            Copyright (c) 2020 IETF Trust and the persons identified as the
+            Copyright (c) 2021 IETF Trust and the persons identified as the
             document authors. All rights reserved.<a href="#section-boilerplate.2-1" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.2-2">
             This document is subject to BCP 78 and the IETF Trust's Legal
@@ -1270,90 +1268,90 @@ information including a time zone and a calendaring system.<a href="#section-abs
         <a href="#" onclick="scroll(0,0)" class="toplink">▲</a><h2 id="name-table-of-contents">
 <a href="#name-table-of-contents" class="section-name selfRef">Table of Contents</a>
         </h2>
-<nav class="toc"><ul class="ulEmpty toc compact">
-<li class="ulEmpty toc compact" id="section-toc.1-1.1">
+<nav class="toc"><ul class="compact ulEmpty toc">
+<li class="compact ulEmpty toc" id="section-toc.1-1.1">
             <p id="section-toc.1-1.1.1" class="keepWithNext"><a href="#section-1" class="xref">1</a>.  <a href="#name-status-of-this-memo-2" class="xref">Status of this Memo</a><a href="#section-toc.1-1.1.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="ulEmpty toc compact" id="section-toc.1-1.2">
+          <li class="compact ulEmpty toc" id="section-toc.1-1.2">
             <p id="section-toc.1-1.2.1" class="keepWithNext"><a href="#section-2" class="xref">2</a>.  <a href="#name-copyright-notice-2" class="xref">Copyright Notice</a><a href="#section-toc.1-1.2.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="ulEmpty toc compact" id="section-toc.1-1.3">
+          <li class="compact ulEmpty toc" id="section-toc.1-1.3">
             <p id="section-toc.1-1.3.1" class="keepWithNext"><a href="#section-3" class="xref">3</a>.  <a href="#name-introduction" class="xref">Introduction</a><a href="#section-toc.1-1.3.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="ulEmpty toc compact" id="section-toc.1-1.4">
+          <li class="compact ulEmpty toc" id="section-toc.1-1.4">
             <p id="section-toc.1-1.4.1"><a href="#section-4" class="xref">4</a>.  <a href="#name-definitions" class="xref">Definitions</a><a href="#section-toc.1-1.4.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="ulEmpty toc compact" id="section-toc.1-1.5">
+          <li class="compact ulEmpty toc" id="section-toc.1-1.5">
             <p id="section-toc.1-1.5.1"><a href="#section-5" class="xref">5</a>.  <a href="#name-two-digit-years" class="xref">Two Digit Years</a><a href="#section-toc.1-1.5.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="ulEmpty toc compact" id="section-toc.1-1.6">
+          <li class="compact ulEmpty toc" id="section-toc.1-1.6">
             <p id="section-toc.1-1.6.1"><a href="#section-6" class="xref">6</a>.  <a href="#name-local-time" class="xref">Local Time</a><a href="#section-toc.1-1.6.1" class="pilcrow">¶</a></p>
-<ul class="ulEmpty toc compact">
-<li class="ulEmpty toc compact" id="section-toc.1-1.6.2.1">
+<ul class="ulEmpty compact toc">
+<li class="ulEmpty compact toc" id="section-toc.1-1.6.2.1">
                 <p id="section-toc.1-1.6.2.1.1"><a href="#section-6.1" class="xref">6.1</a>.  <a href="#name-coordinated-universal-time-" class="xref">Coordinated Universal Time (UTC)</a><a href="#section-toc.1-1.6.2.1.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="ulEmpty toc compact" id="section-toc.1-1.6.2.2">
+              <li class="ulEmpty compact toc" id="section-toc.1-1.6.2.2">
                 <p id="section-toc.1-1.6.2.2.1"><a href="#section-6.2" class="xref">6.2</a>.  <a href="#name-local-offsets" class="xref">Local Offsets</a><a href="#section-toc.1-1.6.2.2.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="ulEmpty toc compact" id="section-toc.1-1.6.2.3">
+              <li class="ulEmpty compact toc" id="section-toc.1-1.6.2.3">
                 <p id="section-toc.1-1.6.2.3.1"><a href="#section-6.3" class="xref">6.3</a>.  <a href="#name-unknown-local-offset-conven" class="xref">Unknown Local Offset Convention</a><a href="#section-toc.1-1.6.2.3.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="ulEmpty toc compact" id="section-toc.1-1.6.2.4">
+              <li class="ulEmpty compact toc" id="section-toc.1-1.6.2.4">
                 <p id="section-toc.1-1.6.2.4.1"><a href="#section-6.4" class="xref">6.4</a>.  <a href="#name-unqualified-local-time" class="xref">Unqualified Local Time</a><a href="#section-toc.1-1.6.2.4.1" class="pilcrow">¶</a></p>
 </li>
             </ul>
 </li>
-          <li class="ulEmpty toc compact" id="section-toc.1-1.7">
+          <li class="compact ulEmpty toc" id="section-toc.1-1.7">
             <p id="section-toc.1-1.7.1"><a href="#section-7" class="xref">7</a>.  <a href="#name-date-and-time-format" class="xref">Date and Time format</a><a href="#section-toc.1-1.7.1" class="pilcrow">¶</a></p>
-<ul class="ulEmpty toc compact">
-<li class="ulEmpty toc compact" id="section-toc.1-1.7.2.1">
+<ul class="ulEmpty compact toc">
+<li class="ulEmpty compact toc" id="section-toc.1-1.7.2.1">
                 <p id="section-toc.1-1.7.2.1.1"><a href="#section-7.1" class="xref">7.1</a>.  <a href="#name-ordering" class="xref">Ordering</a><a href="#section-toc.1-1.7.2.1.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="ulEmpty toc compact" id="section-toc.1-1.7.2.2">
+              <li class="ulEmpty compact toc" id="section-toc.1-1.7.2.2">
                 <p id="section-toc.1-1.7.2.2.1"><a href="#section-7.2" class="xref">7.2</a>.  <a href="#name-human-readability" class="xref">Human Readability</a><a href="#section-toc.1-1.7.2.2.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="ulEmpty toc compact" id="section-toc.1-1.7.2.3">
+              <li class="ulEmpty compact toc" id="section-toc.1-1.7.2.3">
                 <p id="section-toc.1-1.7.2.3.1"><a href="#section-7.3" class="xref">7.3</a>.  <a href="#name-rarely-used-options" class="xref">Rarely Used Options</a><a href="#section-toc.1-1.7.2.3.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="ulEmpty toc compact" id="section-toc.1-1.7.2.4">
+              <li class="ulEmpty compact toc" id="section-toc.1-1.7.2.4">
                 <p id="section-toc.1-1.7.2.4.1"><a href="#section-7.4" class="xref">7.4</a>.  <a href="#name-redundant-information" class="xref">Redundant Information</a><a href="#section-toc.1-1.7.2.4.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="ulEmpty toc compact" id="section-toc.1-1.7.2.5">
+              <li class="ulEmpty compact toc" id="section-toc.1-1.7.2.5">
                 <p id="section-toc.1-1.7.2.5.1"><a href="#section-7.5" class="xref">7.5</a>.  <a href="#name-simplicity" class="xref">Simplicity</a><a href="#section-toc.1-1.7.2.5.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="ulEmpty toc compact" id="section-toc.1-1.7.2.6">
+              <li class="ulEmpty compact toc" id="section-toc.1-1.7.2.6">
                 <p id="section-toc.1-1.7.2.6.1"><a href="#section-7.6" class="xref">7.6</a>.  <a href="#name-internet-date-time-format" class="xref">Internet Date/Time Format</a><a href="#section-toc.1-1.7.2.6.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="ulEmpty toc compact" id="section-toc.1-1.7.2.7">
+              <li class="ulEmpty compact toc" id="section-toc.1-1.7.2.7">
                 <p id="section-toc.1-1.7.2.7.1"><a href="#section-7.7" class="xref">7.7</a>.  <a href="#name-restrictions" class="xref">Restrictions</a><a href="#section-toc.1-1.7.2.7.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="ulEmpty toc compact" id="section-toc.1-1.7.2.8">
+              <li class="ulEmpty compact toc" id="section-toc.1-1.7.2.8">
                 <p id="section-toc.1-1.7.2.8.1"><a href="#section-7.8" class="xref">7.8</a>.  <a href="#name-examples" class="xref">Examples</a><a href="#section-toc.1-1.7.2.8.1" class="pilcrow">¶</a></p>
 </li>
             </ul>
 </li>
-          <li class="ulEmpty toc compact" id="section-toc.1-1.8">
+          <li class="compact ulEmpty toc" id="section-toc.1-1.8">
             <p id="section-toc.1-1.8.1"><a href="#section-8" class="xref">8</a>.  <a href="#name-security-considerations" class="xref">Security Considerations</a><a href="#section-toc.1-1.8.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="ulEmpty toc compact" id="section-toc.1-1.9">
+          <li class="compact ulEmpty toc" id="section-toc.1-1.9">
             <p id="section-toc.1-1.9.1"><a href="#section-9" class="xref">9</a>.  <a href="#name-normative-references" class="xref">Normative references</a><a href="#section-toc.1-1.9.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="ulEmpty toc compact" id="section-toc.1-1.10">
+          <li class="compact ulEmpty toc" id="section-toc.1-1.10">
             <p id="section-toc.1-1.10.1"><a href="#section-10" class="xref">10</a>. <a href="#name-bibliography" class="xref">Bibliography</a><a href="#section-toc.1-1.10.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="ulEmpty toc compact" id="section-toc.1-1.11">
+          <li class="compact ulEmpty toc" id="section-toc.1-1.11">
             <p id="section-toc.1-1.11.1"><a href="#section-appendix.a" class="xref">Appendix A</a>.  <a href="#name-iso-8601-collected-abnf" class="xref">ISO 8601 Collected ABNF</a><a href="#section-toc.1-1.11.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="ulEmpty toc compact" id="section-toc.1-1.12">
+          <li class="compact ulEmpty toc" id="section-toc.1-1.12">
             <p id="section-toc.1-1.12.1"><a href="#section-appendix.b" class="xref">Appendix B</a>.  <a href="#name-day-of-the-week" class="xref">Day of the Week</a><a href="#section-toc.1-1.12.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="ulEmpty toc compact" id="section-toc.1-1.13">
+          <li class="compact ulEmpty toc" id="section-toc.1-1.13">
             <p id="section-toc.1-1.13.1"><a href="#section-appendix.c" class="xref">Appendix C</a>.  <a href="#name-leap-years" class="xref">Leap Years</a><a href="#section-toc.1-1.13.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="ulEmpty toc compact" id="section-toc.1-1.14">
+          <li class="compact ulEmpty toc" id="section-toc.1-1.14">
             <p id="section-toc.1-1.14.1"><a href="#section-appendix.d" class="xref">Appendix D</a>.  <a href="#name-leap-seconds" class="xref">Leap Seconds</a><a href="#section-toc.1-1.14.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="ulEmpty toc compact" id="section-toc.1-1.15">
+          <li class="compact ulEmpty toc" id="section-toc.1-1.15">
             <p id="section-toc.1-1.15.1"><a href="#section-appendix.e" class="xref"></a><a href="#name-authors-address" class="xref">Author's Address</a><a href="#section-toc.1-1.15.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
@@ -1365,7 +1363,7 @@ information including a time zone and a calendaring system.<a href="#section-abs
       <h2 id="name-status-of-this-memo-2">
 <a href="#section-1" class="section-number selfRef">1. </a><a href="#name-status-of-this-memo-2" class="section-name selfRef">Status of this Memo</a>
       </h2>
-<div id="_a766f268-0863-4b4b-9dbe-e350295b9afb">
+<div id="_8e0676bd-991c-466c-887f-52cb4d7dc630">
 <p id="section-1-1">This document specifies an Internet standards track protocol for the
 Internet community, and requests discussion and suggestions for
 improvements.  Please refer to the current edition of the "Internet
@@ -1379,7 +1377,7 @@ and status of this protocol.  Distribution of this memo is unlimited.<a href="#s
       <h2 id="name-copyright-notice-2">
 <a href="#section-2" class="section-number selfRef">2. </a><a href="#name-copyright-notice-2" class="section-name selfRef">Copyright Notice</a>
       </h2>
-<div id="_5265543c-1bdf-4648-a68f-8853669885c8">
+<div id="_3a6da46e-2250-4f4a-bdb4-cbb5f51403b5">
 <p id="section-2-1">Copyright &amp;#169; The Internet Society (2020).  All Rights Reserved.<a href="#section-2-1" class="pilcrow">¶</a></p>
 </div>
 </section>
@@ -1389,23 +1387,23 @@ and status of this protocol.  Distribution of this memo is unlimited.<a href="#s
       <h2 id="name-introduction">
 <a href="#section-3" class="section-number selfRef">3. </a><a href="#name-introduction" class="section-name selfRef">Introduction</a>
       </h2>
-<div id="_61faa331-1550-4de3-8067-6f1b62db52a6">
+<div id="_4fef7b34-f735-40f3-9f63-90e0e2200ebb">
 <p id="section-3-1">Date and time formats cause a lot of confusion and interoperability
 problems on the Internet. This document addresses many of the
 problems encountered and makes recommendations to improve consistency
 and interoperability when representing and using date and time in
 Internet protocols.<a href="#section-3-1" class="pilcrow">¶</a></p>
 </div>
-<div id="_b20db987-4cf5-48b6-8b84-acb9b0f4bc43">
+<div id="_79e3712f-dc15-4478-a9f1-54e2c7ec0b32">
 <p id="section-3-2">This document includes an Internet profile of the <span>[<a href="#ISO8601" class="xref">ISO8601</a>]</span>
-standard for representation of dates and times using the Proleptic
+standard for representation of dates and times using the proleptic
 Gregorian calendar. For any dates and times in a different calendar
 system the ID of the calendar that they are expected to be in is
 required to be included which the implementation would then project
-them to. In the absence of a calendar ID, the Proleptic Gregorian
+them to. In the absence of a calendar ID, the proleptic Gregorian
 calendar system is assumed.<a href="#section-3-2" class="pilcrow">¶</a></p>
 </div>
-<div id="_3887dc01-9628-4114-8801-1b014db36f69">
+<div id="_0eadb0b0-2ace-431e-baf1-72b05ac2f511">
 <p id="section-3-3">There are many ways in which date and time values might appear in
 Internet protocols:  this document focuses on just one common usage,
 viz. timestamps for Internet protocol events.  This limited
@@ -1413,7 +1411,7 @@ consideration has the following consequences:<a href="#section-3-3" class="pilcr
 </div>
 <ul class="normal">
 <li class="normal" id="section-3-4.1">
-          <div id="_220f9acc-4064-4a16-a6e7-749d52d25570">
+          <div id="_5d0d1223-8f08-4e82-b348-6762e6e18440">
 <p id="section-3-4.1.1">All dates and times are assumed to be in the "current era",
 somewhere between 0000AD and 9999AD.<a href="#section-3-4.1.1" class="pilcrow">¶</a></p>
 </div>
@@ -1421,7 +1419,7 @@ somewhere between 0000AD and 9999AD.<a href="#section-3-4.1.1" class="pilcrow">�
       </ul>
 <ul class="normal">
 <li class="normal" id="section-3-5.1">
-          <div id="_df609d31-aed3-462f-a702-e2996408b2c8">
+          <div id="_fd45f656-3de4-4794-8873-ee23b7771c5e">
 <p id="section-3-5.1.1">All times expressed have a stated relationship (offset) to
 Coordinated Universal Time (UTC). Certain applications require the
 presence of a time zone for scheduling applications as well as for
@@ -1430,14 +1428,14 @@ an optional time zone ID may be included.<a href="#section-3-5.1.1" class="pilcr
 </div>
 </li>
         <li class="normal" id="section-3-5.2">
-          <div id="_ab352443-520a-4a56-98e9-18fdc519523a">
+          <div id="_7d5206c1-cc22-4236-8cfe-32c10842f26a">
 <p id="section-3-5.2.1">Timestamps can express times that occurred before the introduction
 of UTC.  Such timestamps are expressed relative to universal time,
 using the best available practice at the stated time.<a href="#section-3-5.2.1" class="pilcrow">¶</a></p>
 </div>
 </li>
         <li class="normal" id="section-3-5.3">
-          <div id="_80a1d29b-f9b0-4a2e-b5d4-c55a1cc1749b">
+          <div id="_490b8e19-0910-4fce-82d9-540fbef1f6d1">
 <p id="section-3-5.3.1">Date and time expressions indicate an instant in time.
 Description of time periods, or intervals, is not covered here.<a href="#section-3-5.3.1" class="pilcrow">¶</a></p>
 </div>
@@ -1450,16 +1448,16 @@ Description of time periods, or intervals, is not covered here.<a href="#section
       <h2 id="name-definitions">
 <a href="#section-4" class="section-number selfRef">4. </a><a href="#name-definitions" class="section-name selfRef">Definitions</a>
       </h2>
-<div id="_28ce28c8-9ff7-42c0-a445-ac72e03a8242">
+<div id="_13a67260-27c6-43fc-a94b-82265e584a4b">
 <p id="section-4-1">The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
 "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
 document are to be interpreted as described in <span>[<a href="#RFC2119" class="xref">RFC2119</a>]</span>.<a href="#section-4-1" class="pilcrow">¶</a></p>
 </div>
-<span class="break"></span><div id="_c3350d32-9e37-4c1e-bdd4-b805ce943cf3">
+<span class="break"></span><div id="_63431077-4de7-4a6f-8090-e4f443cb39f7">
 <dl class="dlParallel" id="section-4-2">
         <dt id="section-4-2.1">UTC</dt>
         <dd style="margin-left: 1.5em" id="section-4-2.2">
-          <div id="_afe73cea-0eba-4c2b-a10f-9dc69724e73f">
+          <div id="_5859f51c-23de-4da5-9a73-b585627f0c4e">
 <p id="section-4-2.2.1">Coordinated Universal Time as maintained by the Bureau
 International des Poids et Mesures (BIPM).<a href="#section-4-2.2.1" class="pilcrow">¶</a></p>
 </div>
@@ -1467,7 +1465,7 @@ International des Poids et Mesures (BIPM).<a href="#section-4-2.2.1" class="pilc
         <dd class="break"></dd>
 <dt id="section-4-2.3">second</dt>
         <dd style="margin-left: 1.5em" id="section-4-2.4">
-          <div id="_70a328bc-f3a0-4d5b-8d4a-848fbddda1a3">
+          <div id="_d7e5363d-8f31-4a74-beff-96e2ad99fde9">
 <p id="section-4-2.4.1">A basic unit of measurement of time in the
 International System of Units.  It is defined as the
 duration of 9,192,631,770 cycles of microwave light
@@ -1479,7 +1477,7 @@ external fields.<a href="#section-4-2.4.1" class="pilcrow">¶</a></p>
         <dd class="break"></dd>
 <dt id="section-4-2.5">minute</dt>
         <dd style="margin-left: 1.5em" id="section-4-2.6">
-          <div id="_2752477c-8537-42f4-b16d-67de2aeaa404">
+          <div id="_13191266-6ce8-446b-b6a2-09a8d1153c2a">
 <p id="section-4-2.6.1">A period of time of 60 seconds.  However, see also the
 restrictions in section <a href="#restrictions" class="xref">Section 7.7</a> and <a href="#annexD" class="xref">Appendix D</a> for how
 leap seconds are denoted within minutes.<a href="#section-4-2.6.1" class="pilcrow">¶</a></p>
@@ -1488,22 +1486,22 @@ leap seconds are denoted within minutes.<a href="#section-4-2.6.1" class="pilcro
         <dd class="break"></dd>
 <dt id="section-4-2.7">hour</dt>
         <dd style="margin-left: 1.5em" id="section-4-2.8">
-          <div id="_527e9729-f73a-4d2b-8508-fb69cd55ab87">
+          <div id="_f91e9f2a-e0ff-4935-b357-a70ab69bae65">
 <p id="section-4-2.8.1">A period of time of 60 minutes.<a href="#section-4-2.8.1" class="pilcrow">¶</a></p>
 </div>
 </dd>
         <dd class="break"></dd>
 <dt id="section-4-2.9">day</dt>
         <dd style="margin-left: 1.5em" id="section-4-2.10">
-          <div id="_7ddf678c-21dd-4497-8e53-e27a09bcf303">
+          <div id="_69dc1aea-bd43-426b-8662-4682b45dcbb5">
 <p id="section-4-2.10.1">A period of time of 24 hours.<a href="#section-4-2.10.1" class="pilcrow">¶</a></p>
 </div>
 </dd>
         <dd class="break"></dd>
 <dt id="section-4-2.11">leap year</dt>
         <dd style="margin-left: 1.5em" id="section-4-2.12">
-          <div id="_42b1fe58-de42-4344-a2ae-a0dc20c4d08b">
-<p id="section-4-2.12.1">In the Proleptic Gregorian calendar, a year which has
+          <div id="_f54898a9-408c-4ad3-8b97-672765d54e1d">
+<p id="section-4-2.12.1">In the proleptic Gregorian calendar, a year which has
 366 days. A leap year is a year whose number is divisible by
 four an integral number of times, except that if it is
 a centennial year (i.e. divisible by one hundred) it
@@ -1514,7 +1512,7 @@ number of times.<a href="#section-4-2.12.1" class="pilcrow">¶</a></p>
         <dd class="break"></dd>
 <dt id="section-4-2.13">ABNF</dt>
         <dd style="margin-left: 1.5em" id="section-4-2.14">
-          <div id="_69cb1b74-1dcf-4a82-8141-c67904dd9439">
+          <div id="_0dc34961-7f79-4823-b923-37710f5adf87">
 <p id="section-4-2.14.1">Augmented Backus-Naur Form, a format used to represent
 permissible strings in a protocol or language, as
 defined in <span>[<a href="#RFC2234" class="xref">RFC2234</a>]</span>.<a href="#section-4-2.14.1" class="pilcrow">¶</a></p>
@@ -1523,7 +1521,7 @@ defined in <span>[<a href="#RFC2234" class="xref">RFC2234</a>]</span>.<a href="#
         <dd class="break"></dd>
 <dt id="section-4-2.15">Email Date/Time Format</dt>
         <dd style="margin-left: 1.5em" id="section-4-2.16">
-          <div id="_0bb504a9-bb0b-4968-a8fc-8193f23cbc4f">
+          <div id="_8e8a8938-e5c0-4512-a37b-374de913686b">
 <p id="section-4-2.16.1">The date/time format used by Internet Mail as defined
 by <span>[<a href="#RFC2822" class="xref">RFC2822</a>]</span>.<a href="#section-4-2.16.1" class="pilcrow">¶</a></p>
 </div>
@@ -1531,14 +1529,14 @@ by <span>[<a href="#RFC2822" class="xref">RFC2822</a>]</span>.<a href="#section-
         <dd class="break"></dd>
 <dt id="section-4-2.17">Internet Date/Time Format</dt>
         <dd style="margin-left: 1.5em" id="section-4-2.18">
-          <div id="_f5a98523-5270-410a-a09b-b4e4b22ef925">
+          <div id="_2b0ce13f-12ae-45aa-a467-48412e5e10d3">
 <p id="section-4-2.18.1">The date format defined in section 5 of this document.<a href="#section-4-2.18.1" class="pilcrow">¶</a></p>
 </div>
 </dd>
         <dd class="break"></dd>
 <dt id="section-4-2.19">Timestamp</dt>
         <dd style="margin-left: 1.5em" id="section-4-2.20">
-          <div id="_3c1595b5-e5b6-45a6-84a7-d0072c5325fa">
+          <div id="_aa2bff42-66e1-497a-80a5-a834d52df4e2">
 <p id="section-4-2.20.1">This term is used in this document to refer to an
 unambiguous representation of some instant in time.<a href="#section-4-2.20.1" class="pilcrow">¶</a></p>
 </div>
@@ -1546,7 +1544,7 @@ unambiguous representation of some instant in time.<a href="#section-4-2.20.1" c
         <dd class="break"></dd>
 <dt id="section-4-2.21">Z</dt>
         <dd style="margin-left: 1.5em" id="section-4-2.22">
-          <div id="_644ed2e8-7b38-42c2-9ec6-59c63df7f446">
+          <div id="_de82b2e2-8395-4bdb-9180-cd791ab58751">
 <p id="section-4-2.22.1">A suffix which, when applied to a time, denotes a UTC
 offset of 00:00; often spoken "Zulu" from the ICAO
 phonetic alphabet representation of the letter "Z".<a href="#section-4-2.22.1" class="pilcrow">¶</a></p>
@@ -1555,7 +1553,7 @@ phonetic alphabet representation of the letter "Z".<a href="#section-4-2.22.1" c
       <dd class="break"></dd>
 </dl>
 </div>
-<div id="_7ae69280-4a1f-40d6-81b8-afd7e1421fc3">
+<div id="_5ee9a339-6fe3-4ccf-8a8e-b035c300024c">
 <p id="section-4-3">For more information about time scales, see Appendix E of <span>[<a href="#RFC1305" class="xref">RFC1305</a>]</span>,
 Section 3 of <span>[<a href="#ISO8601" class="xref">ISO8601</a>]</span>, and the appropriate ITU documents (ITU-R-TF).<a href="#section-4-3" class="pilcrow">¶</a></p>
 </div>
@@ -1566,18 +1564,18 @@ Section 3 of <span>[<a href="#ISO8601" class="xref">ISO8601</a>]</span>, and the
       <h2 id="name-two-digit-years">
 <a href="#section-5" class="section-number selfRef">5. </a><a href="#name-two-digit-years" class="section-name selfRef">Two Digit Years</a>
       </h2>
-<div id="_f9646ac6-3dfd-42ba-b85c-cb7f1318e840">
+<div id="_a3cbb740-1526-471b-9c2e-c79397206f22">
 <p id="section-5-1">The following requirements are to address the problems of ambiguity
 of 2-digit years:<a href="#section-5-1" class="pilcrow">¶</a></p>
 </div>
 <ul class="normal">
 <li class="normal" id="section-5-2.1">
-          <div id="_60907b25-7104-4ad7-a175-ffd2ceb84ffa">
+          <div id="_f38a0b58-9065-4f9b-a8a4-7d03baa6b30b">
 <p id="section-5-2.1.1">Internet Protocols MUST generate four digit years in dates.<a href="#section-5-2.1.1" class="pilcrow">¶</a></p>
 </div>
 </li>
         <li class="normal" id="section-5-2.2">
-          <div id="_a014a3c8-37c1-4102-a669-e9fdcf1ff1d9">
+          <div id="_e340ead4-c91c-4077-a60d-470e7efa510c">
 <p id="section-5-2.2.1">The use of 2-digit years is deprecated.  If a 2-digit year is
 received, it should be accepted ONLY if an incorrect
 interpretation will not cause a protocol or processing failure
@@ -1585,7 +1583,7 @@ interpretation will not cause a protocol or processing failure
 </div>
 </li>
         <li class="normal" id="section-5-2.3">
-          <div id="_315aface-c5f9-4850-b0ce-2e08eabcfb08">
+          <div id="_b6d127e2-0011-47a8-ac8d-a8ce1640710e">
 <p id="section-5-2.3.1">It is possible that a program using two digit years will
 represent years after 1999 as three digits.  This occurs if the
 program simply subtracts 1900 from the year and doesn't check
@@ -1595,7 +1593,7 @@ digit years.<a href="#section-5-2.3.1" class="pilcrow">¶</a></p>
 </div>
 </li>
         <li class="normal" id="section-5-2.4">
-          <div id="_144b0667-ed18-48aa-a08d-9d3a3be8ba03">
+          <div id="_e7c64ba4-22a7-4395-a023-414fa9da3cc6">
 <p id="section-5-2.4.1">It is possible that a program using two digit years will
 represent years after 1999 as ":0", ":1", ...​ ":9", ";0", ...​
 This occurs if the program simply subtracts 1900 from the year
@@ -1606,7 +1604,7 @@ appropriately.<a href="#section-5-2.4.1" class="pilcrow">¶</a></p>
 </div>
 </li>
       </ul>
-<div id="_3878c956-0298-42bb-b927-37d88f35fbfc">
+<div id="_fed459d7-c806-4469-a47a-090a187eef53">
 <p id="section-5-3">The problems with two digit years amply demonstrate why all dates and
 times used in Internet protocols MUST be fully qualified.<a href="#section-5-3" class="pilcrow">¶</a></p>
 </div>
@@ -1622,7 +1620,7 @@ times used in Internet protocols MUST be fully qualified.<a href="#section-5-3" 
         <h3 id="name-coordinated-universal-time-">
 <a href="#section-6.1" class="section-number selfRef">6.1. </a><a href="#name-coordinated-universal-time-" class="section-name selfRef">Coordinated Universal Time (UTC)</a>
         </h3>
-<div id="_dd530b10-84f2-48fc-8017-7cd4cd2d4429">
+<div id="_6fd3a03d-b83f-4368-bd40-c35ee229b9d3">
 <p id="section-6.1-1">Because the daylight saving rules for local time zones are so
 convoluted and can change based on local law at unpredictable times,
 true interoperability is best achieved by using Coordinated Universal
@@ -1638,7 +1636,7 @@ zone that can be interpreted by the implementations<a href="#section-6.1-1" clas
         <h3 id="name-local-offsets">
 <a href="#section-6.2" class="section-number selfRef">6.2. </a><a href="#name-local-offsets" class="section-name selfRef">Local Offsets</a>
         </h3>
-<div id="_cf78d120-e402-4fec-99bf-e5740e0a8671">
+<div id="_fc50e38c-0daa-4a14-819c-b623dfe95a13">
 <p id="section-6.2-1">The offset between local time and UTC is often useful information.
 For example, in electronic mail (RFC2822, <span>[<a href="#RFC2822" class="xref">RFC2822</a>]</span>) the local
 offset provides a useful heuristic to determine the probability of a
@@ -1646,14 +1644,14 @@ prompt response.  Attempts to label local offsets with alphabetic
 strings have resulted in poor interoperability in the past <span>[<a href="#RFC1123" class="xref">RFC1123</a>]</span>.
 As a result, RFC2822 <span>[<a href="#RFC2822" class="xref">RFC2822</a>]</span> has made numeric offsets mandatory.<a href="#section-6.2-1" class="pilcrow">¶</a></p>
 </div>
-<div id="_1c5c2c1c-6531-4873-ba91-820bf3bf450d">
+<div id="_4da73756-f8e6-48ea-82c6-fd2e2b3f0cdf">
 <p id="section-6.2-2">Numeric offsets are calculated as "local time minus UTC".  So the
 equivalent time in UTC can be determined by subtracting the offset
 from the local time.  For example, 18:50:00-04:00 is the same time as
 22:50:00Z.  (This example shows negative offsets handled by adding
 the absolute value of the offset.)<a href="#section-6.2-2" class="pilcrow">¶</a></p>
 </div>
-<div id="_b44b1df1-c99d-44d6-ae90-ce63e1872bfd">
+<div id="_238d686d-cb6a-4ca1-8794-f02b457b0aab">
 <aside id="section-6.2-3">
           <p id="section-6.2-3.1">NOTE: Following ISO 8601, numeric offsets represent only time
 zones that differ from UTC by an integral number of minutes.
@@ -1670,7 +1668,7 @@ time zone.<a href="#section-6.2-3.1" class="pilcrow">¶</a></p>
         <h3 id="name-unknown-local-offset-conven">
 <a href="#section-6.3" class="section-number selfRef">6.3. </a><a href="#name-unknown-local-offset-conven" class="section-name selfRef">Unknown Local Offset Convention</a>
         </h3>
-<div id="_16b28a03-d891-4b78-8e1a-8868fe97b551">
+<div id="_68e078a8-a231-40a4-bd01-fd80f607e21c">
 <p id="section-6.3-1">If the time in UTC is known, but the offset to local time is unknown,
 this can be represented with an offset of "-00:00".  This differs
 semantically from an offset of "Z" or "+00:00", which imply that UTC
@@ -1684,7 +1682,7 @@ is the preferred reference point for the specified time.  RFC2822
         <h3 id="name-unqualified-local-time">
 <a href="#section-6.4" class="section-number selfRef">6.4. </a><a href="#name-unqualified-local-time" class="section-name selfRef">Unqualified Local Time</a>
         </h3>
-<div id="_285a0e9e-2d58-43db-8143-3dbc4a5f306e">
+<div id="_8c272f8d-802d-4ec4-8b48-3532cf8f3e26">
 <p id="section-6.4-1">A number of devices currently connected to the Internet run their
 internal clocks in local time and are unaware of UTC.  While the
 Internet does have a tradition of accepting reality when creating
@@ -1700,19 +1698,19 @@ suitable mechanisms are:<a href="#section-6.4-1" class="pilcrow">¶</a></p>
 </div>
 <ul class="normal">
 <li class="normal" id="section-6.4-2.1">
-            <div id="_5b987f78-52a6-4a46-bf6e-9c3ea7ce899c">
+            <div id="_b050e3f8-067d-4360-a4f2-67e5bb701f64">
 <p id="section-6.4-2.1.1">Use Network Time Protocol <span>[<a href="#RFC1305" class="xref">RFC1305</a>]</span> to obtain the time in UTC.<a href="#section-6.4-2.1.1" class="pilcrow">¶</a></p>
 </div>
 </li>
           <li class="normal" id="section-6.4-2.2">
-            <div id="_d6705b92-ce0f-47d1-92c6-08c43f7a3db0">
+            <div id="_249b69a7-7a3c-4936-875e-3a3840e1cd10">
 <p id="section-6.4-2.2.1">Use another host in the same local time zone as a gateway to the
 Internet.  This host MUST correct unqualified local times that are
 transmitted to other hosts.<a href="#section-6.4-2.2.1" class="pilcrow">¶</a></p>
 </div>
 </li>
           <li class="normal" id="section-6.4-2.3">
-            <div id="_01ba48d1-f74f-4b8b-ac06-23e2a0615611">
+            <div id="_0199f424-8b7a-4dd9-bf74-bc95b4f4ed06">
 <p id="section-6.4-2.3.1">Prompt the user for the local time zone and daylight saving rule
 settings.<a href="#section-6.4-2.3.1" class="pilcrow">¶</a></p>
 </div>
@@ -1727,7 +1725,7 @@ settings.<a href="#section-6.4-2.3.1" class="pilcrow">¶</a></p>
       <h2 id="name-date-and-time-format">
 <a href="#section-7" class="section-number selfRef">7. </a><a href="#name-date-and-time-format" class="section-name selfRef">Date and Time format</a>
       </h2>
-<div id="_a01351ba-e5cd-4c70-980f-fd70dd21f6f3">
+<div id="_87e2e884-0b9a-464d-a78b-33eec1d8f8e5">
 <p id="section-7-1">This section discusses desirable qualities of date and time formats
 and defines a profile of ISO 8601 for use in Internet protocols.<a href="#section-7-1" class="pilcrow">¶</a></p>
 </div>
@@ -1736,7 +1734,7 @@ and defines a profile of ISO 8601 for use in Internet protocols.<a href="#sectio
         <h3 id="name-ordering">
 <a href="#section-7.1" class="section-number selfRef">7.1. </a><a href="#name-ordering" class="section-name selfRef">Ordering</a>
         </h3>
-<div id="_542af378-91fa-4144-acf1-2f1b9240a0e1">
+<div id="_f74a729b-3d10-45b4-9d1a-6ea94831334b">
 <p id="section-7.1-1">If date and time components are ordered from least precise to most
 precise, then a useful property is achieved. Assuming that the time
 zones of the dates and times are the same (e.g., all in UTC),
@@ -1753,7 +1751,7 @@ presence of optional punctuation would violate this characteristic.<a href="#sec
         <h3 id="name-human-readability">
 <a href="#section-7.2" class="section-number selfRef">7.2. </a><a href="#name-human-readability" class="section-name selfRef">Human Readability</a>
         </h3>
-<div id="_463ea4cf-06b6-493e-8712-5d24654b4de4">
+<div id="_d057eea9-8ebc-483e-856d-365c011f6578">
 <p id="section-7.2-1">Human readability has proved to be a valuable feature of Internet
 protocols. Human readable protocols greatly reduce the costs of
 debugging since telnet often suffices as a test client and network
@@ -1769,7 +1767,7 @@ which were easier to generate (e.g. the format used by the C function
 <code>ctime</code>). For this reason, a balance must be struck between human
 readability and interoperability.<a href="#section-7.2-1" class="pilcrow">¶</a></p>
 </div>
-<div id="_b1effb7d-ad29-4a78-9195-9e66266f6553">
+<div id="_dbee8fcb-5df1-4b77-a16b-7e513fdd64d6">
 <p id="section-7.2-2">Because no date and time format is readable according to the
 conventions of all countries, Internet clients SHOULD be prepared to
 transform dates into a display format suitable for the locality.
@@ -1782,7 +1780,7 @@ This may include translating UTC to local time.<a href="#section-7.2-2" class="p
         <h3 id="name-rarely-used-options">
 <a href="#section-7.3" class="section-number selfRef">7.3. </a><a href="#name-rarely-used-options" class="section-name selfRef">Rarely Used Options</a>
         </h3>
-<div id="_5c70207a-0793-47ff-b756-d4f5fc7be2fb">
+<div id="_1e2e59c9-c4ff-44fd-91cf-5210db64362e">
 <p id="section-7.3-1">A format which includes rarely used options is likely to cause
 interoperability problems. This is because rarely used options are
 less likely to be used in alpha or beta testing, so bugs in parsing
@@ -1790,7 +1788,7 @@ are less likely to be discovered. Rarely used options should be made
 mandatory or omitted for the sake of interoperability whenever
 possible.<a href="#section-7.3-1" class="pilcrow">¶</a></p>
 </div>
-<div id="_83173e29-9f96-47ee-bffc-c22ae04bb187">
+<div id="_1b743150-c65d-4691-9057-95958b239d00">
 <p id="section-7.3-2">The format defined below includes only one rarely used option:
 fractions of a second. It is expected that this will be used only by
 applications which require strict ordering of date/time stamps or
@@ -1803,7 +1801,7 @@ which have an unusual precision requirement.<a href="#section-7.3-2" class="pilc
         <h3 id="name-redundant-information">
 <a href="#section-7.4" class="section-number selfRef">7.4. </a><a href="#name-redundant-information" class="section-name selfRef">Redundant Information</a>
         </h3>
-<div id="_cff122b5-9ca0-4749-a884-240f5981da24">
+<div id="_ca2007c8-5a0b-472d-a023-d2f58d8f5e92">
 <p id="section-7.4-1">If a date/time format includes redundant information, that introduces
 the possibility that the redundant information will not correlate.
 For example, including the day of the week in a date/time format
@@ -1819,7 +1817,7 @@ not be included in a date/time format.<a href="#section-7.4-1" class="pilcrow">�
         <h3 id="name-simplicity">
 <a href="#section-7.5" class="section-number selfRef">7.5. </a><a href="#name-simplicity" class="section-name selfRef">Simplicity</a>
         </h3>
-<div id="_c732b6d9-5585-4a36-aef9-c87ead735fcb">
+<div id="_6e260d51-486c-4108-a14c-a7e58d3b75fd">
 <p id="section-7.5-1">The complete set of date and time formats specified in ISO 8601
 <span>[<a href="#ISO8601" class="xref">ISO8601</a>]</span> is quite complex in an attempt to provide multiple
 representations and partial representations. <a href="#annexA" class="xref">Appendix A</a> contains an
@@ -1831,7 +1829,7 @@ data in order to achieve true interoperability. Therefore, the
 complete grammar for ISO 8601 is deemed too complex for most Internet
 protocols.<a href="#section-7.5-1" class="pilcrow">¶</a></p>
 </div>
-<div id="_c2eb0804-8daf-4af9-8abf-c63bd8286044">
+<div id="_1b38ab6f-b91e-4d74-bbd2-e077c7620a64">
 <p id="section-7.5-2">The following section defines a profile of ISO 8601 for use on the
 Internet. It is a conformant subset of the ISO 8601 extended format.
 Simplicity is achieved by making most fields and punctuation
@@ -1844,12 +1842,12 @@ mandatory.<a href="#section-7.5-2" class="pilcrow">¶</a></p>
         <h3 id="name-internet-date-time-format">
 <a href="#section-7.6" class="section-number selfRef">7.6. </a><a href="#name-internet-date-time-format" class="section-name selfRef">Internet Date/Time Format</a>
         </h3>
-<div id="_846f01ba-7b28-4ac4-873c-ce65c1c89311">
+<div id="_6b2154c2-d2fe-46dc-906a-43c9a9fc2986">
 <p id="section-7.6-1">The following profile of <span>[<a href="#ISO8601" class="xref">ISO8601</a>]</span> dates SHOULD be used in
 new protocols on the Internet. This is specified using the syntax
 description notation defined in <span>[<a href="#RFC2234" class="xref">RFC2234</a>]</span>.<a href="#section-7.6-1" class="pilcrow">¶</a></p>
 </div>
-<div id="_80cd7bf4-ca39-4454-a051-e98f8a21db13">
+<div id="_e517aa4a-c6a2-4d50-a602-6f8bee8bc61d">
 <figure id="figure-1">
           <div id="section-7.6-2.1">
 <pre class="sourcecode">date-fullyear = 4DIGIT +
@@ -1870,13 +1868,13 @@ date-time = full-date "T" full-time</pre>
 </div>
 <figcaption><a href="#figure-1" class="selfRef">Figure 1</a></figcaption></figure>
 </div>
-<div id="_b055c796-bf37-49c6-850f-bcd32daee81f">
+<div id="_7b8b0c8b-07fe-48ec-bde1-12eda5fb225c">
 <aside id="section-7.6-3">
           <p id="section-7.6-3.1">NOTE  1: Per <span>[<a href="#RFC2234" class="xref">RFC2234</a>]</span> and ISO8601, the "T" and "Z" characters in this
 syntax may alternatively be lower case "t" or "z" respectively.<a href="#section-7.6-3.1" class="pilcrow">¶</a></p>
 </aside>
 </div>
-<div id="_3afaa318-2808-410d-8c53-2973330f9da6">
+<div id="_1eb4f7d7-4b53-4451-b69e-10776d101c9d">
 <p id="section-7.6-4">This date/time format may be used in some environments or contexts
 that distinguish between the upper- and lower-case letters 'A'-'Z'
 and 'a'-'z' (e.g. XML). Specifications that use this format in
@@ -1885,7 +1883,7 @@ the letters 'T' and 'Z' used in the date/time syntax must always
 be upper case. Applications that generate this format SHOULD use
 upper case letters.<a href="#section-7.6-4" class="pilcrow">¶</a></p>
 </div>
-<div id="_197a79bd-7dec-4c78-8198-958488f38d89">
+<div id="_4942b1b8-905a-4904-82e5-cd8b1627bd34">
 <aside id="section-7.6-5">
           <p id="section-7.6-5.1">NOTE  2: ISO 8601 defines date and time separated by "T".
 Applications using this syntax may choose, for the sake of
@@ -1900,12 +1898,12 @@ readability, to specify a full-date and full-time separated by
         <h3 id="name-restrictions">
 <a href="#section-7.7" class="section-number selfRef">7.7. </a><a href="#name-restrictions" class="section-name selfRef">Restrictions</a>
         </h3>
-<div id="_feefdc40-c3cd-400f-b312-ead8ed4c294b">
+<div id="_2c829932-898b-46e1-a6ca-ccdc5057b332">
 <p id="section-7.7-1">The grammar element date-mday represents the day number within the
 current month. The maximum value varies based on the month and year
 as follows:<a href="#section-7.7-1" class="pilcrow">¶</a></p>
 </div>
-<div id="_a6f4910c-c870-4dd3-b15f-58465ac2c8ef">
+<div id="_18b94f53-7d99-441d-82f8-bf63afee0636">
 <table class="center" id="table-1">
           <caption><a href="#table-1" class="selfRef">Table 1</a></caption>
 <thead>
@@ -1984,11 +1982,11 @@ as follows:<a href="#section-7.7-1" class="pilcrow">¶</a></p>
           </tbody>
         </table>
 </div>
-<div id="_f0b0e07b-91df-492b-90dc-d453cd6cecd2">
+<div id="_26078ef2-e09c-49c8-b31d-c144b25010d3">
 <p id="section-7.7-3"><a href="#annexC" class="xref">Appendix C</a> contains sample C code to determine if a year is a leap
 year.<a href="#section-7.7-3" class="pilcrow">¶</a></p>
 </div>
-<div id="_8f83bbc9-d154-4c7e-a3ea-443ec0a6fac3">
+<div id="_ca455895-b467-4383-a2be-a5275ad545c0">
 <p id="section-7.7-4">The grammar element time-second may have the value "60" at the end of
 months in which a leap second occurs - to date: June (XXXX-06-
 30T23:59:60Z) or December (XXXX-12-31T23:59:60Z); see <a href="#annexD" class="xref">Appendix D</a> for
@@ -1999,14 +1997,14 @@ Further, in time zones other than "Z", the leap second point is
 shifted by the zone offset (so it happens at the same instant around
 the globe).<a href="#section-7.7-4" class="pilcrow">¶</a></p>
 </div>
-<div id="_7c3ad614-af58-4fae-8712-2f8eb6e2a7b6">
+<div id="_fff1b42b-4abc-443d-8b67-d7471e2df4eb">
 <p id="section-7.7-5">Leap seconds cannot be predicted far into the future. The
 International Earth Rotation Service publishes bulletins (IERS) that
 announce leap seconds with a few weeks' warning. Applications should
 not generate timestamps involving inserted leap seconds until after
 the leap seconds are announced.<a href="#section-7.7-5" class="pilcrow">¶</a></p>
 </div>
-<div id="_82a7ec78-ca5f-42d9-8b2c-4f03b846bea9">
+<div id="_b9ef3839-aac2-44db-a108-b0b866661d37">
 <p id="section-7.7-6">Although ISO 8601 permits the hour to be "24", this profile of ISO
 8601 only allows values between "00" and "23" for the hour in order
 to reduce confusion.<a href="#section-7.7-6" class="pilcrow">¶</a></p>
@@ -2018,62 +2016,62 @@ to reduce confusion.<a href="#section-7.7-6" class="pilcrow">¶</a></p>
         <h3 id="name-examples">
 <a href="#section-7.8" class="section-number selfRef">7.8. </a><a href="#name-examples" class="section-name selfRef">Examples</a>
         </h3>
-<div id="_835899ac-2deb-4454-b937-604b62176d20">
+<div id="_cf41d223-abe3-4874-9a42-d1f0b049dbbd">
 <p id="section-7.8-1">Here are some examples of Internet date/time format.<a href="#section-7.8-1" class="pilcrow">¶</a></p>
 </div>
-<div id="_e2291bb6-08e9-478f-846c-bc8421669239">
+<div id="_c96646db-ddf3-4a18-a3d5-f3c0b64c927b">
 <figure id="figure-2">
           <div id="section-7.8-2.1">
 <pre class="sourcecode">1985-04-12T23:20:50.52Z</pre>
 </div>
 <figcaption><a href="#figure-2" class="selfRef">Figure 2</a></figcaption></figure>
 </div>
-<div id="_ba6d86bf-2afe-451b-a5e5-b887649c5cea">
+<div id="_758ca66c-b300-4081-96d0-93d95f6af562">
 <p id="section-7.8-3">This represents 20 minutes and 50.52 seconds after the 23rd hour of
 April 12th, 1985 in UTC.<a href="#section-7.8-3" class="pilcrow">¶</a></p>
 </div>
-<div id="_7416efad-fe4c-4062-999a-f893d48c2962">
+<div id="_db282065-fa5b-485d-88ed-ae283137cc20">
 <figure id="figure-3">
           <div id="section-7.8-4.1">
 <pre class="sourcecode">1996-12-19T16:39:57-08:00</pre>
 </div>
 <figcaption><a href="#figure-3" class="selfRef">Figure 3</a></figcaption></figure>
 </div>
-<div id="_823af847-6ff7-4997-ac89-ac6345c0cfe0">
+<div id="_8b404620-c8a5-4345-8c11-ab4b02b870da">
 <p id="section-7.8-5">This represents 39 minutes and 57 seconds after the 16th hour of
 December 19th, 1996 with an offset of -08:00 from UTC (Pacific
 Standard Time). Note that this is equivalent to 1996-12-20T00:39:57Z
 in UTC.<a href="#section-7.8-5" class="pilcrow">¶</a></p>
 </div>
-<div id="_289026fd-5afc-4a7a-b47d-a4175bf42e57">
+<div id="_8be26a51-2bfa-428e-8506-c574bb7d3038">
 <figure id="figure-4">
           <div id="section-7.8-6.1">
 <pre class="sourcecode">1990-12-31T23:59:60Z</pre>
 </div>
 <figcaption><a href="#figure-4" class="selfRef">Figure 4</a></figcaption></figure>
 </div>
-<div id="_0018f357-e379-47e6-b4f9-bdec5aef48e0">
+<div id="_174068e6-d179-4d60-8e33-842931622613">
 <p id="section-7.8-7">This represents the leap second inserted at the end of 1990.<a href="#section-7.8-7" class="pilcrow">¶</a></p>
 </div>
-<div id="_3d7b476f-17ff-491d-80a0-8e75a8f6a79b">
+<div id="_c89c2254-5487-47b9-a776-968b71eca2e0">
 <figure id="figure-5">
           <div id="section-7.8-8.1">
 <pre class="sourcecode">1990-12-31T15:59:60-08:00</pre>
 </div>
 <figcaption><a href="#figure-5" class="selfRef">Figure 5</a></figcaption></figure>
 </div>
-<div id="_96dfe8b9-746e-4255-817b-a5a26a8ef76f">
+<div id="_a4d9a8b4-9290-4c36-b833-090d9af232c4">
 <p id="section-7.8-9">This represents the same leap second in Pacific Standard Time, 8
 hours behind UTC.<a href="#section-7.8-9" class="pilcrow">¶</a></p>
 </div>
-<div id="_75772014-b1ff-4c83-9834-a8556ae0df9c">
+<div id="_b528bd97-b209-4b7a-8638-f6ea0b29ebd0">
 <figure id="figure-6">
           <div id="section-7.8-10.1">
 <pre class="sourcecode">1937-01-01T12:00:27.87+00:20</pre>
 </div>
 <figcaption><a href="#figure-6" class="selfRef">Figure 6</a></figcaption></figure>
 </div>
-<div id="_b91d7314-e310-4ca6-bd20-eb4929fd6df9">
+<div id="_2f5a277a-bfd9-4607-8578-fef9e693108c">
 <p id="section-7.8-11">This represents the same instant of time as noon, January 1, 1937,
 Netherlands time. Standard time in the Netherlands was exactly 19
 minutes and 32.13 seconds ahead of UTC by law from 1909-05-01 through
@@ -2090,7 +2088,7 @@ offset.<a href="#section-7.8-11" class="pilcrow">¶</a></p>
       <h2 id="name-security-considerations">
 <a href="#section-8" class="section-number selfRef">8. </a><a href="#name-security-considerations" class="section-name selfRef">Security Considerations</a>
       </h2>
-<div id="_6e8b57a6-19dd-4844-9ef5-ac7edd38f792">
+<div id="_ae23cc1d-eb9c-4e5a-8d8f-e19f85b7414b">
 <p id="section-8-1">Since the local time zone of a site may be useful for determining a
 time when systems are less likely to be monitored and might be more
 susceptible to a security probe, some sites may wish to emit times in
@@ -2150,17 +2148,17 @@ functionality at the hands of paranoia.<a href="#section-8-1" class="pilcrow">¶
       <h2 id="name-iso-8601-collected-abnf">
 <a href="#section-appendix.a" class="section-number selfRef">Appendix A. </a><a href="#name-iso-8601-collected-abnf" class="section-name selfRef">ISO 8601 Collected ABNF</a>
       </h2>
-<div id="_db8a52f7-65eb-4a9b-a9ea-600b6864c773">
+<div id="_74b581a2-786a-46a5-8587-09d5dc7b26a5">
 <p id="section-appendix.a-1">This information is based on the 1988 version of ISO 8601.  There may
 be some changes in the 2000 revision.<a href="#section-appendix.a-1" class="pilcrow">¶</a></p>
 </div>
-<div id="_2bae9cd4-f0bd-4429-afaa-633993fb1309">
+<div id="_559a7137-90dd-406f-a79a-0d583107ea13">
 <p id="section-appendix.a-2">ISO 8601 does not specify a formal grammar for the date and time
 formats it defines.  The following is an attempt to create a formal
 grammar from ISO 8601.  This is informational only and may contain
 errors.  ISO 8601 remains the authoritative reference.<a href="#section-appendix.a-2" class="pilcrow">¶</a></p>
 </div>
-<div id="_4d4f4976-9a69-4db2-ab54-accef4991f75">
+<div id="_d02d45fd-3434-4401-86f5-4ab28664591e">
 <p id="section-appendix.a-3">Note that due to ambiguities in ISO 8601, some interpretations had to
 be made.  First, ISO 8601 is not clear if mixtures of basic and
 extended format are permissible.  This grammar permits mixtures. ISO
@@ -2175,7 +2173,7 @@ gives examples where the decimal fractions are not preceded by a "0".
 This grammar assumes section 5.3.1.3 is correct and that Annex B.2 is
 in error.<a href="#section-appendix.a-3" class="pilcrow">¶</a></p>
 </div>
-<div id="_b9c46afd-2ab6-4911-9999-0df86e40b265">
+<div id="_0bd3a349-1b9e-48a1-8e10-b2b13f0ea0d6">
 <figure id="figure-7">
         <div id="section-appendix.a-4.1">
 <pre class="sourcecode">date-century::   = 2DIGIT  ; 00-99
@@ -2212,10 +2210,10 @@ date:: = datespec-full / datespec-year  / datespec-month / datespec-mday / dates
 </div>
 <figcaption><a href="#figure-7" class="selfRef">Figure 7</a></figcaption></figure>
 </div>
-<div id="_c8c851ed-6dd4-44aa-819c-cb5203f7e795">
+<div id="_17c108cb-cf0c-44c2-aeea-534cb81df6f3">
 <p id="section-appendix.a-5">Time:<a href="#section-appendix.a-5" class="pilcrow">¶</a></p>
 </div>
-<div id="_f0c8d554-9c11-4d01-bff7-985172b6ebb0">
+<div id="_5c939f88-23e4-468a-8c57-fb4d0aa5b530">
 <figure id="figure-8">
         <div id="section-appendix.a-6.1">
 <pre class="sourcecode">time-hour::        = 2DIGIT ; 00-24
@@ -2239,10 +2237,10 @@ iso-date-time::     = date "T" time</pre>
 </div>
 <figcaption><a href="#figure-8" class="selfRef">Figure 8</a></figcaption></figure>
 </div>
-<div id="_b1eb304f-bc52-40dc-a8d6-a42d0f2f0a29">
+<div id="_19e55ec5-132b-4a89-94a6-18da51ef73f9">
 <p id="section-appendix.a-7">Durations:<a href="#section-appendix.a-7" class="pilcrow">¶</a></p>
 </div>
-<div id="_d9bdff09-e0b3-40ee-838d-0db88738146e">
+<div id="_41014c6f-9dc5-43f4-8fcb-d8b7cf7cded8">
 <figure id="figure-9">
         <div id="section-appendix.a-8.1">
 <pre class="sourcecode">dur-second::       = 1*DIGIT "S"
@@ -2259,10 +2257,10 @@ duration::          = "P" (dur-date / dur-time / dur-week)</pre>
 </div>
 <figcaption><a href="#figure-9" class="selfRef">Figure 9</a></figcaption></figure>
 </div>
-<div id="_530718ba-4c62-431c-823c-74886265a4fd">
+<div id="_7156c8e9-1379-49f5-8508-ee5d3740607b">
 <p id="section-appendix.a-9">Periods:<a href="#section-appendix.a-9" class="pilcrow">¶</a></p>
 </div>
-<div id="_056c693b-becd-4fa8-a265-3654b0b0d458">
+<div id="_36cfc4e3-78d8-43fe-874f-a9b56df02f13">
 <figure id="figure-10">
         <div id="section-appendix.a-10.1">
 <pre class="sourcecode">period-explicit::  = iso-date-time "/" iso-date-time
@@ -2280,12 +2278,12 @@ period::            = period-explicit / period-start / period-end</pre>
       <h2 id="name-day-of-the-week">
 <a href="#section-appendix.b" class="section-number selfRef">Appendix B. </a><a href="#name-day-of-the-week" class="section-name selfRef">Day of the Week</a>
       </h2>
-<div id="_dbf64089-f3c0-4685-914f-ed155361c276">
+<div id="_d41af1f7-ff62-4a02-8ed9-1eee3cba2d83">
 <p id="section-appendix.b-1">The following is a sample C subroutine loosely based on Zeller's
 Congruence (ZELLER) which may be used to obtain the day of the week
 for dates on or after 0000-03-01:<a href="#section-appendix.b-1" class="pilcrow">¶</a></p>
 </div>
-<div id="_6a4f64b8-e774-4bd0-988f-b2d18bed6a90">
+<div id="_877efdf4-e698-412b-b5aa-7bc0ca9cae61">
 <figure id="figure-11">
         <div id="section-appendix.b-2.1">
 <pre class="sourcecode lang-c">char *day_of_week(int day, int month, int year)
@@ -2317,10 +2315,10 @@ for dates on or after 0000-03-01:<a href="#section-appendix.b-1" class="pilcrow"
       <h2 id="name-leap-years">
 <a href="#section-appendix.c" class="section-number selfRef">Appendix C. </a><a href="#name-leap-years" class="section-name selfRef">Leap Years</a>
       </h2>
-<div id="_2b615381-2f90-4f14-abc2-0a036c672994">
+<div id="_0592dd90-9e83-4286-b280-9f632e8f5c5c">
 <p id="section-appendix.c-1">Here is a sample C subroutine to calculate if a year is a leap year:<a href="#section-appendix.c-1" class="pilcrow">¶</a></p>
 </div>
-<div id="_e9b0012f-cc4e-41c6-b30b-5bcc0615ea3d">
+<div id="_8fa2a4b6-db41-4c2d-857c-c7c34aa92cd4">
 <figure id="figure-12">
         <div id="section-appendix.c-2.1">
 <pre class="sourcecode lang-c">/* This returns non-zero if year is a leap year.  Must use 4 digit
@@ -2340,37 +2338,37 @@ int leap_year(int year)
       <h2 id="name-leap-seconds">
 <a href="#section-appendix.d" class="section-number selfRef">Appendix D. </a><a href="#name-leap-seconds" class="section-name selfRef">Leap Seconds</a>
       </h2>
-<div id="_3b98ba75-e9f6-4122-8941-8937e74a2893">
+<div id="_bf54a384-29ed-47ba-9d0e-1d245ad2619f">
 <p id="section-appendix.d-1">Information about leap seconds can be found at: &lt;<span><a href="http://tycho.usno.navy.mil/leapsec.html">http://tycho.usno.navy.mil/leapsec.html</a></span>&gt;.  In particular, it notes
 that:<a href="#section-appendix.d-1" class="pilcrow">¶</a></p>
 </div>
-<div id="_4b212692-1e16-41a6-ad1e-bc079f51ecf9">
+<div id="_7fcaf07b-a160-4cb1-b07b-402ea26e94c6">
 <p id="section-appendix.d-2">The decision to introduce a leap second in UTC is the
 responsibility of the International Earth Rotation Service (IERS).
 According to the CCIR Recommendation, first preference is given to
 the opportunities at the end of December and June, and second
 preference to those at the end of March and September.<a href="#section-appendix.d-2" class="pilcrow">¶</a></p>
 </div>
-<div id="_4c94f6b7-60c5-43e7-86e0-d200425fe0d6">
+<div id="_d1c98349-92f5-4a1a-b6a9-3080c0061a21">
 <p id="section-appendix.d-3">When required, insertion of a leap second occurs as an extra second
 at the end of a day in UTC, represented by a timestamp of the form
 YYYY-MM-DDT23:59:60Z.  A leap second occurs simultaneously in all
 time zones, so that time zone relationships are not affected.  See
 section <a href="#date-time-examples" class="xref">Section 7.8</a> for some examples of leap second times.<a href="#section-appendix.d-3" class="pilcrow">¶</a></p>
 </div>
-<div id="_ecd68718-545b-4386-89bf-75f866e3b9ce">
+<div id="_8321b120-efcf-429e-b1ce-319005b43a98">
 <p id="section-appendix.d-4">The following table is an excerpt from the table maintained by the
 United States Naval Observatory.  The source data is located at:<a href="#section-appendix.d-4" class="pilcrow">¶</a></p>
 </div>
-<div id="_98a5b8af-d58a-4c16-a177-763bd3dea8ef">
+<div id="_bf3bbe07-e640-4278-b8a7-1e12c9a371a3">
 <p id="section-appendix.d-5">&lt;<span><a href="ftp://maia.usno.navy.mil/ser7/tai-utc.dat">ftp://maia.usno.navy.mil/ser7/tai-utc.dat</a></span>&gt;<a href="#section-appendix.d-5" class="pilcrow">¶</a></p>
 </div>
-<div id="_722c43c7-4a3b-4e80-9c89-9d8eff73001b">
+<div id="_be19e387-e74c-4b0f-82de-c0f9fdd96e34">
 <p id="section-appendix.d-6">This table shows the date of the leap second, and the difference
 between the time standard TAI (which isn't adjusted by leap seconds)
 and UTC after that leap second.<a href="#section-appendix.d-6" class="pilcrow">¶</a></p>
 </div>
-<div id="_856b09d7-59dd-4a2b-b829-ad49b794dced">
+<div id="_2f090ece-c08f-421a-8ef3-068f3e772d10">
 <table class="center" id="table-2">
         <caption><a href="#table-2" class="selfRef">Table 2</a></caption>
 <thead>

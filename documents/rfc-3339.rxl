@@ -31,16 +31,15 @@
 <language>en</language>
 <script>Latn</script><abstract>
 <p>This document defines a date and time format for use in Internet
-protocols that is a profile of the ISO 8601 standard for
-representation of dates and times using the Proleptic Gregorian
-calendar, with optional extensions representing additional
+protocols for representation of dates and times using the proleptic
+Gregorian calendar, with optional extensions representing additional
 information including a time zone and a calendaring system.</p>
 </abstract>
 <status>
 <stage>published</stage>
 </status>
 <copyright>
-<from>2020</from>
+<from>2021</from>
 <owner>
 <organization>
 <name>Internet Engineering Task Force</name>
