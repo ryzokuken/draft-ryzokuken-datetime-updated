@@ -1,5 +1,4 @@
-
-
+[[date-time-format]]
 == Date and Time format
 
 This section discusses desirable qualities of date and time formats

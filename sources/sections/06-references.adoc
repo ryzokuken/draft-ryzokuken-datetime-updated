@@ -1,3 +1,4 @@
+[[references]]
 [bibliography]
 == Normative References
 // * [[[RFC822,RFC 822]]]

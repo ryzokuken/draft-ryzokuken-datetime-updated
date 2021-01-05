@@ -1,4 +1,4 @@
-
+[[security]]
 == Security Considerations
 
 Since the local time zone of a site may be useful for determining a

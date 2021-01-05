@@ -1,4 +1,3 @@
-
 [[annexA]]
 [appendix]
 == ISO 8601 Collected ABNF

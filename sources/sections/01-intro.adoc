@@ -1,3 +1,4 @@
+[[intro]]
 == Introduction
 
 Date and time formats cause a lot of confusion and interoperability
