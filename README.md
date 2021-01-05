@@ -16,7 +16,7 @@ by allowing additional information like the timezone and calendar to be specifie
 - [ ] `aa-iso-8601.adoc`
 - [ ] `ab-day-week.adoc`
 - [ ] `ac-leap-years.adoc`
-- [ ] `ad-leap-seconds.adoc`
+- [X] `ad-leap-seconds.adoc`
 
 ## Building
 

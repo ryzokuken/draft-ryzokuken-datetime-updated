@@ -2,9 +2,11 @@
 [appendix]
 == Leap Seconds
 
-Information about leap seconds can be found at: <link:http://tycho.usno.navy.mil/leapsec.html[http://tycho.usno.navy.mil/leapsec.html]>.  In particular, it notes
-that:
+Information about leap seconds can be found at the
+https://www.usno.navy.mil/USNO/time/master-clock/leap-seconds[US Navy Oceanography Portal].
+In particular, it notes that:
 
+[quote]
 The decision to introduce a leap second in UTC is the
 responsibility of the International Earth Rotation Service (IERS).
 According to the CCIR Recommendation, first preference is given to
@@ -18,15 +20,12 @@ time zones, so that time zone relationships are not affected.  See
 section <<date-time-examples>> for some examples of leap second times.
 
 The following table is an excerpt from the table maintained by the
-United States Naval Observatory.  The source data is located at:
-
-<link:ftp://maia.usno.navy.mil/ser7/tai-utc.dat[ftp://maia.usno.navy.mil/ser7/tai-utc.dat]>
-
+United States Naval Observatory. The source data is located at the
+ftp://maia.usno.navy.mil/ser7/tai-utc.dat[US Navy Oceanography Portal].
 
 This table shows the date of the leap second, and the difference
 between the time standard TAI (which isn't adjusted by leap seconds)
 and UTC after that leap second.
-
 
 [cols="2",options="unnumbered,header"]
 |===
