@@ -867,6 +867,7 @@ Appendix B.  Day of the Week
        year %= 100;
        return (dayofweek[((26 * month - 2) / 10 + day + year
                        + year / 4 + cent / 4 + 5 * cent) % 7]);
+   }
 
                                  Figure 11
 
@@ -889,7 +890,6 @@ Appendix D.  Leap Seconds
    Information about leap seconds can be found at the US Navy
    Oceanography Portal (https://www.usno.navy.mil/USNO/time/master-
    clock/leap-seconds).  In particular, it notes that:
-
 
 
 
