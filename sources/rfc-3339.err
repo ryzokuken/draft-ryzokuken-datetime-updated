@@ -4,25 +4,25 @@ sources/rfc-3339.err errors
 == Metanorma XML Style Warning
 
 (XML Line 000231): Hanging paragraph in clause
-	<clause id="_local_time" inline-header="false" obligation="normative"><title>Local Time</title><clause id="_coordinated_universal_time_utc" inline-header="false" obligation="normative">
+	<clause id="local-time" inline-header="false" obligation="normative"><title>Local Time</title><clause id="_coordinated_universal_time_utc" inline-header="false" obligation="normative">
 	<title>Coordinated Universal Time (UTC)</title>
-	<p id="_f4b35613-721b-425c-b428-86910a796c8e">Because the daylight saving rules for local time zones are so
+	<p id="_b9aafcff-0806-45bd-886e-74f9e21f7b91">Because the daylight saving rules for local time zones are so
 	convoluted and can change based on local law at unpredictable times,
 	true interoperability is best achieved by using Coordinated Universal
 (XML Line 000294): Hanging paragraph in clause
-	<clause id="_date_and_time_format" inline-header="false" obligation="normative"><title>Date and Time format</title><p id="_5a8caea7-50fe-4b12-ae48-83a76eeabd42">This section discusses desirable qualities of date and time formats
+	<clause id="date-time-format" inline-header="false" obligation="normative"><title>Date and Time format</title><p id="_225eca80-fe22-43df-bafb-9f5c978be8ff">This section discusses desirable qualities of date and time formats
 	and defines a profile of ISO 8601 for use in Internet protocols.</p>
 	<clause id="_ordering" inline-header="false" obligation="normative">
 	<title>Ordering</title>
-	<p id="_53340843-f690-4e5f-a3cb-bee2935b4fa2">If date and time components are ordered from least precise to most
+	<p id="_61b38cf1-7de7-4c51-bb67-cb41eb5e0cee">If date and time components are ordered from least precise to most
 (XML Line 000398): Table should have title
-	<table id="_684ed1f1-b202-4dcb-b235-aab598834552" unnumbered="true">
+	<table id="_177bdc3d-7836-412e-9773-712b25f9b2e6" unnumbered="true">
 	<thead>
 	<tr>
 	<th valign="top" align="left">Month Number</th>
 	<th valign="top" align="left">Month/Year</th>
-(XML Line 000670): Table should have title
-	<table id="_1f964dd7-f7fd-4ae2-95c7-8dde21484200" unnumbered="true">
+(XML Line 000673): Table should have title
+	<table id="_c9c87021-e045-481d-bb8a-a71f0e0d7212" unnumbered="true">
 	<thead>
 	<tr>
 	<th valign="top" align="left">UTC Date</th>
@@ -78,49 +78,49 @@ sources/rfc-3339.err errors
 (XML Line 000627:73): attribute "inline-header" not allowed here; expected attribute "language", "numbered", "obligation", "removeInRFC", "script" or "toc"
 (XML Line 000649:73): attribute "inline-header" not allowed here; expected attribute "language", "numbered", "obligation", "removeInRFC", "script" or "toc"
 (XML Line 000657:73): attribute "inline-header" not allowed here; expected attribute "language", "numbered", "obligation", "removeInRFC", "script" or "toc"
-(XML Line 000678:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
-(XML Line 000679:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
-(XML Line 000684:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
-(XML Line 000685:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
+(XML Line 000681:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
+(XML Line 000682:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
+(XML Line 000687:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
 (XML Line 000688:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
-(XML Line 000689:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
+(XML Line 000691:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
 (XML Line 000692:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
-(XML Line 000693:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
+(XML Line 000695:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
 (XML Line 000696:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
-(XML Line 000697:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
+(XML Line 000699:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
 (XML Line 000700:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
-(XML Line 000701:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
+(XML Line 000703:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
 (XML Line 000704:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
-(XML Line 000705:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
+(XML Line 000707:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
 (XML Line 000708:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
-(XML Line 000709:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
+(XML Line 000711:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
 (XML Line 000712:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
-(XML Line 000713:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
+(XML Line 000715:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
 (XML Line 000716:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
-(XML Line 000717:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
+(XML Line 000719:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
 (XML Line 000720:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
-(XML Line 000721:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
+(XML Line 000723:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
 (XML Line 000724:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
-(XML Line 000725:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
+(XML Line 000727:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
 (XML Line 000728:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
-(XML Line 000729:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
+(XML Line 000731:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
 (XML Line 000732:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
-(XML Line 000733:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
+(XML Line 000735:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
 (XML Line 000736:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
-(XML Line 000737:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
+(XML Line 000739:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
 (XML Line 000740:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
-(XML Line 000741:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
+(XML Line 000743:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
 (XML Line 000744:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
-(XML Line 000745:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
+(XML Line 000747:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
 (XML Line 000748:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
-(XML Line 000749:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
+(XML Line 000751:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
 (XML Line 000752:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
-(XML Line 000753:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
+(XML Line 000755:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
 (XML Line 000756:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
-(XML Line 000757:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
+(XML Line 000759:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
 (XML Line 000760:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
-(XML Line 000761:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
+(XML Line 000763:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
 (XML Line 000764:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
-(XML Line 000765:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
+(XML Line 000767:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
 (XML Line 000768:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
-(XML Line 000769:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
+(XML Line 000771:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
+(XML Line 000772:31): attribute "valign" not allowed here; expected attribute "align", "colspan" or "rowspan"
