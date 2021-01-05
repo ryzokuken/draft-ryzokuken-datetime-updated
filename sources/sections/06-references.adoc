@@ -1,4 +1,5 @@
 [[references]]
+// TODO: fix bibliography
 [bibliography]
 == Normative References
 // * [[[RFC822,RFC 822]]]
@@ -11,7 +12,7 @@
 [bibliography]
 == Informative References
 * [[[ISO8601,ISO 8601:1988]]]
-* [[[ISO8601-2000,ISO 8601:2000]]]
+// * [[[ISO8601-2000,ISO 8601:2000]]]
 // * [[[ITU-R-TF,ITU-R TF.460-6]]]
 
 // [[ZELLER]]
@@ -26,3 +27,4 @@
 // [%bibitem]
 // === International Earth Rotation Service Bulletins
 // link:: https://www.iers.org/IERS/EN/Publications/Bulletins/bulletins.html
+// link:: https://hpiers.obspm.fr/iers/bul/bulc/bulletinc.dat
