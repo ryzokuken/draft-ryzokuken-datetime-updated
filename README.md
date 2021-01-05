@@ -9,10 +9,10 @@ by allowing additional information like the timezone and calendar to be specifie
 - [X] `01-intro.adoc`
 - [ ] `02-definitions.adoc`
 - [X] `03-two-digit-years.adoc`
-- [ ] `04-local-time.adoc`
+- [X] `04-local-time.adoc`
 - [ ] `05-date-time-format.adoc`
 - [ ] `06-references.adoc`
-- [ ] `07-security.adoc`
+- [X] `07-security.adoc`
 - [ ] `aa-iso-8601.adoc`
 - [ ] `ab-day-week.adoc`
 - [ ] `ac-leap-years.adoc`

@@ -4,5 +4,5 @@
 Since the local time zone of a site may be useful for determining a
 time when systems are less likely to be monitored and might be more
 susceptible to a security probe, some sites may wish to emit times in
-UTC only.  Others might consider this to be loss of useful
+UTC only. Others might consider this to be loss of useful
 functionality at the hands of paranoia.
