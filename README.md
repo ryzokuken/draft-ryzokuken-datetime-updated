@@ -3,6 +3,14 @@
 This repository contains a WIP IETF I-D that seeks to replace [RFC 3339](https://tools.ietf.org/html/rfc3339)
 by allowing additional information like the timezone and calendar to be specified at the end of the timestamp.
 
+## View
+
+You can view the built HTML version of the draft [here](https://ryzokuken.dev/draft-ryzokuken-datetime-extended/documents/rfc-3339.html).
+
+## Compare
+
+You can compare the differences from the base RFC 3339 [here](https://github.com/ryzokuken/draft-ryzokuken-datetime-extended/compare/original...master).
+
 ## Status
 
 - [X] `00-front-area.adoc`
