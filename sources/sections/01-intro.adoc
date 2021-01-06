@@ -7,13 +7,13 @@ problems encountered and makes recommendations to improve consistency
 and interoperability when representing and using date and time in
 Internet protocols.
 
-This document includes an Internet profile of the <<ISO8601>>
-standard for representation of dates and times using the proleptic
-Gregorian calendar. For any dates and times in a different calendar
-system the ID of the calendar that they are expected to be in is
-required to be included which the implementation would then project
-them to. In the absence of a calendar ID, the proleptic Gregorian
-calendar system is assumed.
+This document includes an extension to an Internet profile of the
+<<ISO8601>> standard for representation of dates and times using the
+proleptic Gregorian calendar alongside any additional information. Any
+dates and times that are required to be handled in a different calendar
+system need to include the ID of the calendar which can be handle by
+the implementations approximately. In the absence of a calendar ID, the
+proleptic Gregorian calendar system is assumed.
 
 There are many ways in which date and time values might appear in
 Internet protocols:  this document focuses on just one common usage,
@@ -35,8 +35,8 @@ somewhere between 0000AD and 9999AD.
 
 * All times expressed have a stated relationship (offset) to
 Coordinated Universal Time (UTC). Certain applications require the
-presence of a time zone for scheduling applications as well as for
-handling Daylight Savings Time transitions properly. In that case,
+presence of a time zone in order to perform scheduling as well as
+handle Daylight Savings Time transitions properly. In that case,
 an optional time zone ID may be included.
 
 * Timestamps can express times that occurred before the introduction

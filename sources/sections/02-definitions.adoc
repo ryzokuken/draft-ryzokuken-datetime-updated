@@ -39,7 +39,7 @@ The date/time format used by Internet Mail as defined
 by <<RFC2822>>.
 
 Internet Date/Time Format::
-The date format defined in section 5 of this document.
+The date/time format defined in section 5 of this document.
 
 Timestamp:: This term is used in this document to refer to an
 unambiguous representation of some instant in time.

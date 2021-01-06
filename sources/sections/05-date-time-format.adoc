@@ -177,8 +177,8 @@ announce leap seconds with a few weeks' warning. Applications should
 not generate timestamps involving inserted leap seconds until after
 the leap seconds are announced.
 
-Although ISO 8601 permits the hour to be "24", this profile of ISO
-8601 only allows values between "00" and "23" for the hour in order
+Although ISO 8601 permits the hour to be "24", this extension of a profile
+of ISO 8601 only allows values between "00" and "23" for the hour in order
 to reduce confusion.
 
 [[date-time-examples]]

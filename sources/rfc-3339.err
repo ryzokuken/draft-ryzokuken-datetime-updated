@@ -6,11 +6,11 @@ sources/rfc-3339.err errors
 (XML Line 000219): Hanging paragraph in clause
 	<clause id="local-time" inline-header="false" obligation="normative"><title>Local Time</title><clause id="_coordinated_universal_time_utc" inline-header="false" obligation="normative">
 	<title>Coordinated Universal Time (UTC)</title>
-	<p id="_3e349e8b-d0c2-49c5-a90b-1726a4da6879">Because the daylight saving rules for local time zones are so
+	<p id="_3d302576-94e3-4940-98b0-d6ed95568411">Because the daylight saving rules for local time zones are so
 	convoluted and can change based on local law at unpredictable times,
 	true interoperability is best achieved by using Coordinated Universal
 (XML Line 000282): Hanging paragraph in clause
-	<clause id="date-time-format" inline-header="false" obligation="normative"><title>Date and Time format</title><p id="_765c8623-feda-4973-8b59-b31b5456f0cf">This section discusses desirable qualities of date and time formats
+	<clause id="date-time-format" inline-header="false" obligation="normative"><title>Date and Time format</title><p id="_daad96ed-7c80-404c-b934-7323a6ce8156">This section discusses desirable qualities of date and time formats
 	and defines a format that extends the profile of ISO 8601 for use in
 	Internet protocols.</p>
 	<clause id="_ordering" inline-header="false" obligation="normative">
