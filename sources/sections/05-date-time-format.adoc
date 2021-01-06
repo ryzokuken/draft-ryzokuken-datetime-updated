@@ -106,11 +106,13 @@ partial-time   = time-hour ":" time-minute ":" time-second [time-secfrac]
 full-date      = date-fullyear "-" date-month "-" date-mday
 full-time      = partial-time time-offset
 
-timezone-id    = 1*14ALPHA "/" 1*14ALPHA
+timezone-part  = (ALPHA / "." / "_") *13(ALPHA / "." / "_" / "-") ; but not "." or ".."
+timezone-id    = timezone-part *("/" timezone-part)
 timezone       = "[" timezone-id "]"
-calendar-id    = 3*8ALPHA
+calendar-part  = 3*8(ALPHA / DIGIT)
+calendar-id    = calendar-part *("-" calendar-part)
 calendar       = "[c=" calendar-id "]"
-suffix-part    = "[" 1*ALPHA "=" 1*ALPHA "]"
+suffix-part    = "[" 1*ALPHA "=" 1*(ALPHA / DIGIT) "]"
 suffix         = [timezone] [calendar] 1*suffix-part
 
 date-time      = full-date "T" full-time suffix
