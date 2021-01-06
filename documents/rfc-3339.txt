@@ -81,7 +81,7 @@ Table of Contents
      7.8.  Examples  . . . . . . . . . . . . . . . . . . . . . . . .  11
    8.  Security Considerations . . . . . . . . . . . . . . . . . . .  12
    9.  Normative references  . . . . . . . . . . . . . . . . . . . .  12
-   10. Bibliography  . . . . . . . . . . . . . . . . . . . . . . . .  12
+   10. Bibliography  . . . . . . . . . . . . . . . . . . . . . . . .  13
    Appendix A.  ISO 8601 Collected ABNF  . . . . . . . . . . . . . .  13
    Appendix B.  Day of the Week  . . . . . . . . . . . . . . . . . .  16
    Appendix C.  Leap Years . . . . . . . . . . . . . . . . . . . . .  16
@@ -324,8 +324,8 @@ Internet-Draft             Timestamps Extended              January 2021
 7.  Date and Time format
 
    This section discusses desirable qualities of date and time formats
-   and defines a profile of ISO 8601 for use in Internet protocols.
-
+   and defines a format that extends the profile of ISO 8601 for use in
+   Internet protocols.
 
 
 
@@ -343,12 +343,12 @@ Internet-Draft             Timestamps Extended              January 2021
    If date and time components are ordered from least precise to most
    precise, then a useful property is achieved.  Assuming that the time
    zones of the dates and times are the same (e.g., all in UTC),
-   expressed using the same string (e.g., all "Z" or all "+00:00"), and
-   all times have the same number of fractional second digits, then the
-   date and time strings may be sorted as strings (e.g., using the
-   "strcmp()" function in C) and a time-ordered sequence will result.
-   The presence of optional punctuation would violate this
-   characteristic.
+   expressed using the same string (e.g., all "Z" or all "+00:00"), all
+   times have the same number of fractional second digits, and they all
+   have the same suffix (or none), then the date and time strings may be
+   sorted as strings (e.g., using the "strcmp()" function in C) and a
+   time-ordered sequence will result.  The presence of optional
+   punctuation would violate this characteristic.
 
 7.2.  Human Readability
 
@@ -370,7 +370,8 @@ Internet-Draft             Timestamps Extended              January 2021
    Because no date and time format is readable according to the
    conventions of all countries, Internet clients SHOULD be prepared to
    transform dates into a display format suitable for the locality.
-   This may include translating UTC to local time.
+   This may include translating UTC to local time as well as converting
+   from the Gregorian calendar to the viewer's preferred calendar.
 
 7.3.  Rarely Used Options
 
@@ -381,10 +382,9 @@ Internet-Draft             Timestamps Extended              January 2021
    mandatory or omitted for the sake of interoperability whenever
    possible.
 
-   The format defined below includes only one rarely used option:
-   fractions of a second.  It is expected that this will be used only by
-   applications which require strict ordering of date/time stamps or
-   which have an unusual precision requirement.
+
+
+
 
 
 
@@ -417,17 +417,17 @@ Internet-Draft             Timestamps Extended              January 2021
    complete grammar for ISO 8601 is deemed too complex for most Internet
    protocols.
 
-   The following section defines a profile of ISO 8601 for use on the
-   Internet.  It is a conformant subset of the ISO 8601 extended format.
-   Simplicity is achieved by making most fields and punctuation
-   mandatory.
+   The following section defines a format that in an extension of a
+   profile of ISO 8601 for use on the Internet.  It is a conformant
+   subset of the ISO 8601 extended format with additional information
+   optionally suffixed.  Simplicity is achieved by making most fields
+   and punctuation mandatory.
 
 7.6.  Internet Date/Time Format
 
-   The following profile of [ISO8601] dates SHOULD be used in new
-   protocols on the Internet.  This is specified using the syntax
-   description notation defined in [RFC2234].
-
+   The following extension of a profile of [ISO8601] dates SHOULD be
+   used in new protocols on the Internet.  This is specified using the
+   syntax description notation defined in [RFC2234].
 
 
 
@@ -450,21 +450,28 @@ Sharma                    Expires 10 July 2021                  [Page 8]
 Internet-Draft             Timestamps Extended              January 2021
 
 
-   date-fullyear = 4DIGIT +
-   date-month = 2DIGIT ; 01-12  +
-   date-mday = 2DIGIT ; 01-28, 01-29, 01-30, 01-31 based on month/year +
-   time-hour = 2DIGIT ; 00-23 +
-   time-minute = 2DIGIT ; 00-59 +
-   time-second = 2DIGIT ; 00-58, 00-59, 00-60 based on leap second rules +
-   time-secfrac = "." 1*DIGIT +
-   time-numoffset = ("+" / "-") time-hour ":" time-minute +
-   time-offset = "Z" / time-numoffset
+   date-fullyear  = 4DIGIT
+   date-month     = 2DIGIT ; 01-12
+   date-mday      = 2DIGIT ; 01-28, 01-29, 01-30, 01-31 based on month/year
+   time-hour      = 2DIGIT ; 00-23
+   time-minute    = 2DIGIT ; 00-59
+   time-second    = 2DIGIT ; 00-58, 00-59, 00-60 based on leap second rules
+   time-secfrac   = "." 1*DIGIT
+   time-numoffset = ("+" / "-") time-hour ":" time-minute
+   time-offset    = "Z" / time-numoffset
 
-   partial-time = time-hour ":" time-minute ":" time-second [time-secfrac] +
-   full-date = date-fullyear "-" date-month "-" date-mday +
-   full-time = partial-time time-offset +
+   partial-time   = time-hour ":" time-minute ":" time-second [time-secfrac]
+   full-date      = date-fullyear "-" date-month "-" date-mday
+   full-time      = partial-time time-offset
 
-   date-time = full-date "T" full-time
+   timezone-id    = 1*14ALPHA "/" 1*14ALPHA
+   timezone       = "[" timezone-id "]"
+   calendar-id    = 3*8ALPHA
+   calendar       = "[c=" calendar-id "]"
+   suffix-part    = "[" 1*ALPHA "=" 1*ALPHA "]"
+   suffix         = [timezone] [calendar] 1*suffix-part
+
+   date-time      = full-date "T" full-time suffix
 
                                   Figure 1
 
@@ -490,13 +497,6 @@ Internet-Draft             Timestamps Extended              January 2021
    The grammar element date-mday represents the day number within the
    current month.  The maximum value varies based on the month and year
    as follows:
-
-
-
-
-
-
-
 
 
 
@@ -592,23 +592,23 @@ Internet-Draft             Timestamps Extended              January 2021
    Standard Time).  Note that this is equivalent to 1996-12-20T00:39:57Z
    in UTC.
 
-   1990-12-31T23:59:60Z
+   1996-12-19T16:39:57-08:00[America/Los_Angeles]
 
                                   Figure 4
+
+   This represents the exact same instant as the previous example but
+   additionally specifies the human timezone associated with it for
+   timezone aware implementations to take into account.
+
+   1990-12-31T23:59:60Z
+
+                                  Figure 5
 
    This represents the leap second inserted at the end of 1990.
 
    1990-12-31T15:59:60-08:00
 
-                                  Figure 5
-
-   This represents the same leap second in Pacific Standard Time, 8
-   hours behind UTC.
-
-   1937-01-01T12:00:27.87+00:20
-
                                   Figure 6
-
 
 
 
@@ -618,12 +618,35 @@ Sharma                    Expires 10 July 2021                 [Page 11]
 Internet-Draft             Timestamps Extended              January 2021
 
 
+   This represents the same leap second in Pacific Standard Time, 8
+   hours behind UTC.
+
+   1937-01-01T12:00:27.87+00:20
+
+                                  Figure 7
+
    This represents the same instant of time as noon, January 1, 1937,
    Netherlands time.  Standard time in the Netherlands was exactly 19
    minutes and 32.13 seconds ahead of UTC by law from 1909-05-01 through
    1937-06-30.  This time zone cannot be represented exactly using the
    HH:MM format, and this timestamp uses the closest representable UTC
    offset.
+
+   1937-01-01T12:00:27.87+00:20[c=Japanese]
+
+                                  Figure 8
+
+   This represents the exact same instant as the previous example but
+   additionally specifies the human calendar associated with it for
+   calendar aware implementations to take into account.
+
+   1937-01-01T12:00:27.87+00:20[foo=bar][baz=bat]
+
+                                  Figure 9
+
+   This timestamp utilizes the generalized format to declare two
+   additional suffix box that can be interpreted by any compatible
+   implementations and ignored otherwise.
 
 8.  Security Considerations
 
@@ -643,6 +666,13 @@ Internet-Draft             Timestamps Extended              January 2021
               Specifications: ABNF", IETF RFC 2234, IETF RFC 2234,
               DOI 10.17487/RFC2234, November 1997,
               <https://www.rfc-editor.org/info/rfc2234>.
+
+
+
+Sharma                    Expires 10 July 2021                 [Page 12]
+
+Internet-Draft             Timestamps Extended              January 2021
+
 
    [RFC1123]  Braden, R., Ed., "Requirements for Internet
               Hosts — Application and Support", IETF RFC 1123, IETF RFC
@@ -664,15 +694,6 @@ Internet-Draft             Timestamps Extended              January 2021
    [ISO8601]  International Organization for Standardization, "Data
               elements and interchange formats", ISO 8601:1988, 1988,
               <https://www.iso.org/standard/15903.html>.
-
-
-
-
-
-Sharma                    Expires 10 July 2021                 [Page 12]
-
-Internet-Draft             Timestamps Extended              January 2021
-
 
 Appendix A.  ISO 8601 Collected ABNF
 
@@ -697,27 +718,6 @@ Appendix A.  ISO 8601 Collected ABNF
    of ISO 8601 gives examples where the decimal fractions are not
    preceded by a "0".  This grammar assumes section 5.3.1.3 is correct
    and that Annex B.2 is in error.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -762,7 +762,7 @@ Internet-Draft             Timestamps Extended              January 2021
 
    date:: = datespec-full / datespec-year  / datespec-month / datespec-mday / datespec-week / datespec-wday / datespec-yday
 
-                                  Figure 7
+                                 Figure 10
 
    Time:
 
@@ -805,7 +805,7 @@ Internet-Draft             Timestamps Extended              January 2021
 
    iso-date-time::     = date "T" time
 
-                                  Figure 8
+                                 Figure 11
 
    Durations:
 
@@ -821,7 +821,7 @@ Internet-Draft             Timestamps Extended              January 2021
 
    duration::          = "P" (dur-date / dur-time / dur-week)
 
-                                  Figure 9
+                                 Figure 12
 
    Periods:
 
@@ -831,7 +831,7 @@ Internet-Draft             Timestamps Extended              January 2021
 
    period::            = period-explicit / period-start / period-end
 
-                                 Figure 10
+                                 Figure 13
 
 
 
@@ -869,7 +869,7 @@ Appendix B.  Day of the Week
                        + year / 4 + cent / 4 + 5 * cent) % 7]);
    }
 
-                                 Figure 11
+                                 Figure 14
 
 Appendix C.  Leap Years
 
@@ -883,7 +883,7 @@ Appendix C.  Leap Years
        return (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0));
    }
 
-                                 Figure 12
+                                 Figure 15
 
 Appendix D.  Leap Seconds
 

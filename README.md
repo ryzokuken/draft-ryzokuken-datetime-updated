@@ -10,7 +10,7 @@ by allowing additional information like the timezone and calendar to be specifie
 - [ ] `02-definitions.adoc`
 - [X] `03-two-digit-years.adoc`
 - [X] `04-local-time.adoc`
-- [ ] `05-date-time-format.adoc`
+- [X] `05-date-time-format.adoc`
 - [ ] `06-references.adoc`
 - [X] `07-security.adoc`
 - [ ] `aa-iso-8601.adoc`
