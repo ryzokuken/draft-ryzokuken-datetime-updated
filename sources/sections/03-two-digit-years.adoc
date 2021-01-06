@@ -1,3 +1,4 @@
+// TODO: consider if it's still necessary to deal with 2/3-digit years.
 [[two-digit-years]]
 == Two Digit Years
 
@@ -29,4 +30,3 @@ appropriately.
 The problems with two digit years amply demonstrate why all dates and
 times used in Internet protocols MUST be fully qualified.
 
-// TODO: consider if it's still necessary to deal with 2/3-digit years.
