@@ -139,7 +139,7 @@ The grammar element date-mday represents the day number within the
 current month. The maximum value varies based on the month and year
 as follows:
 
-[cols="3",options="header,unnumbered"]
+.Days in each month
 |===
 | Month Number  | Month/Year           | Maximum value of date-mday
 

@@ -27,7 +27,7 @@ This table shows the date of the leap second, and the difference
 between the time standard TAI (which isn't adjusted by leap seconds)
 and UTC after that leap second.
 
-[cols="2",options="unnumbered,header"]
+.Historic leap seconds
 |===
 | UTC Date  | TAI - UTC After Leap Second
 

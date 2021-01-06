@@ -536,7 +536,7 @@ Internet-Draft             Timestamps Extended              January 2021
     | 12           | December            | 31                         |
     +--------------+---------------------+----------------------------+
 
-                                  Table 1
+                        Table 1: Days in each month
 
    Appendix C contains sample C code to determine if a year is a leap
    year.
@@ -975,7 +975,7 @@ Internet-Draft             Timestamps Extended              January 2021
                | 1998-12-31 | 32                          |
                +------------+-----------------------------+
 
-                                 Table 2
+                      Table 2: Historic leap seconds
 
 Author's Address
 
