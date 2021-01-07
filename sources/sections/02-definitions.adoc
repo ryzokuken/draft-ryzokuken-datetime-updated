@@ -48,7 +48,13 @@ Z:: A suffix which, when applied to a time, denotes a UTC
 offset of 00:00; often spoken "Zulu" from the ICAO
 phonetic alphabet representation of the letter "Z".
 
-// TODO: Add definitions for calendar and timezone.
+Timezone:: A timezone that is a included in the Time Zone Database (often
+called `tz` or `zoneinfo`) maintained by IANA.
+
+Calendar:: A calendar that is included in the Unicode CLDR data as a valid
+calendar for use in BCP47 language tags.
+
+// TODO: Add references once we fix the referencing situation.
 
 For more information about time scales, see Appendix E of <<RFC1305>>,
 Section 3 of <<ISO8601>>, and the appropriate ITU documents (ITU-R-TF).
