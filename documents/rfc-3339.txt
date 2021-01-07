@@ -247,16 +247,16 @@ Internet-Draft             Timestamps Extended              January 2021
 
    Numeric offsets are calculated as "local time minus UTC".  So the
    equivalent time in UTC can be determined by subtracting the offset
-   from the local time.  For example, 18:50:00-04:00 is the same time as
-   22:50:00Z.  (This example shows negative offsets handled by adding
-   the absolute value of the offset.)
+   from the local time.  For example, "18:50:00-04:00" is the same time
+   as "22:50:00Z".  (This example shows negative offsets handled by
+   adding the absolute value of the offset.)
 
-      |  NOTE: Following ISO 8601, numeric offsets represent only time
-      |  zones that differ from UTC by an integral number of minutes.
-      |  However, many historical time zones differ from UTC by a non-
-      |  integral number of minutes.  To represent such historical time
-      |  stamps exactly, applications must convert them to a
-      |  representable time zone.
+   Numeric offsets may differ from UTC by any number of seconds, or even
+   a fraction of seconds.  This can be easily represented by including
+   an optional seconds value in the offset, which may further optionally
+   include a fraction of seconds behind a decimal point, for example
+   "+12:34:56.789".  This is especially useful in the case of certain
+   historical time zones.
 
 4.3.  Unknown Local Offset Convention
 
@@ -409,9 +409,9 @@ Internet-Draft             Timestamps Extended              January 2021
    time-minute    = 2DIGIT ; 00-59
    time-second    = 2DIGIT ; 00-58, 00-59, 00-60 based on leap second rules
    time-secfrac   = "." 1*DIGIT
-   time-numoffset = ("+" / "-") time-hour ":" time-minute
-   time-offset    = "Z" / time-numoffset
    time-partial   = time-hour ":" time-minute ":" time-second [time-secfrac]
+   time-numoffset = ("+" / "-") time-partial
+   time-offset    = "Z" / time-numoffset
    time-full      = time-partial time-offset
 
    timezone-part  = (ALPHA / "." / "_") *13(ALPHA / "." / "_" / "-") ; but not "." or ".."

@@ -22,16 +22,22 @@ As a result, RFC2822 <<RFC2822>> has made numeric offsets mandatory.
 
 Numeric offsets are calculated as "local time minus UTC".  So the
 equivalent time in UTC can be determined by subtracting the offset
-from the local time. For example, 18:50:00-04:00 is the same time as
-22:50:00Z. (This example shows negative offsets handled by adding
+from the local time. For example, `18:50:00-04:00` is the same time as
+`22:50:00Z`. (This example shows negative offsets handled by adding
 the absolute value of the offset.)
 
-NOTE: Following ISO 8601, numeric offsets represent only time
-zones that differ from UTC by an integral number of minutes.
-However, many historical time zones differ from UTC by a non-
-integral number of minutes. To represent such historical time
-stamps exactly, applications must convert them to a representable
-time zone.
+// NOTE: Following ISO 8601, numeric offsets represent only time
+// zones that differ from UTC by an integral number of minutes.
+// However, many historical time zones differ from UTC by a non-
+// integral number of minutes. To represent such historical time
+// stamps exactly, applications must convert them to a representable
+// time zone.
+
+Numeric offsets may differ from UTC by any number of seconds, or even a
+fraction of seconds. This can be easily represented by including an
+optional seconds value in the offset, which may further optionally include
+a fraction of seconds behind a decimal point, for example `+12:34:56.789`.
+This is especially useful in the case of certain historical time zones.
 
 === Unknown Local Offset Convention
 

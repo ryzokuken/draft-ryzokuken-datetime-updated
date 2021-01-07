@@ -101,9 +101,9 @@ time-hour      = 2DIGIT ; 00-23
 time-minute    = 2DIGIT ; 00-59
 time-second    = 2DIGIT ; 00-58, 00-59, 00-60 based on leap second rules
 time-secfrac   = "." 1*DIGIT
-time-numoffset = ("+" / "-") time-hour ":" time-minute
-time-offset    = "Z" / time-numoffset
 time-partial   = time-hour ":" time-minute ":" time-second [time-secfrac]
+time-numoffset = ("+" / "-") time-partial
+time-offset    = "Z" / time-numoffset
 time-full      = time-partial time-offset
 
 timezone-part  = (ALPHA / "." / "_") *13(ALPHA / "." / "_" / "-") ; but not "." or ".."
