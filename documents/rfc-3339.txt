@@ -568,48 +568,48 @@ Internet-Draft             Timestamps Extended              January 2021
    additionally specifies the human timezone associated with it for
    timezone aware implementations to take into account.
 
-   1996-12-19T16:27:23-08:12:34
-
-                                  Figure 6
-
-   This represents the same instant as before, but with an offset that
-   includes an optional seconds component.
-
    1990-12-31T23:59:60Z
 
-                                  Figure 7
+                                  Figure 6
 
    This represents the leap second inserted at the end of 1990.
 
    1990-12-31T15:59:60-08:00
 
-                                  Figure 8
+                                  Figure 7
 
    This represents the same leap second in Pacific Standard Time, 8
    hours behind UTC.
 
-   1937-01-01T12:00:27.87+00:20
+   1937-01-01T12:00:27.87+00:19:32.130
 
-                                  Figure 9
+                                  Figure 8
 
    This represents the same instant of time as noon, January 1, 1937,
    Netherlands time.  Standard time in the Netherlands was exactly 19
    minutes and 32.13 seconds ahead of UTC by law from 1909-05-01 through
-   1937-06-30.  This time zone cannot be represented exactly using the
-   HH:MM format, and this timestamp uses the closest representable UTC
-   offset.
+   1937-06-30.
 
-   1937-01-01T12:00:27.87+00:20[c=Japanese]
+   1937-01-01T12:00:27.87+00:19:32.130[c=japanese]
 
-                                 Figure 10
+                                  Figure 9
 
    This represents the exact same instant as the previous example but
    additionally specifies the human calendar associated with it for
    calendar aware implementations to take into account.
 
-   1937-01-01T12:00:27.87+00:20[foo=bar][baz=bat]
+   1937-01-01T12:00:27.87+00:19:32.130[foo=bar][baz=bat]
 
-                                 Figure 11
+                                 Figure 10
+
+   This timestamp utilizes the generalized format to declare two
+   additional pieces of information in the suffix that can be
+   interpreted by any compatible implementations and ignored otherwise.
+
+
+
+
+
 
 
 
@@ -617,10 +617,6 @@ Sharma                    Expires 12 July 2021                 [Page 11]
 
 Internet-Draft             Timestamps Extended              January 2021
 
-
-   This timestamp utilizes the generalized format to declare two
-   additional pieces of information in the suffix that can be
-   interpreted by any compatible implementations and ignored otherwise.
 
 6.  Security Considerations
 
@@ -669,6 +665,10 @@ Internet-Draft             Timestamps Extended              January 2021
 
 
 
+
+
+
+
 Sharma                    Expires 12 July 2021                 [Page 12]
 
 Internet-Draft             Timestamps Extended              January 2021
@@ -701,7 +701,7 @@ Appendix A.  Day of the Week
                        + year / 4 + cent / 4 + 5 * cent) % 7]);
    }
 
-                                 Figure 12
+                                 Figure 11
 
 Appendix B.  Leap Years
 
@@ -715,7 +715,7 @@ Appendix B.  Leap Years
        return (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0));
    }
 
-                                 Figure 13
+                                 Figure 12
 
 Appendix C.  Leap Seconds
 

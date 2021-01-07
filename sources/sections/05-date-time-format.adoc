@@ -227,14 +227,6 @@ timezone aware implementations to take into account.
 
 [%unnumbered]
 ----
-1996-12-19T16:27:23-08:12:34
-----
-
-This represents the same instant as before, but with an offset that
-includes an optional seconds component.
-
-[%unnumbered]
-----
 1990-12-31T23:59:60Z
 ----
 
@@ -250,19 +242,17 @@ hours behind UTC.
 
 [%unnumbered]
 ----
-1937-01-01T12:00:27.87+00:20
+1937-01-01T12:00:27.87+00:19:32.130
 ----
 
 This represents the same instant of time as noon, January 1, 1937,
 Netherlands time. Standard time in the Netherlands was exactly 19
 minutes and 32.13 seconds ahead of UTC by law from 1909-05-01 through
-1937-06-30. This time zone cannot be represented exactly using the
-HH:MM format, and this timestamp uses the closest representable UTC
-offset.
+1937-06-30.
 
 [%unnumbered]
 ----
-1937-01-01T12:00:27.87+00:20[c=Japanese]
+1937-01-01T12:00:27.87+00:19:32.130[c=japanese]
 ----
 
 This represents the exact same instant as the previous example but
@@ -271,7 +261,7 @@ calendar aware implementations to take into account.
 
 [%unnumbered]
 ----
-1937-01-01T12:00:27.87+00:20[foo=bar][baz=bat]
+1937-01-01T12:00:27.87+00:19:32.130[foo=bar][baz=bat]
 ----
 
 This timestamp utilizes the generalized format to declare two additional
