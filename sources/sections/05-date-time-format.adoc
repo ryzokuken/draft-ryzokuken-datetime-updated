@@ -114,7 +114,7 @@ calendar-part  = 3*8(ALPHA / DIGIT)
 calendar-id    = calendar-part *("-" calendar-part)
 calendar       = "[c=" calendar-id "]"
 
-suffix-part    = "[" 1*ALPHA "=" 1*(ALPHA / DIGIT) "]"
+suffix-part    = "[" 1*ALPHA "=" 1*VCHAR "]"
 suffix         = [timezone] [calendar] *suffix-part
 
 date-time      = date-full "T" time-full suffix
