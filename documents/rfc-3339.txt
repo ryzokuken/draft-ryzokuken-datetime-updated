@@ -4,9 +4,9 @@
 
 Calendaring Extensions Working Group                           U. Sharma
 Internet-Draft                                              Igalia, S.L.
-Obsoletes: 3339 (if approved)                             6 January 2021
+Obsoletes: 3339 (if approved)                             7 January 2021
 Intended status: Standards Track                                        
-Expires: 10 July 2021
+Expires: 11 July 2021
 
 
  Date and Time on the Internet: Timestamps with additional information
@@ -34,7 +34,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 10 July 2021.
+   This Internet-Draft will expire on 11 July 2021.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Sharma                    Expires 10 July 2021                  [Page 1]
+Sharma                    Expires 11 July 2021                  [Page 1]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Sharma                    Expires 10 July 2021                  [Page 2]
+Sharma                    Expires 11 July 2021                  [Page 2]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -165,7 +165,7 @@ Internet-Draft             Timestamps Extended              January 2021
 
 
 
-Sharma                    Expires 10 July 2021                  [Page 3]
+Sharma                    Expires 11 July 2021                  [Page 3]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -221,7 +221,7 @@ Internet-Draft             Timestamps Extended              January 2021
 
 
 
-Sharma                    Expires 10 July 2021                  [Page 4]
+Sharma                    Expires 11 July 2021                  [Page 4]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -277,7 +277,7 @@ Internet-Draft             Timestamps Extended              January 2021
 
 
 
-Sharma                    Expires 10 July 2021                  [Page 5]
+Sharma                    Expires 11 July 2021                  [Page 5]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -333,7 +333,7 @@ Internet-Draft             Timestamps Extended              January 2021
 
 
 
-Sharma                    Expires 10 July 2021                  [Page 6]
+Sharma                    Expires 11 July 2021                  [Page 6]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -389,7 +389,7 @@ Internet-Draft             Timestamps Extended              January 2021
 
 
 
-Sharma                    Expires 10 July 2021                  [Page 7]
+Sharma                    Expires 11 July 2021                  [Page 7]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -414,12 +414,14 @@ Internet-Draft             Timestamps Extended              January 2021
    full-date      = date-fullyear "-" date-month "-" date-mday
    full-time      = partial-time time-offset
 
-   timezone-id    = 1*14ALPHA "/" 1*14ALPHA
+   timezone-part  = (ALPHA / "." / "_") *13(ALPHA / "." / "_" / "-") ; but not "." or ".."
+   timezone-id    = timezone-part *("/" timezone-part)
    timezone       = "[" timezone-id "]"
-   calendar-id    = 3*8ALPHA
+   calendar-part  = 3*8(ALPHA / DIGIT)
+   calendar-id    = calendar-part *("-" calendar-part)
    calendar       = "[c=" calendar-id "]"
-   suffix-part    = "[" 1*ALPHA "=" 1*ALPHA "]"
-   suffix         = [timezone] [calendar] 1*suffix-part
+   suffix-part    = "[" 1*ALPHA "=" 1*(ALPHA / DIGIT) "]"
+   suffix         = [timezone] [calendar] *suffix-part
 
    date-time      = full-date "T" full-time suffix
 
@@ -437,18 +439,21 @@ Internet-Draft             Timestamps Extended              January 2021
    case.  Applications that generate this format SHOULD use upper case
    letters.
 
+
+
+
+
+
+
+Sharma                    Expires 11 July 2021                  [Page 8]
+
+Internet-Draft             Timestamps Extended              January 2021
+
+
       |  NOTE 2: ISO 8601 defines date and time separated by "T".
       |  Applications using this syntax may choose, for the sake of
       |  readability, to specify a full-date and full-time separated by
       |  (say) a space character.
-
-
-
-
-Sharma                    Expires 10 July 2021                  [Page 8]
-
-Internet-Draft             Timestamps Extended              January 2021
-
 
 5.7.  Restrictions
 
@@ -496,12 +501,7 @@ Internet-Draft             Timestamps Extended              January 2021
 
 
 
-
-
-
-
-
-Sharma                    Expires 10 July 2021                  [Page 9]
+Sharma                    Expires 11 July 2021                  [Page 9]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -557,7 +557,7 @@ Internet-Draft             Timestamps Extended              January 2021
 
 
 
-Sharma                    Expires 10 July 2021                 [Page 10]
+Sharma                    Expires 11 July 2021                 [Page 10]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -613,7 +613,7 @@ Internet-Draft             Timestamps Extended              January 2021
 
 
 
-Sharma                    Expires 10 July 2021                 [Page 11]
+Sharma                    Expires 11 July 2021                 [Page 11]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -647,8 +647,8 @@ Internet-Draft             Timestamps Extended              January 2021
 8.  Bibliography
 
    [ISO8601]  International Organization for Standardization, "Data
-              elements and interchange formats", ISO 8601:1988, 1988,
-              <https://www.iso.org/standard/15903.html>.
+              elements and interchange formats", ISO 8601:1988, June
+              1988, <https://www.iso.org/standard/15903.html>.
 
 Appendix A.  ISO 8601 Collected ABNF
 
@@ -669,7 +669,7 @@ Appendix A.  ISO 8601 Collected ABNF
 
 
 
-Sharma                    Expires 10 July 2021                 [Page 12]
+Sharma                    Expires 11 July 2021                 [Page 12]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -725,7 +725,7 @@ Internet-Draft             Timestamps Extended              January 2021
 
 
 
-Sharma                    Expires 10 July 2021                 [Page 13]
+Sharma                    Expires 11 July 2021                 [Page 13]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -781,7 +781,7 @@ Internet-Draft             Timestamps Extended              January 2021
 
 
 
-Sharma                    Expires 10 July 2021                 [Page 14]
+Sharma                    Expires 11 July 2021                 [Page 14]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -837,7 +837,7 @@ Appendix D.  Leap Seconds
 
 
 
-Sharma                    Expires 10 July 2021                 [Page 15]
+Sharma                    Expires 11 July 2021                 [Page 15]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -893,7 +893,7 @@ Internet-Draft             Timestamps Extended              January 2021
 
 
 
-Sharma                    Expires 10 July 2021                 [Page 16]
+Sharma                    Expires 11 July 2021                 [Page 16]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -949,4 +949,4 @@ Author's Address
 
 
 
-Sharma                    Expires 10 July 2021                 [Page 17]
+Sharma                    Expires 11 July 2021                 [Page 17]
