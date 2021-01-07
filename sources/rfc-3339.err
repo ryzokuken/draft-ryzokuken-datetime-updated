@@ -3,14 +3,14 @@ sources/rfc-3339.err errors
 
 == Metanorma XML Style Warning
 
-(XML Line 000229): Hanging paragraph in clause
+(XML Line 000202): Hanging paragraph in clause
 	<clause id="local-time" inline-header="false" obligation="normative"><title>Local Time</title><clause id="_coordinated_universal_time_utc" inline-header="false" obligation="normative">
 	<title>Coordinated Universal Time (UTC)</title>
-	<p id="_891959aa-516f-402d-ab47-6ca899523aba">Because the daylight saving rules for local time zones are so
+	<p id="_a86a3796-39f5-4cf2-8e4d-cf35dfca0f6d">Because the daylight saving rules for local time zones are so
 	convoluted and can change based on local law at unpredictable times,
 	true interoperability is best achieved by using Coordinated Universal
-(XML Line 000289): Hanging paragraph in clause
-	<clause id="date-time-format" inline-header="false" obligation="normative"><title>Date and Time format</title><p id="_cfc70d07-ec00-4729-a430-3d511da3fe43">This section discusses desirable qualities of date and time formats
+(XML Line 000262): Hanging paragraph in clause
+	<clause id="date-time-format" inline-header="false" obligation="normative"><title>Date and Time format</title><p id="_bd0c0968-2366-46ce-8291-f8a70e4615ab">This section discusses desirable qualities of date and time formats
 	and defines a format that extends the profile of ISO 8601 for use in
 	Internet protocols.</p>
 	<clause id="_ordering" inline-header="false" obligation="normative">
@@ -20,7 +20,7 @@ sources/rfc-3339.err errors
 == Metanorma XML Syntax
 
 (XML Line 000067:12): element "workgroup" not allowed here; expected the element end-tag or element "committee"
-(XML Line 000569:76): attribute "inline-header" not allowed here; expected attribute "language", "numbered", "obligation", "removeInRFC", "script" or "toc"
-(XML Line 000659:73): attribute "inline-header" not allowed here; expected attribute "language", "numbered", "obligation", "removeInRFC", "script" or "toc"
-(XML Line 000682:73): attribute "inline-header" not allowed here; expected attribute "language", "numbered", "obligation", "removeInRFC", "script" or "toc"
-(XML Line 000690:73): attribute "inline-header" not allowed here; expected attribute "language", "numbered", "obligation", "removeInRFC", "script" or "toc"
+(XML Line 000542:76): attribute "inline-header" not allowed here; expected attribute "language", "numbered", "obligation", "removeInRFC", "script" or "toc"
+(XML Line 000632:73): attribute "inline-header" not allowed here; expected attribute "language", "numbered", "obligation", "removeInRFC", "script" or "toc"
+(XML Line 000655:73): attribute "inline-header" not allowed here; expected attribute "language", "numbered", "obligation", "removeInRFC", "script" or "toc"
+(XML Line 000663:73): attribute "inline-header" not allowed here; expected attribute "language", "numbered", "obligation", "removeInRFC", "script" or "toc"

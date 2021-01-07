@@ -4,9 +4,9 @@
 
 Calendaring Extensions Working Group                           U. Sharma
 Internet-Draft                                              Igalia, S.L.
-Obsoletes: 3339 (if approved)                             7 January 2021
+Obsoletes: 3339 (if approved)                             8 January 2021
 Intended status: Standards Track                                        
-Expires: 11 July 2021
+Expires: 12 July 2021
 
 
  Date and Time on the Internet: Timestamps with additional information
@@ -34,7 +34,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 11 July 2021.
+   This Internet-Draft will expire on 12 July 2021.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Sharma                    Expires 11 July 2021                  [Page 1]
+Sharma                    Expires 12 July 2021                  [Page 1]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -63,28 +63,28 @@ Table of Contents
    1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   2
    2.  Definitions . . . . . . . . . . . . . . . . . . . . . . . . .   3
    3.  Two Digit Years . . . . . . . . . . . . . . . . . . . . . . .   4
-   4.  Local Time  . . . . . . . . . . . . . . . . . . . . . . . . .   5
-     4.1.  Coordinated Universal Time (UTC)  . . . . . . . . . . . .   5
+   4.  Local Time  . . . . . . . . . . . . . . . . . . . . . . . . .   4
+     4.1.  Coordinated Universal Time (UTC)  . . . . . . . . . . . .   4
      4.2.  Local Offsets . . . . . . . . . . . . . . . . . . . . . .   5
      4.3.  Unknown Local Offset Convention . . . . . . . . . . . . .   5
-     4.4.  Unqualified Local Time  . . . . . . . . . . . . . . . . .   6
+     4.4.  Unqualified Local Time  . . . . . . . . . . . . . . . . .   5
    5.  Date and Time format  . . . . . . . . . . . . . . . . . . . .   6
      5.1.  Ordering  . . . . . . . . . . . . . . . . . . . . . . . .   6
-     5.2.  Human Readability . . . . . . . . . . . . . . . . . . . .   7
+     5.2.  Human Readability . . . . . . . . . . . . . . . . . . . .   6
      5.3.  Rarely Used Options . . . . . . . . . . . . . . . . . . .   7
      5.4.  Redundant Information . . . . . . . . . . . . . . . . . .   7
-     5.5.  Simplicity  . . . . . . . . . . . . . . . . . . . . . . .   8
-     5.6.  Internet Date/Time Format . . . . . . . . . . . . . . . .   8
-     5.7.  Restrictions  . . . . . . . . . . . . . . . . . . . . . .  10
-     5.8.  Examples  . . . . . . . . . . . . . . . . . . . . . . . .  11
-   6.  Security Considerations . . . . . . . . . . . . . . . . . . .  13
-   7.  Normative references  . . . . . . . . . . . . . . . . . . . .  13
-   8.  Bibliography  . . . . . . . . . . . . . . . . . . . . . . . .  13
+     5.5.  Simplicity  . . . . . . . . . . . . . . . . . . . . . . .   7
+     5.6.  Internet Date/Time Format . . . . . . . . . . . . . . . .   7
+     5.7.  Restrictions  . . . . . . . . . . . . . . . . . . . . . .   9
+     5.8.  Examples  . . . . . . . . . . . . . . . . . . . . . . . .  10
+   6.  Security Considerations . . . . . . . . . . . . . . . . . . .  12
+   7.  Normative references  . . . . . . . . . . . . . . . . . . . .  12
+   8.  Bibliography  . . . . . . . . . . . . . . . . . . . . . . . .  12
    Appendix A.  ISO 8601 Collected ABNF  . . . . . . . . . . . . . .  13
-   Appendix B.  Day of the Week  . . . . . . . . . . . . . . . . . .  17
-   Appendix C.  Leap Years . . . . . . . . . . . . . . . . . . . . .  17
-   Appendix D.  Leap Seconds . . . . . . . . . . . . . . . . . . . .  17
-   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  19
+   Appendix B.  Day of the Week  . . . . . . . . . . . . . . . . . .  16
+   Appendix C.  Leap Years . . . . . . . . . . . . . . . . . . . . .  16
+   Appendix D.  Leap Seconds . . . . . . . . . . . . . . . . . . . .  16
+   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  18
 
 1.  Introduction
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Sharma                    Expires 11 July 2021                  [Page 2]
+Sharma                    Expires 12 July 2021                  [Page 2]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -165,7 +165,7 @@ Internet-Draft             Timestamps Extended              January 2021
 
 
 
-Sharma                    Expires 11 July 2021                  [Page 3]
+Sharma                    Expires 12 July 2021                  [Page 3]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -194,40 +194,12 @@ Internet-Draft             Timestamps Extended              January 2021
 
 3.  Two Digit Years
 
-   The following requirements are to address the problems of ambiguity
-   of 2-digit years:
+   The use of 2 (and 3) digit years was allowed but deprecated in
+   [RFC3339], the predecessor of this document.
 
-   *  Internet Protocols MUST generate four digit years in dates.
-
-   *  The use of 2-digit years is deprecated.  If a 2-digit year is
-      received, it should be accepted ONLY if an incorrect
-      interpretation will not cause a protocol or processing failure
-      (e.g. if used only for logging or tracing purposes).
-
-   *  It is possible that a program using two digit years will represent
-      years after 1999 as three digits.  This occurs if the program
-      simply subtracts 1900 from the year and doesn't check the number
-      of digits.  Programs wishing to robustly deal with dates generated
-      by such broken software may add 1900 to three digit years.
-
-   *  It is possible that a program using two digit years will represent
-      years after 1999 as ":0", ":1", ... ":9", ";0", ... This occurs if
-      the program simply subtracts 1900 from the year and adds the
-      decade to the US-ASCII character zero.  Programs wishing to
-      robustly deal with dates generated by such broken software should
-      detect non-numeric decades and interpret appropriately.
-
-
-
-
-
-Sharma                    Expires 11 July 2021                  [Page 4]
-
-Internet-Draft             Timestamps Extended              January 2021
-
-
-   The problems with two digit years amply demonstrate why all dates and
-   times used in Internet protocols MUST be fully qualified.
+   The use of such a format is no longer allowed, and implementations
+   should use either a standard 4-digit year or the extended 6-digit
+   value with a sign.
 
 4.  Local Time
 
@@ -240,6 +212,19 @@ Internet-Draft             Timestamps Extended              January 2021
    time zone rules.  However, certain implementations may be expected
    to.  For these situations, a timestamp may additionally include a
    local time zone that the implementations can take into account.
+
+
+
+
+
+
+
+
+
+Sharma                    Expires 12 July 2021                  [Page 4]
+
+Internet-Draft             Timestamps Extended              January 2021
+
 
 4.2.  Local Offsets
 
@@ -271,17 +256,6 @@ Internet-Draft             Timestamps Extended              January 2021
    is the preferred reference point for the specified time.  RFC2822
    [RFC2822] describes a similar convention for email.
 
-
-
-
-
-
-
-Sharma                    Expires 11 July 2021                  [Page 5]
-
-Internet-Draft             Timestamps Extended              January 2021
-
-
 4.4.  Unqualified Local Time
 
    A number of devices currently connected to the Internet run their
@@ -298,6 +272,15 @@ Internet-Draft             Timestamps Extended              January 2021
    suitable mechanisms are:
 
    *  Use Network Time Protocol [RFC1305] to obtain the time in UTC.
+
+
+
+
+
+Sharma                    Expires 12 July 2021                  [Page 5]
+
+Internet-Draft             Timestamps Extended              January 2021
+
 
    *  Use another host in the same local time zone as a gateway to the
       Internet.  This host MUST correct unqualified local times that are
@@ -324,20 +307,6 @@ Internet-Draft             Timestamps Extended              January 2021
    time-ordered sequence will result.  The presence of optional
    punctuation would violate this characteristic.
 
-
-
-
-
-
-
-
-
-
-Sharma                    Expires 11 July 2021                  [Page 6]
-
-Internet-Draft             Timestamps Extended              January 2021
-
-
 5.2.  Human Readability
 
    Human readability has proved to be a valuable feature of Internet
@@ -361,6 +330,14 @@ Internet-Draft             Timestamps Extended              January 2021
    This may include translating UTC to local time as well as converting
    from the Gregorian calendar to the viewer's preferred calendar.
 
+
+
+
+Sharma                    Expires 12 July 2021                  [Page 6]
+
+Internet-Draft             Timestamps Extended              January 2021
+
+
 5.3.  Rarely Used Options
 
    A format which includes rarely used options is likely to cause
@@ -379,20 +356,6 @@ Internet-Draft             Timestamps Extended              January 2021
    date is correct, or vice versa.  Since it is not difficult to compute
    the day of week from a date (see Appendix B), the day of week should
    not be included in a date/time format.
-
-
-
-
-
-
-
-
-
-
-Sharma                    Expires 11 July 2021                  [Page 7]
-
-Internet-Draft             Timestamps Extended              January 2021
-
 
 5.5.  Simplicity
 
@@ -426,26 +389,7 @@ Internet-Draft             Timestamps Extended              January 2021
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Sharma                    Expires 11 July 2021                  [Page 8]
+Sharma                    Expires 12 July 2021                  [Page 7]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -501,7 +445,7 @@ Internet-Draft             Timestamps Extended              January 2021
 
 
 
-Sharma                    Expires 11 July 2021                  [Page 9]
+Sharma                    Expires 12 July 2021                  [Page 8]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -557,7 +501,7 @@ Internet-Draft             Timestamps Extended              January 2021
 
 
 
-Sharma                    Expires 11 July 2021                 [Page 10]
+Sharma                    Expires 12 July 2021                  [Page 9]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -613,7 +557,7 @@ Internet-Draft             Timestamps Extended              January 2021
 
 
 
-Sharma                    Expires 11 July 2021                 [Page 11]
+Sharma                    Expires 12 July 2021                 [Page 10]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -669,7 +613,7 @@ Internet-Draft             Timestamps Extended              January 2021
 
 
 
-Sharma                    Expires 11 July 2021                 [Page 12]
+Sharma                    Expires 12 July 2021                 [Page 11]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -718,17 +662,22 @@ Internet-Draft             Timestamps Extended              January 2021
               elements and interchange formats", ISO 8601:1988, June
               1988, <https://www.iso.org/standard/15903.html>.
 
+   [RFC3339]  Klyne, G. and C. Newman, "Date and Time on the Internet:
+              Timestamps", IETF RFC 3339, IETF RFC 3339,
+              DOI 10.17487/RFC3339, July 2002,
+              <https://www.rfc-editor.org/info/rfc3339>.
+
+
+
+Sharma                    Expires 12 July 2021                 [Page 12]
+
+Internet-Draft             Timestamps Extended              January 2021
+
+
 Appendix A.  ISO 8601 Collected ABNF
 
    This information is based on the 1988 version of ISO 8601.  There may
    be some changes in the 2000 revision.
-
-
-
-Sharma                    Expires 11 July 2021                 [Page 13]
-
-Internet-Draft             Timestamps Extended              January 2021
-
 
    ISO 8601 does not specify a formal grammar for the date and time
    formats it defines.  The following is an attempt to create a formal
@@ -776,12 +725,7 @@ Internet-Draft             Timestamps Extended              January 2021
 
 
 
-
-
-
-
-
-Sharma                    Expires 11 July 2021                 [Page 14]
+Sharma                    Expires 12 July 2021                 [Page 13]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -837,7 +781,7 @@ Internet-Draft             Timestamps Extended              January 2021
 
 
 
-Sharma                    Expires 11 July 2021                 [Page 15]
+Sharma                    Expires 12 July 2021                 [Page 14]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -893,7 +837,7 @@ Internet-Draft             Timestamps Extended              January 2021
 
 
 
-Sharma                    Expires 11 July 2021                 [Page 16]
+Sharma                    Expires 12 July 2021                 [Page 15]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -949,7 +893,7 @@ Appendix D.  Leap Seconds
 
 
 
-Sharma                    Expires 11 July 2021                 [Page 17]
+Sharma                    Expires 12 July 2021                 [Page 16]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -1005,7 +949,7 @@ Internet-Draft             Timestamps Extended              January 2021
 
 
 
-Sharma                    Expires 11 July 2021                 [Page 18]
+Sharma                    Expires 12 July 2021                 [Page 17]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -1061,4 +1005,4 @@ Author's Address
 
 
 
-Sharma                    Expires 11 July 2021                 [Page 19]
+Sharma                    Expires 12 July 2021                 [Page 18]
