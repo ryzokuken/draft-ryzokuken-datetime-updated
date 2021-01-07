@@ -92,7 +92,7 @@ syntax description notation defined in <<RFC2234>>.
 
 [source%unnumbered]
 ----
-date-year      = 4DIGIT
+date-year      = 4DIGIT / ("+" / "-") 6DIGIT
 date-month     = 2DIGIT ; 01-12
 date-mday      = 2DIGIT ; 01-28, 01-29, 01-30, 01-31 based on month/year
 date-full      = date-year "-" date-month "-" date-mday
@@ -200,6 +200,14 @@ April 12th, 1985 in UTC.
 
 [%unnumbered]
 ----
++001985-04-12T23:20:50.52Z
+----
+
+This represents the same instant as the previous example but with the
+expanded 6-digit year format.
+
+[%unnumbered]
+----
 1996-12-19T16:39:57-08:00
 ----
 
@@ -216,6 +224,14 @@ in UTC.
 This represents the exact same instant as the previous example but
 additionally specifies the human timezone associated with it for
 timezone aware implementations to take into account.
+
+[%unnumbered]
+----
+1996-12-19T16:27:23-08:12:34
+----
+
+This represents the same instant as before, but with an offset that
+includes an optional seconds component.
 
 [%unnumbered]
 ----
