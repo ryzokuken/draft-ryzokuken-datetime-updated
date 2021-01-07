@@ -63,21 +63,21 @@ the possibility that the redundant information will not correlate.
 For example, including the day of the week in a date/time format
 introduces the possibility that the day of week is incorrect but the
 date is correct, or vice versa. Since it is not difficult to compute
-the day of week from a date (see <<annexB>>), the day of week should
+the day of week from a date (see <<annexA>>), the day of week should
 not be included in a date/time format.
 
 === Simplicity
 
+// <<annexA>> contains an attempt to translate the complete syntax of ISO 8601 into <<RFC2234>>.
+
 The complete set of date and time formats specified in ISO 8601
 <<ISO8601>> is quite complex in an attempt to provide multiple
-representations and partial representations. <<annexA>> contains an
-attempt to translate the complete syntax of ISO 8601 into <<RFC2234>>.
-Internet protocols have somewhat different requirements and
-simplicity has proved to be an important characteristic. In
-addition, Internet protocols usually need complete specification of
-data in order to achieve true interoperability. Therefore, the
-complete grammar for ISO 8601 is deemed too complex for most Internet
-protocols.
+representations and partial representations. Internet protocols have
+somewhat different requirements and simplicity has proved to be an
+important characteristic. In addition, Internet protocols usually need
+complete specification of data in order to achieve true interoperability.
+Therefore, the complete grammar for ISO 8601 is deemed too complex for
+most Internet protocols.
 
 The following section defines a format that in an extension of a profile
 of ISO 8601 for use on the Internet. It is a conformant subset of the ISO
@@ -162,12 +162,12 @@ as follows:
 | 12            | December             | 31
 |===
 
-<<annexC>> contains sample C code to determine if a year is a leap
+<<annexB>> contains sample C code to determine if a year is a leap
 year.
 
 The grammar element time-second may have the value "60" at the end of
 months in which a leap second occurs -- to date: June (XXXX-06-
-30T23:59:60Z) or December (XXXX-12-31T23:59:60Z); see <<annexD>> for
+30T23:59:60Z) or December (XXXX-12-31T23:59:60Z); see <<annexC>> for
 a table of leap seconds. It is also possible for a leap second to be
 subtracted, at which times the maximum value of time-second is "58".
 At all other times the maximum value of time-second is "59".

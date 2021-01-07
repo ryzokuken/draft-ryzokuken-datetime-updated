@@ -16,7 +16,7 @@ cesium-133 atoms in their ground state undisturbed by
 external fields.
 
 minute:: A period of time of 60 seconds. However, see also the
-restrictions in section <<restrictions>> and <<annexD>> for how
+restrictions in section <<restrictions>> and <<annexC>> for how
 leap seconds are denoted within minutes.
 
 hour:: A period of time of 60 minutes.

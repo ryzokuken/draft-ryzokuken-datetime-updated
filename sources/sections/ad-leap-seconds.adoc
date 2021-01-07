@@ -1,4 +1,4 @@
-[[annexD]]
+[[annexC]]
 [appendix]
 == Leap Seconds
 

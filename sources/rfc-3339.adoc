@@ -39,7 +39,7 @@ include::sections/06-references.adoc[]
 
 include::sections/07-security.adoc[]
 
-include::sections/aa-iso-8601.adoc[]
+// include::sections/aa-iso-8601.adoc[]
 
 include::sections/ab-day-week.adoc[]
 

@@ -1,4 +1,4 @@
-[[annexB]]
+[[annexA]]
 [appendix]
 == Day of the Week
 
