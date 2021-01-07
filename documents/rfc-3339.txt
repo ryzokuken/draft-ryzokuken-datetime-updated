@@ -400,30 +400,32 @@ Internet-Draft             Timestamps Extended              January 2021
    used in new protocols on the Internet.  This is specified using the
    syntax description notation defined in [RFC2234].
 
-   date-fullyear  = 4DIGIT
+   date-year      = 4DIGIT
    date-month     = 2DIGIT ; 01-12
    date-mday      = 2DIGIT ; 01-28, 01-29, 01-30, 01-31 based on month/year
+   date-full      = date-year "-" date-month "-" date-mday
+
    time-hour      = 2DIGIT ; 00-23
    time-minute    = 2DIGIT ; 00-59
    time-second    = 2DIGIT ; 00-58, 00-59, 00-60 based on leap second rules
    time-secfrac   = "." 1*DIGIT
    time-numoffset = ("+" / "-") time-hour ":" time-minute
    time-offset    = "Z" / time-numoffset
-
-   partial-time   = time-hour ":" time-minute ":" time-second [time-secfrac]
-   full-date      = date-fullyear "-" date-month "-" date-mday
-   full-time      = partial-time time-offset
+   time-partial   = time-hour ":" time-minute ":" time-second [time-secfrac]
+   time-full      = time-partial time-offset
 
    timezone-part  = (ALPHA / "." / "_") *13(ALPHA / "." / "_" / "-") ; but not "." or ".."
    timezone-id    = timezone-part *("/" timezone-part)
    timezone       = "[" timezone-id "]"
+
    calendar-part  = 3*8(ALPHA / DIGIT)
    calendar-id    = calendar-part *("-" calendar-part)
    calendar       = "[c=" calendar-id "]"
+
    suffix-part    = "[" 1*ALPHA "=" 1*(ALPHA / DIGIT) "]"
    suffix         = [timezone] [calendar] *suffix-part
 
-   date-time      = full-date "T" full-time suffix
+   date-time      = date-full "T" time-full suffix
 
                                   Figure 1
 
@@ -438,8 +440,6 @@ Internet-Draft             Timestamps Extended              January 2021
    letters 'T' and 'Z' used in the date/time syntax must always be upper
    case.  Applications that generate this format SHOULD use upper case
    letters.
-
-
 
 
 
