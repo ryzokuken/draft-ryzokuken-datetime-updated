@@ -257,6 +257,6 @@ calendar aware implementations to take into account.
 ----
 
 This timestamp utilizes the generalized format to declare two additional
-suffix box that can be interpreted by any compatible implementations
-and ignored otherwise.
+pieces of information in the suffix that can be interpreted by any
+compatible implementations and ignored otherwise.
 

@@ -599,8 +599,8 @@ Internet-Draft             Timestamps Extended              January 2021
                                   Figure 9
 
    This timestamp utilizes the generalized format to declare two
-   additional suffix box that can be interpreted by any compatible
-   implementations and ignored otherwise.
+   additional pieces of information in the suffix that can be
+   interpreted by any compatible implementations and ignored otherwise.
 
 6.  Security Considerations
 

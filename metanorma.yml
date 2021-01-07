@@ -3,5 +3,3 @@ relaton:
   collection:
     name: IETF Draft Timezones Extended
     organization: Internet Engineering Task Force
-metanorma:
-  formats: "txt-html"
