@@ -106,9 +106,9 @@ time-numoffset = ("+" / "-") time-partial
 time-offset    = "Z" / time-numoffset
 time-full      = time-partial time-offset
 
-time-zone-part = (ALPHA / "." / "_") *13(ALPHA / "." / "_" / "-") ; but not "." or ".."
+time-zone-part = (ALPHA / "." / "_") *13(ALPHA / "." / "_" / "-" / "+") ; but not "." or ".."
 time-zone-id   = time-zone-part *("/" time-zone-part)
-time-zone      = "[" time-zone-id "]"
+time-zone      = "[" (time-zone-id / "Etc/GMT" ("+"/"-") 1*2DIGIT) "]"
 
 calendar-part  = 3*8(ALPHA / DIGIT)
 calendar-id    = calendar-part *("-" calendar-part)
