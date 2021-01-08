@@ -106,16 +106,16 @@ time-numoffset = ("+" / "-") time-partial
 time-offset    = "Z" / time-numoffset
 time-full      = time-partial time-offset
 
-timezone-part  = (ALPHA / "." / "_") *13(ALPHA / "." / "_" / "-") ; but not "." or ".."
-timezone-id    = timezone-part *("/" timezone-part)
-timezone       = "[" timezone-id "]"
+time-zone-part = (ALPHA / "." / "_") *13(ALPHA / "." / "_" / "-") ; but not "." or ".."
+time-zone-id   = time-zone-part *("/" time-zone-part)
+time-zone      = "[" time-zone-id "]"
 
 calendar-part  = 3*8(ALPHA / DIGIT)
 calendar-id    = calendar-part *("-" calendar-part)
 calendar       = "[c=" calendar-id "]"
 
 suffix-part    = "[" 1*ALPHA "=" 1*VCHAR "]"
-suffix         = [timezone] [calendar] *suffix-part
+suffix         = [time-zone] [calendar] *suffix-part
 
 date-time      = date-full "T" time-full suffix
 ----
@@ -222,8 +222,8 @@ in UTC.
 ----
 
 This represents the exact same instant as the previous example but
-additionally specifies the human timezone associated with it for
-timezone aware implementations to take into account.
+additionally specifies the human time zone associated with it for
+time zone aware implementations to take into account.
 
 [%unnumbered]
 ----

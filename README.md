@@ -3,7 +3,7 @@
 This repository contains a WIP IETF I-D that seeks to replace [RFC 3339](https://tools.ietf.org/html/rfc3339)
 by making the following updates:
 
-1. Timestamps can now contain additional information including but not limited to timezone and calendar.
+1. Timestamps can now contain additional information including but not limited to time zone and calendar.
 2. The usage of 2-digit years is now no longer permitted.
 3. The usage of the extended year format (6-digit with sign) is now allowed.
 4. Numeric offsets can now include section and sub-second precision.
