@@ -93,6 +93,13 @@ All information is therefore divided into three hyphen-separated sections: the
 namespace, the key and the value. For example, the calendar as defined by the
 Unicode consortium could be included as `u-ca-chinese`.
 
+Currently, two namespaces are supported:
+
+* `u` for the Unicode Consortium, the different keys accepted under this
+namespace are standardized by the Unicode Consortium.
+* `x` for Private Use, any keys can be used with this namespace, it is not
+standardized.
+
 === Internet Date/Time Format
 
 The following extension of a profile of <<ISO8601>> dates SHOULD be
