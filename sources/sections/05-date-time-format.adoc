@@ -113,10 +113,10 @@ time-zone      = "[" time-zone-id "]"
 
 calendar-part  = 3*8(ALPHA / DIGIT)
 calendar-id    = calendar-part *("-" calendar-part)
-calendar       = "[c=" calendar-id "]"
+calendar       = "[u-ca-" calendar-id "]"
 
-suffix-part    = "[" 1*ALPHA "=" 1*VCHAR "]"
-suffix         = [time-zone] [calendar] *suffix-part
+suffix-part    = "[" ALPHA "-" 2*ALPHA "-" 1*VCHAR "]"
+suffix         = [timezone] [calendar] *suffix-part
 
 date-time      = date-full "T" time-full suffix
 ----
@@ -253,7 +253,7 @@ minutes and 32.13 seconds ahead of UTC by law from 1909-05-01 through
 
 [%unnumbered]
 ----
-1937-01-01T12:00:27.87+00:19:32.130[c=japanese]
+1937-01-01T12:00:27.87+00:19:32.130[u-ca-japanese]
 ----
 
 This represents the exact same instant as the previous example but
@@ -262,7 +262,7 @@ calendar aware implementations to take into account.
 
 [%unnumbered]
 ----
-1937-01-01T12:00:27.87+00:19:32.130[foo=bar][baz=bat]
+1937-01-01T12:00:27.87+00:19:32.130[x-foo-bar][x-baz-bat]
 ----
 
 This timestamp utilizes the generalized format to declare two additional
