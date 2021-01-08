@@ -84,6 +84,15 @@ of ISO 8601 for use on the Internet. It is a conformant subset of the ISO
 8601 extended format with additional information optionally suffixed.
 Simplicity is achieved by making most fields and punctuation mandatory.
 
+=== Namespaces
+
+Since the format can include all sorts of additional information in the suffix,
+different standards bodies/organizations need a way to identify which part
+adheres to their standards. For this, all information needs to be namespaced.
+All information is therefore divided into three hyphen-separated sections: the
+namespace, the key and the value. For example, the calendar as defined by the
+Unicode consortium could be included as `u-ca-chinese`.
+
 === Internet Date/Time Format
 
 The following extension of a profile of <<ISO8601>> dates SHOULD be
