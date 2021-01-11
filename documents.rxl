@@ -7,8 +7,8 @@
   <uri type="xml">documents/rfc-3339.xml</uri>
   <uri type="rxl">documents/rfc-3339.rxl</uri>
   <uri type="txt">documents/rfc-3339.txt</uri>
-  <docidentifier>draft-ryzokuken-datetime-extended-01</docidentifier>
-  <docnumber>draft-ryzokuken-datetime-extended-01</docnumber>
+  <docidentifier>draft-ryzokuken-datetime-extended-00</docidentifier>
+  <docnumber>draft-ryzokuken-datetime-extended-00</docnumber>
   <contributor>
     <role type="author"/>
     <person>
