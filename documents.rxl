@@ -1,14 +1,14 @@
-<relaton-collection xmlns="https://open.ribose.com/relaton-xml"><title>IETF Draft Timezones Extended</title><contributor><role type='author'/><organization><name>Internet Engineering Task Force</name></organization></contributor><relation type='partOf'><bibdata type="standard">
+<relaton-collection xmlns="https://open.ribose.com/relaton-xml"><title>IETF Draft Timestamps Extended</title><contributor><role type='author'/><organization><name>Internet Engineering Task Force</name></organization></contributor><relation type='partOf'><bibdata type="standard">
   <title type="main" format="text/plain" language="en">Date and Time on the Internet: Timestamps with additional information</title>
   <title type="abbrev" format="text/plain" language="en">Timestamps Extended</title>
-  <uri>https://www.igalia.com/</uri>
-  <uri type="xml">documents/rfc-3339.xml</uri>
-  <uri type="pdf">documents/rfc-3339.pdf</uri>
+  <uri>https://ryzokuken.dev/draft-ryzokuken-datetime-extended/</uri>
   <uri type="html">documents/rfc-3339.html</uri>
+  <uri type="pdf">documents/rfc-3339.pdf</uri>
+  <uri type="xml">documents/rfc-3339.xml</uri>
   <uri type="rxl">documents/rfc-3339.rxl</uri>
   <uri type="txt">documents/rfc-3339.txt</uri>
-  <docidentifier>01</docidentifier>
-  <docnumber>01</docnumber>
+  <docidentifier>draft-ryzokuken-datetime-extended-01</docidentifier>
+  <docnumber>draft-ryzokuken-datetime-extended-01</docnumber>
   <contributor>
     <role type="author"/>
     <person>
@@ -61,9 +61,6 @@ information including a time zone and a calendaring system.
   </relation>
   <series type="stream">
     <title>IETF</title>
-  </series>
-  <series type="intended">
-    <title>standard</title>
   </series>
   <ext>
     <doctype>internet-draft</doctype>

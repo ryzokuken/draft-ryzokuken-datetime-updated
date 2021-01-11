@@ -1,9 +1,11 @@
 <bibdata type="standard">
 <title language="en" format="text/plain" type="main">Date and Time on the Internet: Timestamps with additional information</title>
 <title language="en" format="text/plain" type="abbrev">Timestamps Extended</title>
-<uri>https://www.igalia.com/</uri>
-<docidentifier>01</docidentifier>
-<docnumber>01</docnumber>
+<uri>https://ryzokuken.dev/draft-ryzokuken-datetime-extended/</uri>
+<uri type="html">https://ryzokuken.dev/draft-ryzokuken-datetime-extended/documents/rfc-3339.html</uri>
+<uri type="pdf">https://ryzokuken.dev/draft-ryzokuken-datetime-extended/documents/rfc-3339.pdf</uri>
+<docidentifier>draft-ryzokuken-datetime-extended-01</docidentifier>
+<docnumber>draft-ryzokuken-datetime-extended-01</docnumber>
 <contributor>
 <role type="author"/>
 <person>
@@ -56,15 +58,11 @@ information including a time zone and a calendaring system.</p>
 <series type="stream">
 <title>IETF</title>
 </series>
-<series type="intended">
-<title>standard</title>
-</series>
 <ext>
 <doctype>internet-draft</doctype>
 <editorialgroup>
 <workgroup>Calendaring Extensions Working Group</workgroup>
 </editorialgroup>
-<area>Internet</area>
 <ipr>trust200902</ipr>
 <pi>
 <toc>yes</toc>
