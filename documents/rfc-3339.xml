@@ -72,63 +72,63 @@ information including a time zone and a calendaring system.</p>
 </ext>
 </bibdata>
 <preface><abstract id="_abstract"><title>Abstract</title>
-<p id="_9cc01afe-c263-4418-82d1-8ccd9cbddff3">This document defines a date and time format for use in Internet
+<p id="_a12d0e5b-a91f-4915-b7c9-429e903e7a11">This document defines a date and time format for use in Internet
 protocols for representation of dates and times using the proleptic
 Gregorian calendar, with optional extensions representing additional
 information including a time zone and a calendaring system.</p>
 </abstract></preface><sections>
-<clause id="intro" inline-header="false" obligation="normative"><title>Introduction</title><p id="_f53c1046-b98f-46ef-882b-4510facc7b87">Date and time formats cause a lot of confusion and interoperability
+<clause id="intro" inline-header="false" obligation="normative"><title>Introduction</title><p id="_ed855ba7-f022-4d77-86db-5482d20d60af">Date and time formats cause a lot of confusion and interoperability
 problems on the Internet. This document addresses many of the
 problems encountered and makes recommendations to improve consistency
 and interoperability when representing and using date and time in
 Internet protocols.</p>
-<p id="_16ce241b-d95b-41d6-bae2-41e95e8093a6">This document includes an extension to an Internet profile of the
+<p id="_fe1ffe9a-312f-4345-94cc-7a4e3944bc14">This document includes an extension to an Internet profile of the
 <eref type="inline" bibitemid="ISO8601" citeas="ISO 8601:1988"/> standard for representation of dates and times using the
 proleptic Gregorian calendar alongside any additional information. Any
 dates and times that are required to be handled in a different calendar
 system need to include the ID of the calendar which can be handle by
 the implementations approximately. In the absence of a calendar ID, the
 proleptic Gregorian calendar system is assumed.</p>
-<p id="_6ad88238-1587-43b9-b2a3-d68b90ec788a">There are many ways in which date and time values might appear in
+<p id="_884a0927-4d1a-49c8-90f3-9a8b93e6d17d">There are many ways in which date and time values might appear in
 Internet protocols:  this document focuses on just one common usage,
 viz. timestamps for Internet protocol events.  This limited
 consideration has the following consequences:</p>
-<ul id="_30ccab61-4c95-4240-b51c-d3eefa9970f5">
+<ul id="_64d1f29c-06e6-4d33-bbfb-ecdbe4246fda">
 <li>
-<p id="_1fbc13e1-eeb0-4213-934a-65bf5c6352bf">All dates and times are assumed to be in the "current era",
+<p id="_402ebc9f-7b3b-439f-91e6-d3a90dcfae46">All dates and times are assumed to be in the "current era",
 somewhere between 0000AD and 9999AD.</p>
 </li>
 </ul>
-<ul id="_da48335d-2e7e-43e4-9e9a-a4b034679621">
+<ul id="_cc714ae7-3898-486c-8fc6-3042bd4dca25">
 <li>
-<p id="_a07fedb0-ec3c-41fe-87f6-db45262eee83">All times expressed have a stated relationship (offset) to
+<p id="_fd8746e0-f432-4285-b3ab-327c7391c431">All times expressed have a stated relationship (offset) to
 Coordinated Universal Time (UTC). Certain applications require the
 presence of a time zone in order to perform scheduling as well as
 handle Daylight Savings Time transitions properly. In that case,
 an optional time zone ID may be included.</p>
 </li>
 <li>
-<p id="_7c8860b8-89a4-44ac-a78b-b7e38f5f5749">Timestamps can express times that occurred before the introduction
+<p id="_34d0badd-5631-4c2f-9f25-2924d4a2b7c4">Timestamps can express times that occurred before the introduction
 of UTC.  Such timestamps are expressed relative to universal time,
 using the best available practice at the stated time.</p>
 </li>
 <li>
-<p id="_879d72ac-1335-4d34-b05f-6857cc21fb6a">Date and time expressions indicate an instant in time.
+<p id="_be58f0b7-b513-4478-8237-161f0d8c3058">Date and time expressions indicate an instant in time.
 Description of time periods, or intervals, is not covered here.</p>
 </li>
 </ul></clause>
-<clause id="defintions" inline-header="false" obligation="normative"><title>Definitions</title><p id="_77d71f1a-86d9-439c-bd82-0f6e1cabdf34">The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+<clause id="defintions" inline-header="false" obligation="normative"><title>Definitions</title><p id="_ac245ea9-0f50-4d29-816c-87faa2eb6414">The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
 "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
 document are to be interpreted as described in <eref type="inline" bibitemid="RFC2119" citeas="RFC 2119"/>.</p>
-<dl id="_17a6cfe9-7826-4556-ba34-74d127235250">
+<dl id="_273cc68e-a5df-4df1-89da-6f404e058cd1">
 <dt>UTC</dt>
 <dd>
-<p id="_8f75eff9-8a25-403b-8120-7ac60b4bb547">Coordinated Universal Time as maintained by the Bureau
+<p id="_671dcdaf-d1b6-48c6-9038-9eb55f622622">Coordinated Universal Time as maintained by the Bureau
 International des Poids et Mesures (BIPM).</p>
 </dd>
 <dt>second</dt>
 <dd>
-<p id="_32d41816-7f09-4aa8-8825-5e1a7734148b">A basic unit of measurement of time in the
+<p id="_8d180848-900c-49c5-af72-df182bfe9475">A basic unit of measurement of time in the
 International System of Units.  It is defined as the
 duration of 9,192,631,770 cycles of microwave light
 absorbed or emitted by the hyperfine transition of
@@ -137,21 +137,21 @@ external fields.</p>
 </dd>
 <dt>minute</dt>
 <dd>
-<p id="_e071d78a-1045-4685-bd72-2a4d73d9625f">A period of time of 60 seconds. However, see also the
+<p id="_b56cedc3-9435-4855-8d3c-a515c993d532">A period of time of 60 seconds. However, see also the
 restrictions in section <xref target="restrictions"/> and <xref target="annexC"/> for how
 leap seconds are denoted within minutes.</p>
 </dd>
 <dt>hour</dt>
 <dd>
-<p id="_5c44e236-b8bc-4b2e-b8ad-9a3f57db35f9">A period of time of 60 minutes.</p>
+<p id="_cd18299c-a15e-4d3e-a390-b7ecdeb98188">A period of time of 60 minutes.</p>
 </dd>
 <dt>day</dt>
 <dd>
-<p id="_2f638203-7659-4359-9dfe-8162dcf04af1">A period of time of 24 hours.</p>
+<p id="_6383d498-93d3-42e9-b1d8-c4c47084fca1">A period of time of 24 hours.</p>
 </dd>
 <dt>leap year</dt>
 <dd>
-<p id="_bc0df70a-0d80-4fcc-afd0-96056a1c3f2a">In the proleptic Gregorian calendar, a year which has
+<p id="_094d7247-e8b9-4bd0-9ea5-000686902e5b">In the proleptic Gregorian calendar, a year which has
 366 days. A leap year is a year whose number is divisible by
 four an integral number of times, except that if it is
 a centennial year (i.e. divisible by one hundred) it
@@ -160,51 +160,51 @@ number of times.</p>
 </dd>
 <dt>ABNF</dt>
 <dd>
-<p id="_be5ac7c2-69d4-4133-a7ed-0b8ef9b9df50">Augmented Backus-Naur Form, a format used to represent
+<p id="_6d1e94e6-f10a-47c2-8b15-e92a87afdccb">Augmented Backus-Naur Form, a format used to represent
 permissible strings in a protocol or language, as
 defined in <eref type="inline" bibitemid="RFC2234" citeas="RFC 2234"/>.</p>
 </dd>
 <dt>Email Date/Time Format</dt>
 <dd>
-<p id="_707a05ef-2936-4882-bd5d-d09aaaa00991">The date/time format used by Internet Mail as defined
+<p id="_3412324d-b955-45ce-b0bd-5e7ac9d4b77b">The date/time format used by Internet Mail as defined
 by <eref type="inline" bibitemid="RFC2822" citeas="RFC 2822"/>.</p>
 </dd>
 <dt>Internet Date/Time Format</dt>
 <dd>
-<p id="_55e14e76-237e-4428-bbba-1fee6b74b50b">The date/time format defined in section 5 of this document.</p>
+<p id="_874e8baa-f7c0-44da-819c-d921f0b2ad4f">The date/time format defined in section 5 of this document.</p>
 </dd>
 <dt>Timestamp</dt>
 <dd>
-<p id="_ce6e1f8d-105b-44f8-915c-cb7f34ce458b">This term is used in this document to refer to an
+<p id="_55ff8e28-a163-43e3-a0f9-24225dc890aa">This term is used in this document to refer to an
 unambiguous representation of some instant in time.</p>
 </dd>
 <dt>Z</dt>
 <dd>
-<p id="_ab152532-39be-49d7-882d-8e4b233ea369">A suffix which, when applied to a time, denotes a UTC
+<p id="_79b66436-db10-4094-9c90-aa1805f5139a">A suffix which, when applied to a time, denotes a UTC
 offset of 00:00; often spoken "Zulu" from the ICAO
 phonetic alphabet representation of the letter "Z".</p>
 </dd>
 <dt>Time Zone</dt>
 <dd>
-<p id="_ae9e742e-4e34-434f-9b45-64ba5ac5fd34">A time zone that is a included in the Time Zone Database
+<p id="_56e69185-674e-464c-8306-5ac75dfe5bb9">A time zone that is a included in the Time Zone Database
 (often called <tt>tz</tt> or <tt>zoneinfo</tt>) maintained by IANA.</p>
 </dd>
 <dt>Calendar</dt>
 <dd>
-<p id="_4b5a2485-2fc9-422b-8216-d96fe7bea08d">A calendar that is included in the Unicode CLDR data as a valid
+<p id="_2c1f5a63-b9aa-4c6b-b4ed-6ff9ec835a8d">A calendar that is included in the Unicode CLDR data as a valid
 calendar for use in BCP47 language tags.</p>
 </dd>
 </dl>
-<p id="_6ca80013-81cd-4239-ae20-f01fddff3189">For more information about time scales, see Appendix E of <eref type="inline" bibitemid="RFC1305" citeas="RFC 1305"/>,
+<p id="_474673c4-24c5-47dd-b0a6-7648dd3b58b7">For more information about time scales, see Appendix E of <eref type="inline" bibitemid="RFC1305" citeas="RFC 1305"/>,
 Section 3 of <eref type="inline" bibitemid="ISO8601" citeas="ISO 8601:1988"/>, and the appropriate ITU documents (ITU-R-TF).</p></clause>
-<clause id="two-digit-years" inline-header="false" obligation="normative"><title>Two Digit Years</title><p id="_bde7f925-bab0-4d53-aaed-388d679bae61">The use of 2 (and 3) digit years was allowed but deprecated in
+<clause id="two-digit-years" inline-header="false" obligation="normative"><title>Two Digit Years</title><p id="_39594dde-bcc9-4f14-a57f-c46c4c19a12d">The use of 2 (and 3) digit years was allowed but deprecated in
 <eref type="inline" bibitemid="RFC3339" citeas="RFC 3339"/>, the predecessor of this document.</p>
-<p id="_6fe55e4c-8e68-4ebf-ac2e-7ea1e881c0ba">The use of such a format is no longer allowed, and implementations should
+<p id="_d4441984-af52-46c1-9619-5688a317a3bb">The use of such a format is no longer allowed, and implementations should
 use either a standard 4-digit year or the extended 6-digit value with a
 sign.</p></clause>
 <clause id="local-time" inline-header="false" obligation="normative"><title>Local Time</title><clause id="_coordinated_universal_time_utc" inline-header="false" obligation="normative">
 <title>Coordinated Universal Time (UTC)</title>
-<p id="_4593142c-0493-4e8a-89ee-e51946182449">Because the daylight saving rules for local time zones are so
+<p id="_086b4752-08b7-4eb8-8b0f-2643d1837c41">Because the daylight saving rules for local time zones are so
 convoluted and can change based on local law at unpredictable times,
 true interoperability is best achieved by using Coordinated Universal
 Time (UTC). This specification by itself does not cater to local
@@ -212,31 +212,31 @@ time zone rules. However, certain implementations may be expected to.
 For these situations, a timestamp may additionally include a local time
 zone that the implementations can take into account.</p>
 </clause>
-<clause id="_local_offsets" inline-header="false" obligation="normative"><title>Local Offsets</title><p id="_6f7011b6-eb5b-4119-938f-e43b42362ad6">The offset between local time and UTC is often useful information.
+<clause id="_local_offsets" inline-header="false" obligation="normative"><title>Local Offsets</title><p id="_acd06649-c5d5-4a2a-b2ed-6ebf051ce7f7">The offset between local time and UTC is often useful information.
 For example, in electronic mail (RFC2822, <eref type="inline" bibitemid="RFC2822" citeas="RFC 2822"/>) the local
 offset provides a useful heuristic to determine the probability of a
 prompt response. Attempts to label local offsets with alphabetic
 strings have resulted in poor interoperability in the past <eref type="inline" bibitemid="RFC1123" citeas="RFC 1123"/>.
 As a result, RFC2822 <eref type="inline" bibitemid="RFC2822" citeas="RFC 2822"/> has made numeric offsets mandatory.</p>
-<p id="_8e42dd58-3979-4c8e-8efb-1bd34a1f0486">Numeric offsets are calculated as "local time minus UTC".  So the
+<p id="_5e9a5a89-a843-4fde-aa53-570143b2abb6">Numeric offsets are calculated as "local time minus UTC".  So the
 equivalent time in UTC can be determined by subtracting the offset
 from the local time. For example, <tt>18:50:00-04:00</tt> is the same time as
 <tt>22:50:00Z</tt>. (This example shows negative offsets handled by adding
 the absolute value of the offset.)</p>
-<p id="_e43604ad-b3c4-4d72-866c-210988d9a28b">Numeric offsets may differ from UTC by any number of seconds, or even a
+<p id="_c812437e-435e-42b0-99f3-5717b1e63e66">Numeric offsets may differ from UTC by any number of seconds, or even a
 fraction of seconds. This can be easily represented by including an
 optional seconds value in the offset, which may further optionally include
 a fraction of seconds behind a decimal point, for example <tt>+12:34:56.789</tt>.
 This is especially useful in the case of certain historical time zones.</p></clause>
 <clause id="_unknown_local_offset_convention" inline-header="false" obligation="normative">
 <title>Unknown Local Offset Convention</title>
-<p id="_bec5025d-11f4-461c-a1e2-7dfd9688604f">If the time in UTC is known, but the offset to local time is unknown,
+<p id="_09e45aec-4f5a-44f3-9d5f-2b5bc2633ee8">If the time in UTC is known, but the offset to local time is unknown,
 this can be represented with an offset of "-00:00". This differs
 semantically from an offset of "Z" or "+00:00", which imply that UTC
 is the preferred reference point for the specified time. RFC2822
 <eref type="inline" bibitemid="RFC2822" citeas="RFC 2822"/> describes a similar convention for email.</p>
 </clause>
-<clause id="_unqualified_local_time" inline-header="false" obligation="normative"><title>Unqualified Local Time</title><p id="_c03ed46f-19d4-45d7-b218-2eb60c2da4d8">A number of devices currently connected to the Internet run their
+<clause id="_unqualified_local_time" inline-header="false" obligation="normative"><title>Unqualified Local Time</title><p id="_89343d3e-2c2b-4983-a4bf-4d75ed428bd8">A number of devices currently connected to the Internet run their
 internal clocks in local time and are unaware of UTC. While the
 Internet does have a tradition of accepting reality when creating
 specifications, this should not be done at the expense of
@@ -248,26 +248,26 @@ local time, are unaware of the corresponding UTC offset, and depend
 on time synchronization with other Internet systems, MUST use a
 mechanism that ensures correct synchronization with UTC. Some
 suitable mechanisms are:</p>
-<ul id="_57bfafb9-d277-4bed-8682-93f4d4f34855">
+<ul id="_8381559b-d308-4aac-9171-55fdea5e334a">
 <li>
-<p id="_574c8024-b2f2-4143-a0df-5921fac5121a">Use Network Time Protocol <eref type="inline" bibitemid="RFC1305" citeas="RFC 1305"/> to obtain the time in UTC.</p>
+<p id="_4fd8b578-a3f4-4397-b0de-c5adcfaacb0d">Use Network Time Protocol <eref type="inline" bibitemid="RFC1305" citeas="RFC 1305"/> to obtain the time in UTC.</p>
 </li>
 <li>
-<p id="_a665c6b1-ff44-468b-8166-5683f699b2c9">Use another host in the same local time zone as a gateway to the
+<p id="_b94d2d4e-cded-4391-aa87-2fd56f025c9e">Use another host in the same local time zone as a gateway to the
 Internet. This host MUST correct unqualified local times that are
 transmitted to other hosts.</p>
 </li>
 <li>
-<p id="_9a1220f6-a2f9-48fe-bb57-4b40b6658f5e">Prompt the user for the local time zone and daylight saving rule
+<p id="_77d4dc99-2ad3-47ac-b496-e7b2b9dfa861">Prompt the user for the local time zone and daylight saving rule
 settings.</p>
 </li>
 </ul></clause></clause>
-<clause id="date-time-format" inline-header="false" obligation="normative"><title>Date and Time format</title><p id="_ed9f2072-bf6e-4f2c-a97e-482125345127">This section discusses desirable qualities of date and time formats
+<clause id="date-time-format" inline-header="false" obligation="normative"><title>Date and Time format</title><p id="_6830ea51-8a91-435a-803b-b0a66dc8157d">This section discusses desirable qualities of date and time formats
 and defines a format that extends the profile of ISO 8601 for use in
 Internet protocols.</p>
 <clause id="_ordering" inline-header="false" obligation="normative">
 <title>Ordering</title>
-<p id="_8108608a-a991-4f0d-a13d-d6f771e3a087">If date and time components are ordered from least precise to most
+<p id="_8e75b6ad-df40-445e-a5da-75bda5bdf96e">If date and time components are ordered from least precise to most
 precise, then a useful property is achieved. Assuming that the time
 zones of the dates and times are the same (e.g., all in UTC),
 expressed using the same string (e.g., all "Z" or all "+00:00"), all
@@ -277,7 +277,7 @@ sorted as strings (e.g., using the <tt>strcmp()</tt> function in C) and a
 time-ordered sequence will result. The presence of optional punctuation
 would violate this characteristic.</p>
 </clause>
-<clause id="_human_readability" inline-header="false" obligation="normative"><title>Human Readability</title><p id="_14ab0e16-ed3a-4b2e-9d7c-65a2bdf4d497">Human readability has proved to be a valuable feature of Internet
+<clause id="_human_readability" inline-header="false" obligation="normative"><title>Human Readability</title><p id="_4f09e82b-ef44-4ca1-808b-e6ed64380b28">Human readability has proved to be a valuable feature of Internet
 protocols. Human readable protocols greatly reduce the costs of
 debugging since telnet often suffices as a test client and network
 analyzers need not be modified with knowledge of the protocol. On
@@ -291,14 +291,14 @@ letter abbreviations to other languages or substituted date formats
 which were easier to generate (e.g. the format used by the C function
 <tt>ctime</tt>). For this reason, a balance must be struck between human
 readability and interoperability.</p>
-<p id="_c5b16822-8d13-4da4-a858-10092ee39747">Because no date and time format is readable according to the
+<p id="_252d2744-af3f-4382-a8fa-050e3b65c55a">Because no date and time format is readable according to the
 conventions of all countries, Internet clients SHOULD be prepared to
 transform dates into a display format suitable for the locality.
 This may include translating UTC to local time as well as converting
 from the Gregorian calendar to the viewer's preferred calendar.</p></clause>
 <clause id="_rarely_used_options" inline-header="false" obligation="normative">
 <title>Rarely Used Options</title>
-<p id="_d002da8f-d8ec-4e82-8596-66e6545127e4">A format which includes rarely used options is likely to cause
+<p id="_472cecce-7bcc-48e4-a7b2-4b4c8ee8414f">A format which includes rarely used options is likely to cause
 interoperability problems. This is because rarely used options are
 less likely to be used in alpha or beta testing, so bugs in parsing
 are less likely to be discovered. Rarely used options should be made
@@ -307,7 +307,7 @@ possible.</p>
 </clause>
 <clause id="_redundant_information" inline-header="false" obligation="normative">
 <title>Redundant Information</title>
-<p id="_cbcfe0ea-2766-4921-bf14-7d964a3c39f2">If a date/time format includes redundant information, that introduces
+<p id="_4d429f7a-cbd5-4ba7-896f-7741498ba06d">If a date/time format includes redundant information, that introduces
 the possibility that the redundant information will not correlate.
 For example, including the day of the week in a date/time format
 introduces the possibility that the day of week is incorrect but the
@@ -315,7 +315,7 @@ date is correct, or vice versa. Since it is not difficult to compute
 the day of week from a date (see <xref target="annexA"/>), the day of week should
 not be included in a date/time format.</p>
 </clause>
-<clause id="_simplicity" inline-header="false" obligation="normative"><title>Simplicity</title><p id="_a5db9f05-ab52-46d3-974f-74df7cd704b0">The complete set of date and time formats specified in ISO 8601
+<clause id="_simplicity" inline-header="false" obligation="normative"><title>Simplicity</title><p id="_21e9fa2d-e65b-4366-9306-0e987a5f04ba">The complete set of date and time formats specified in ISO 8601
 <eref type="inline" bibitemid="ISO8601" citeas="ISO 8601:1988"/> is quite complex in an attempt to provide multiple
 representations and partial representations. Internet protocols have
 somewhat different requirements and simplicity has proved to be an
@@ -323,14 +323,14 @@ important characteristic. In addition, Internet protocols usually need
 complete specification of data in order to achieve true interoperability.
 Therefore, the complete grammar for ISO 8601 is deemed too complex for
 most Internet protocols.</p>
-<p id="_1ea60b55-2e1a-47df-80b8-f61a3003f1af">The following section defines a format that in an extension of a profile
+<p id="_b89ff436-182e-49e2-a208-c8b579401df0">The following section defines a format that in an extension of a profile
 of ISO 8601 for use on the Internet. It is a conformant subset of the ISO
 8601 extended format with additional information optionally suffixed.
 Simplicity is achieved by making most fields and punctuation mandatory.</p></clause>
-<clause id="_internet_datetime_format" inline-header="false" obligation="normative"><title>Internet Date/Time Format</title><p id="_e68b0c9e-8b3b-4b48-b7b9-cb638718f11b">The following extension of a profile of <eref type="inline" bibitemid="ISO8601" citeas="ISO 8601:1988"/> dates SHOULD be
+<clause id="_internet_datetime_format" inline-header="false" obligation="normative"><title>Internet Date/Time Format</title><p id="_4737df79-8eed-42d9-9193-5fc1c0f901a1">The following extension of a profile of <eref type="inline" bibitemid="ISO8601" citeas="ISO 8601:1988"/> dates SHOULD be
 used in new protocols on the Internet. This is specified using the
 syntax description notation defined in <eref type="inline" bibitemid="RFC2234" citeas="RFC 2234"/>.</p>
-<sourcecode id="_b280da96-8c10-48d9-9c5d-4525156ee45f" unnumbered="true">date-year      = 4DIGIT / ("+" / "-") 6DIGIT
+<sourcecode id="_3bc95252-5017-4cee-95e0-0526ec8af1eb" unnumbered="true">date-year      = 4DIGIT / ("+" / "-") 6DIGIT
 date-month     = 2DIGIT ; 01-12
 date-mday      = 2DIGIT ; 01-28, 01-29, 01-30, 01-31 based on month/year
 date-full      = date-year "-" date-month "-" date-mday
@@ -344,7 +344,8 @@ time-numoffset = ("+" / "-") time-partial
 time-offset    = "Z" / time-numoffset
 time-full      = time-partial time-offset
 
-time-zone-part = (ALPHA / "." / "_") *13(ALPHA / "." / "_" / "-") ; but not "." or ".."
+time-zone-char = ALPHA / "." / "_"
+time-zone-part = time-zone-char *13(time-zone-char / DIGIT / "-" / "+") ; but not "." or ".."
 time-zone-id   = time-zone-part *("/" time-zone-part)
 time-zone      = "[" time-zone-id "]"
 
@@ -357,27 +358,27 @@ suffix         = [time-zone] [calendar] *suffix-part
 
 date-time      = date-full "T" time-full suffix</sourcecode>
 
-<note id="_7a51d4d4-552f-44f8-ba55-94a700bd683d">
-<p id="_d3b0ffb2-3069-4545-8482-2af753d6d94b">Per <eref type="inline" bibitemid="RFC2234" citeas="RFC 2234"/> and ISO8601, the "T" and "Z" characters in this
+<note id="_4609a91c-77a4-4928-a177-c72f1dea0392">
+<p id="_e932ba53-36f1-4a8b-9356-219bfba2b31a">Per <eref type="inline" bibitemid="RFC2234" citeas="RFC 2234"/> and ISO8601, the "T" and "Z" characters in this
 syntax may alternatively be lower case "t" or "z" respectively.</p>
 </note>
-<p id="_3dfd7ec4-3b36-460b-a507-a126dafc3bfb">This date/time format may be used in some environments or contexts
+<p id="_14f6c8a5-5c47-413d-9150-9cf814822015">This date/time format may be used in some environments or contexts
 that distinguish between the upper- and lower-case letters 'A'-'Z'
 and 'a'-'z' (e.g. XML). Specifications that use this format in
 such environments MAY further limit the date/time syntax so that
 the letters 'T' and 'Z' used in the date/time syntax must always
 be upper case. Applications that generate this format SHOULD use
 upper case letters.</p>
-<note id="_fedf180d-2225-4237-ab59-061933806d2b">
-<p id="_e09084b6-f495-4047-a799-ea0d15e4c0b4">ISO 8601 defines date and time separated by "T".
+<note id="_fb6a542b-c6fd-45f6-83b2-2f299fb045f8">
+<p id="_3e15e059-7f86-4fef-8724-da0b03c4e9d0">ISO 8601 defines date and time separated by "T".
 Applications using this syntax may choose, for the sake of
 readability, to specify a full-date and full-time separated by
 (say) a space character.</p>
 </note></clause>
-<clause id="restrictions" inline-header="false" obligation="normative"><title>Restrictions</title><p id="_6ef67c2a-6c6c-4c81-86b9-64677621a5be">The grammar element date-mday represents the day number within the
+<clause id="restrictions" inline-header="false" obligation="normative"><title>Restrictions</title><p id="_aecb0507-73e0-4bf7-b97b-79139f91bb9b">The grammar element date-mday represents the day number within the
 current month. The maximum value varies based on the month and year
 as follows:</p>
-<table id="_9d4d3a3b-097f-4037-9acc-388d050bae23">
+<table id="_215e9392-ea56-4188-a4ff-164d6e6ebb3e">
 <name>Days in each month</name>
 <thead>
 <tr>
@@ -454,9 +455,9 @@ as follows:</p>
 </tr>
 </tbody>
 </table>
-<p id="_e748e254-b2ab-408b-92a1-8840ba41a8f7"><xref target="annexB"/> contains sample C code to determine if a year is a leap
+<p id="_31e43abd-ae47-43b7-bb83-452b4368619d"><xref target="annexB"/> contains sample C code to determine if a year is a leap
 year.</p>
-<p id="_c0d90daa-0f1a-420e-84ca-7567cf9d2423">The grammar element time-second may have the value "60" at the end of
+<p id="_d9734af8-1b7b-4846-8df2-e49e491caf61">The grammar element time-second may have the value "60" at the end of
 months in which a leap second occurs — to date: June (XXXX-06-
 30T23:59:60Z) or December (XXXX-12-31T23:59:60Z); see <xref target="annexC"/> for
 a table of leap seconds. It is also possible for a leap second to be
@@ -465,62 +466,62 @@ At all other times the maximum value of time-second is "59".
 Further, in time zones other than "Z", the leap second point is
 shifted by the zone offset (so it happens at the same instant around
 the globe).</p>
-<p id="_865624a1-6703-4525-9f8f-fc2b5e000b5f">Leap seconds cannot be predicted far into the future. The
+<p id="_a19d0d96-0d90-4aa3-b4fb-e9520253c9af">Leap seconds cannot be predicted far into the future. The
 International Earth Rotation Service publishes bulletins (IERS) that
 announce leap seconds with a few weeks' warning. Applications should
 not generate timestamps involving inserted leap seconds until after
 the leap seconds are announced.</p>
-<p id="_442424e9-c0b8-4f4e-8eef-5a635f4b02fa">Although ISO 8601 permits the hour to be "24", this extension of a profile
+<p id="_da8b333d-53be-4064-9ff7-6e8154d01d11">Although ISO 8601 permits the hour to be "24", this extension of a profile
 of ISO 8601 only allows values between "00" and "23" for the hour in order
 to reduce confusion.</p></clause>
-<clause id="date-time-examples" inline-header="false" obligation="normative"><title>Examples</title><p id="_f0943741-30c4-4ae4-ae75-908d85a56b07">Here are some examples of Internet date/time format.</p>
-<sourcecode id="_45e36449-a7b6-49ba-8c9a-a27efcc60324" unnumbered="true">1985-04-12T23:20:50.52Z</sourcecode>
+<clause id="date-time-examples" inline-header="false" obligation="normative"><title>Examples</title><p id="_2f50df57-937f-4141-b180-f0098dd03496">Here are some examples of Internet date/time format.</p>
+<sourcecode id="_053012b0-8de8-4481-b77b-d4f01c4d55b4" unnumbered="true">1985-04-12T23:20:50.52Z</sourcecode>
 
-<p id="_947537a7-7d9f-4fcc-81c9-444c09c780f6">This represents 20 minutes and 50.52 seconds after the 23rd hour of
+<p id="_c360d95a-808a-4446-a0cb-9225a06114a0">This represents 20 minutes and 50.52 seconds after the 23rd hour of
 April 12th, 1985 in UTC.</p>
-<sourcecode id="_00324086-9c73-47b0-ba00-00e0bfbed400" unnumbered="true">+001985-04-12T23:20:50.52Z</sourcecode>
+<sourcecode id="_92d5d0cf-6731-4ff3-a15a-870c76059ef3" unnumbered="true">+001985-04-12T23:20:50.52Z</sourcecode>
 
-<p id="_8f78a0b6-bef8-44ce-a414-a28a685fb873">This represents the same instant as the previous example but with the
+<p id="_8819c951-6153-4cb3-bd1b-a26263301566">This represents the same instant as the previous example but with the
 expanded 6-digit year format.</p>
-<sourcecode id="_6d93579c-f315-470b-8a2d-7aa7ed2a9a6c" unnumbered="true">1996-12-19T16:39:57-08:00</sourcecode>
+<sourcecode id="_237d2099-8745-4695-9321-07e598c41ee6" unnumbered="true">1996-12-19T16:39:57-08:00</sourcecode>
 
-<p id="_1f360bbf-18e3-41cb-acf3-f8b2d9dc4e73">This represents 39 minutes and 57 seconds after the 16th hour of
+<p id="_5fb59095-ddb8-4614-a3bd-a6ddf38a77b3">This represents 39 minutes and 57 seconds after the 16th hour of
 December 19th, 1996 with an offset of -08:00 from UTC (Pacific
 Standard Time). Note that this is equivalent to 1996-12-20T00:39:57Z
 in UTC.</p>
-<sourcecode id="_f5b1393c-5558-4e6a-80ae-f56e71f87f22" unnumbered="true">1996-12-19T16:39:57-08:00[America/Los_Angeles]</sourcecode>
+<sourcecode id="_d1ee82dd-8ca6-42bd-b160-8e9c7ce11126" unnumbered="true">1996-12-19T16:39:57-08:00[America/Los_Angeles]</sourcecode>
 
-<p id="_b6c3abeb-f61f-410a-be85-7b5a08b1677b">This represents the exact same instant as the previous example but
+<p id="_f16356ff-3432-4ff9-837e-f49dc153d93e">This represents the exact same instant as the previous example but
 additionally specifies the human time zone associated with it for
 time zone aware implementations to take into account.</p>
-<sourcecode id="_ce8a288e-cd8e-4906-98e2-30ebff08ed54" unnumbered="true">1990-12-31T23:59:60Z</sourcecode>
+<sourcecode id="_a8784401-1cf8-4e5e-aa03-e1fce8af8a7f" unnumbered="true">1990-12-31T23:59:60Z</sourcecode>
 
-<p id="_92b5d558-b2de-48db-932d-771f1a60ab34">This represents the leap second inserted at the end of 1990.</p>
-<sourcecode id="_d68c2d0e-b7c8-4a84-af1f-b8f0708073c3" unnumbered="true">1990-12-31T15:59:60-08:00</sourcecode>
+<p id="_73934d02-264f-417b-be2b-d311d0846f70">This represents the leap second inserted at the end of 1990.</p>
+<sourcecode id="_d3f1d6d5-9303-4959-9b90-dd433cb7f81b" unnumbered="true">1990-12-31T15:59:60-08:00</sourcecode>
 
-<p id="_c2c16583-da31-4275-8c96-a45176e3590c">This represents the same leap second in Pacific Standard Time, 8
+<p id="_097dfc35-6792-4536-bfc7-41031c5e6bf0">This represents the same leap second in Pacific Standard Time, 8
 hours behind UTC.</p>
-<sourcecode id="_f31e8378-4509-40ee-8acf-08e6eac88cbf" unnumbered="true">1937-01-01T12:00:27.87+00:19:32.130</sourcecode>
+<sourcecode id="_05319d4a-a931-4c88-a949-49fad90857b1" unnumbered="true">1937-01-01T12:00:27.87+00:19:32.130</sourcecode>
 
-<p id="_192bafe7-203d-4541-a110-9536109be2c2">This represents the same instant of time as noon, January 1, 1937,
+<p id="_aa6ca5fe-0e96-406a-8167-ee62f2bad966">This represents the same instant of time as noon, January 1, 1937,
 Netherlands time. Standard time in the Netherlands was exactly 19
 minutes and 32.13 seconds ahead of UTC by law from 1909-05-01 through
 1937-06-30.</p>
-<sourcecode id="_0424fee8-1cc3-46db-a1a6-441ec26818bd" unnumbered="true">1937-01-01T12:00:27.87+00:19:32.130[c=japanese]</sourcecode>
+<sourcecode id="_df6f01fd-6836-4a2b-92ae-8dedc0ebbaf8" unnumbered="true">1937-01-01T12:00:27.87+00:19:32.130[c=japanese]</sourcecode>
 
-<p id="_8f9b9d4f-ae62-4697-afca-9b0f86fee4d2">This represents the exact same instant as the previous example but
+<p id="_fcc18c88-b133-4f22-84da-c3094924a3c6">This represents the exact same instant as the previous example but
 additionally specifies the human calendar associated with it for
 calendar aware implementations to take into account.</p>
-<sourcecode id="_0ed73b1e-bb54-4bc9-a16f-2b370013752d" unnumbered="true">1937-01-01T12:00:27.87+00:19:32.130[foo=bar][baz=bat]</sourcecode>
+<sourcecode id="_64d3a343-cfc4-417b-b805-3adb79be0cd0" unnumbered="true">1937-01-01T12:00:27.87+00:19:32.130[foo=bar][baz=bat]</sourcecode>
 
-<p id="_bcfb7657-85a6-4f3f-8f00-4794a09f6af4">This timestamp utilizes the generalized format to declare two additional
+<p id="_289f9bc2-059d-4980-ba5e-56d17aee568a">This timestamp utilizes the generalized format to declare two additional
 pieces of information in the suffix that can be interpreted by any
 compatible implementations and ignored otherwise.</p></clause></clause>
 
 
 <clause id="security" inline-header="false" obligation="normative">
 <title>Security Considerations</title>
-<p id="_20f6edc2-f167-4d4d-9783-a7418a31fc24">Since the local time zone of a site may be useful for determining a
+<p id="_06ab6dda-7d09-4ef0-9c63-01936dab35a1">Since the local time zone of a site may be useful for determining a
 time when systems are less likely to be monitored and might be more
 susceptible to a security probe, some sites may wish to emit times in
 UTC only. Others might consider this to be loss of useful
@@ -528,10 +529,10 @@ functionality at the hands of paranoia.</p>
 </clause>
 
 
-</sections><annex id="annexA" inline-header="false" obligation="normative"><title>Day of the Week</title><p id="_abdcff1a-09bc-4197-8ef8-4caacafbaa0f">The following is a sample C subroutine loosely based on Zeller's
+</sections><annex id="annexA" inline-header="false" obligation="normative"><title>Day of the Week</title><p id="_c00e0681-727d-43eb-9ee7-70c5239fc344">The following is a sample C subroutine loosely based on Zeller's
 Congruence (ZELLER) which may be used to obtain the day of the week
 for dates on or after 0000-03-01:</p>
-<sourcecode lang="c" id="_3c91453b-37c6-4e2d-82d1-f518ce598422">char *day_of_week(int day, int month, int year)
+<sourcecode lang="c" id="_d066da21-af7b-4a40-bf1d-9a62d9c7ec79">char *day_of_week(int day, int month, int year)
 {
     int cent;
     char *dayofweek[] = {
@@ -551,36 +552,36 @@ for dates on or after 0000-03-01:</p>
     return (dayofweek[((26 * month - 2) / 10 + day + year
                     + year / 4 + cent / 4 + 5 * cent) % 7]);
 }</sourcecode>
-</annex><annex id="annexB" inline-header="false" obligation="normative"><title>Leap Years</title><p id="_7729fc58-cc2a-4c76-a023-1000949a8b90">Here is a sample C subroutine to calculate if a year is a leap year:</p>
-<sourcecode lang="c" id="_06314671-db74-43ce-8449-9d1e87230d6a">/* This returns non-zero if year is a leap year.  Must use 4 digit
+</annex><annex id="annexB" inline-header="false" obligation="normative"><title>Leap Years</title><p id="_c29d0e69-3bc5-4272-bb9a-24b222fa7d8c">Here is a sample C subroutine to calculate if a year is a leap year:</p>
+<sourcecode lang="c" id="_1492f7d3-d092-4dc0-abfd-34264018f8c7">/* This returns non-zero if year is a leap year.  Must use 4 digit
     year.
 */
 int leap_year(int year)
 {
     return (year % 4 == 0 &amp;&amp; (year % 100 != 0 || year % 400 == 0));
 }</sourcecode>
-</annex><annex id="annexC" inline-header="false" obligation="normative"><title>Leap Seconds</title><p id="_b659cd73-8983-4580-a2fc-78eedab0fa83">Information about leap seconds can be found at the
+</annex><annex id="annexC" inline-header="false" obligation="normative"><title>Leap Seconds</title><p id="_23f42d48-47a0-4c51-9727-49631e608942">Information about leap seconds can be found at the
 <link target="https://www.usno.navy.mil/USNO/time/master-clock/leap-seconds">US Navy Oceanography Portal</link>.
 In particular, it notes that:</p>
-<quote id="_7feb893b-c594-4892-9e75-2b3ba7bbadf8">
-<p id="_347adfb3-7403-4b39-92b2-795778f6a7ab">The decision to introduce a leap second in UTC is the
+<quote id="_dbf66502-69ef-4981-a170-63941bf4be24">
+<p id="_62311c17-ad03-4643-8fcd-2d8ed8d840c4">The decision to introduce a leap second in UTC is the
 responsibility of the International Earth Rotation Service (IERS).
 According to the CCIR Recommendation, first preference is given to
 the opportunities at the end of December and June, and second
 preference to those at the end of March and September.</p>
 </quote>
-<p id="_9a1130dd-36bd-4545-884f-f14f855917cf">When required, insertion of a leap second occurs as an extra second
+<p id="_8a605953-7bd9-455f-b2ff-9646226e1787">When required, insertion of a leap second occurs as an extra second
 at the end of a day in UTC, represented by a timestamp of the form
 YYYY-MM-DDT23:59:60Z.  A leap second occurs simultaneously in all
 time zones, so that time zone relationships are not affected.  See
 section <xref target="date-time-examples"/> for some examples of leap second times.</p>
-<p id="_c1db1139-4841-4b9f-be25-04f1bb5fe927">The following table is an excerpt from the table maintained by the
+<p id="_c6778b7a-9a9c-4cc9-929d-cf6ad95ca3a6">The following table is an excerpt from the table maintained by the
 United States Naval Observatory. The source data is located at the
 <link target="ftp://maia.usno.navy.mil/ser7/tai-utc.dat">US Navy Oceanography Portal</link>.</p>
-<p id="_d07fe085-6f44-42df-a9fe-05d8454f8222">This table shows the date of the leap second, and the difference
+<p id="_075a6693-6337-4bf3-b308-0255cc6a4a47">This table shows the date of the leap second, and the difference
 between the time standard TAI (which isn't adjusted by leap seconds)
 and UTC after that leap second.</p>
-<table id="_33e8112a-46c2-4e4b-acfd-f7ff34ef4588">
+<table id="_4148be23-35f6-44ab-8d4c-26ab143dd877">
 <name>Historic leap seconds</name>
 <thead>
 <tr>
