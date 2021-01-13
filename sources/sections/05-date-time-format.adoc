@@ -84,14 +84,22 @@ of ISO 8601 for use on the Internet. It is a conformant subset of the ISO
 8601 extended format with additional information optionally suffixed.
 Simplicity is achieved by making most fields and punctuation mandatory.
 
+=== Informative
+
+The format should allow implementations to specify additional important
+information in addition to the bare timestamp. This is done by allowing
+implementations to include an informative suffix at the end with as many
+tags as required, each with a hyphen separated key and value. The value
+can be a hyphen delimited list of multiple values.
+
 === Namespaces
 
-Since the format can include all sorts of additional information in the suffix,
+Since the suffix can include all sorts of additional information,
 different standards bodies/organizations need a way to identify which part
-adheres to their standards. For this, all information needs to be namespaced.
-All information is therefore divided into three hyphen-separated sections: the
-namespace, the key and the value. For example, the calendar as defined by the
-Unicode consortium could be included as `u-ca-chinese`.
+adheres to their standards. For this, all information needs to be
+namespaced. Each key is therefore divided into two hyphen-separated
+sections: the namespace and the key. For example, the calendar as defined
+by the Unicode consortium could be included as `u-ca-<value>`.
 
 Currently, two namespaces are supported:
 
@@ -275,6 +283,15 @@ minutes and 32.13 seconds ahead of UTC by law from 1909-05-01 through
 This represents the exact same instant as the previous example but
 additionally specifies the human calendar associated with it for
 calendar aware implementations to take into account.
+
+[%unnumbered]
+----
+1937-01-01T12:00:27.87+00:19:32.130[u-ca-islamic-civil]
+----
+
+Since there's not a single agreed upon way to deal with dates in the
+Islamic calendar, it provides another value to disambiguate between the
+different interpretations.
 
 [%unnumbered]
 ----
