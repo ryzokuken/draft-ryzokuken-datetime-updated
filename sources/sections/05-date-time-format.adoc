@@ -139,8 +139,10 @@ calendar-part  = 3*8(ALPHA / DIGIT)
 calendar-id    = calendar-part *("-" calendar-part)
 calendar       = "[u-ca-" calendar-id "]"
 
-suffix-part    = "[" ALPHA "-" 2*ALPHA "-" 1*VCHAR "]"
-suffix         = [timezone] [calendar] *suffix-part
+suffix-key     = 1*ALPHA "-" 2*ALPHA
+suffix-value   = 1*VCHAR *("-" 1*VCHAR)
+suffix-tag     = "[" suffix-key "-" suffix-value "]"
+suffix         = [timezone] [calendar] *suffix-tag
 
 date-time      = date-full "T" time-full suffix
 ----
