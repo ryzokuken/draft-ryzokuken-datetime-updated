@@ -8,6 +8,9 @@
 * [[[RFC1123,RFC 1123]]]
 * [[[RFC1305,RFC 1305]]]
 * [[[RFC2119,RFC 2119]]]
+* [[[RFC5646,RFC 5646]]]
+* [[[RFC2026,RFC 2026]]]
+* [[[RFC2028,RFC 2028]]]
 
 [bibliography]
 == Informative References
