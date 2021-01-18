@@ -9,11 +9,7 @@ Internet protocols.
 
 This document includes an extension to an Internet profile of the
 <<ISO8601>> standard for representation of dates and times using the
-proleptic Gregorian calendar alongside any additional information. Any
-dates and times that are required to be handled in a different calendar
-system need to include the ID of the calendar which can be handle by
-the implementations approximately. In the absence of a calendar ID, the
-proleptic Gregorian calendar system is assumed.
+proleptic Gregorian calendar alongside any additional information.
 
 There are many ways in which date and time values might appear in
 Internet protocols:  this document focuses on just one common usage,

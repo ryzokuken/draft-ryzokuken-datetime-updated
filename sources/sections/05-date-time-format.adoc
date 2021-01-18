@@ -240,14 +240,10 @@ time-zone-part = time-zone-char *13(time-zone-char / DIGIT / "-" / "+") ; but no
 time-zone-id   = time-zone-part *("/" time-zone-part)
 time-zone      = "[" time-zone-id "]"
 
-calendar-part  = 3*8alphanum
-calendar-id    = calendar-part *("-" calendar-part)
-calendar       = "[u-ca-" calendar-id "]"
-
 suffix-key     = 1*alphanum "-" 2*alphanum
 suffix-value   = 1*VCHAR *("-" 1*VCHAR)
 suffix-tag     = "[" suffix-key "-" suffix-value "]"
-suffix         = [timezone] [calendar] *suffix-tag
+suffix         = [timezone] *suffix-tag
 
 date-time      = date-full "T" time-full suffix
 ----

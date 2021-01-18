@@ -51,10 +51,5 @@ phonetic alphabet representation of the letter "Z".
 Time Zone:: A time zone that is a included in the Time Zone Database
 (often called `tz` or `zoneinfo`) maintained by IANA.
 
-Calendar:: A calendar that is included in the Unicode CLDR data as a valid
-calendar for use in BCP47 language tags.
-
-// TODO: Add references once we fix the referencing situation.
-
 For more information about time scales, see Appendix E of <<RFC1305>>,
 Section 3 of <<ISO8601>>, and the appropriate ITU documents (ITU-R-TF).
