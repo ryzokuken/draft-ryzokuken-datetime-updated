@@ -219,6 +219,8 @@ syntax description notation defined in <<RFC2234>>.
 [[grammar]]
 [source]
 ----
+alphanum       = ALPHA / DIGIT
+
 date-year      = 4DIGIT / ("+" / "-") 6DIGIT
 date-month     = 2DIGIT ; 01-12
 date-mday      = 2DIGIT ; 01-28, 01-29, 01-30, 01-31 based on month/year
@@ -238,11 +240,11 @@ time-zone-part = time-zone-char *13(time-zone-char / DIGIT / "-" / "+") ; but no
 time-zone-id   = time-zone-part *("/" time-zone-part)
 time-zone      = "[" time-zone-id "]"
 
-calendar-part  = 3*8(ALPHA / DIGIT)
+calendar-part  = 3*8alphanum
 calendar-id    = calendar-part *("-" calendar-part)
 calendar       = "[u-ca-" calendar-id "]"
 
-suffix-key     = 1*ALPHA "-" 2*ALPHA
+suffix-key     = 1*alphanum "-" 2*alphanum
 suffix-value   = 1*VCHAR *("-" 1*VCHAR)
 suffix-tag     = "[" suffix-key "-" suffix-value "]"
 suffix         = [timezone] [calendar] *suffix-tag
