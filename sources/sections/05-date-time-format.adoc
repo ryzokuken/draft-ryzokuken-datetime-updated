@@ -103,7 +103,17 @@ sections: the namespace and the key. For example, the calendar as defined
 by the Unicode consortium could be included as `u-ca-<value>`.
 
 All single-character namespaces are reserved for BCP47 extensions recorded
-in the BCP47 extensions registry.
+in the BCP47 extensions registry. For these namespaces:
+
+* Case differences are ignored.
+
+* The namespace is restricted to single alphanum, corresponding to
+extension singletons ('x' can be used for a private use extension).
+
+* In addition, for CLDR extensions:
+** There must be a `namespace-key` and it is restricted to 2 `alphanum`
+characters.
+** A `suffix-value` is limited to `3*8alphanum`.
 
 Multi-character namespaces can be registered specifically for use in this
 format. They are assigned by IANA using the "IETF Review" policy defined
@@ -240,9 +250,13 @@ time-zone-part = time-zone-char *13(time-zone-char / DIGIT / "-" / "+") ; but no
 time-zone-id   = time-zone-part *("/" time-zone-part)
 time-zone      = "[" time-zone-id "]"
 
-suffix-key     = 1*alphanum "-" 2*alphanum
-suffix-value   = 1*VCHAR *("-" 1*VCHAR)
-suffix-tag     = "[" suffix-key "-" suffix-value "]"
+namespace      = 1*alphanum
+namespace-key  = 1*alphanum
+suffix-key     = namespace ["-" namespace-key]
+
+suffix-value   = 1*VCHAR
+suffix-values  = suffix-value *("-" suffix-value)
+suffix-tag     = "[" suffix-key "-" suffix-values "]"
 suffix         = [timezone] *suffix-tag
 
 date-time      = date-full "T" time-full suffix
