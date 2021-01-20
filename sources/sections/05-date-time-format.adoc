@@ -254,7 +254,7 @@ namespace      = 1*alphanum
 namespace-key  = 1*alphanum
 suffix-key     = namespace ["-" namespace-key]
 
-suffix-value   = 1*VCHAR
+suffix-value   = 1*alphanum
 suffix-values  = suffix-value *("-" suffix-value)
 suffix-tag     = "[" suffix-key "-" suffix-values "]"
 suffix         = [timezone] *suffix-tag
