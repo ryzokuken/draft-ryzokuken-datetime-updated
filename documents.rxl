@@ -39,7 +39,7 @@
 This document defines a date and time format for use in Internet
 protocols for representation of dates and times using the proleptic
 Gregorian calendar, with optional extensions representing additional
-information including a time zone and a calendaring system.
+information including a time zone.
 </abstract>
   <status>
     <stage>published</stage>
