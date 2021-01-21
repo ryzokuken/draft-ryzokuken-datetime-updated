@@ -4,9 +4,9 @@
 
 Calendaring Extensions Working Group                           U. Sharma
 Internet-Draft                                              Igalia, S.L.
-Obsoletes: 3339 (if approved)                            20 January 2021
+Obsoletes: 3339 (if approved)                            21 January 2021
 Intended status: Standards Track                                        
-Expires: 24 July 2021
+Expires: 25 July 2021
 
 
  Date and Time on the Internet: Timestamps with additional information
@@ -34,7 +34,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 24 July 2021.
+   This Internet-Draft will expire on 25 July 2021.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Sharma                    Expires 24 July 2021                  [Page 1]
+Sharma                    Expires 25 July 2021                  [Page 1]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Sharma                    Expires 24 July 2021                  [Page 2]
+Sharma                    Expires 25 July 2021                  [Page 2]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -165,7 +165,7 @@ Internet-Draft             Timestamps Extended              January 2021
 
 
 
-Sharma                    Expires 24 July 2021                  [Page 3]
+Sharma                    Expires 25 July 2021                  [Page 3]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -221,7 +221,7 @@ Internet-Draft             Timestamps Extended              January 2021
 
 
 
-Sharma                    Expires 24 July 2021                  [Page 4]
+Sharma                    Expires 25 July 2021                  [Page 4]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -277,7 +277,7 @@ Internet-Draft             Timestamps Extended              January 2021
 
 
 
-Sharma                    Expires 24 July 2021                  [Page 5]
+Sharma                    Expires 25 July 2021                  [Page 5]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -333,7 +333,7 @@ Internet-Draft             Timestamps Extended              January 2021
 
 
 
-Sharma                    Expires 24 July 2021                  [Page 6]
+Sharma                    Expires 25 July 2021                  [Page 6]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -389,7 +389,7 @@ Internet-Draft             Timestamps Extended              January 2021
 
 
 
-Sharma                    Expires 24 July 2021                  [Page 7]
+Sharma                    Expires 25 July 2021                  [Page 7]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -445,7 +445,7 @@ Internet-Draft             Timestamps Extended              January 2021
 
 
 
-Sharma                    Expires 24 July 2021                  [Page 8]
+Sharma                    Expires 25 July 2021                  [Page 8]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -501,7 +501,7 @@ Internet-Draft             Timestamps Extended              January 2021
 
 
 
-Sharma                    Expires 24 July 2021                  [Page 9]
+Sharma                    Expires 25 July 2021                  [Page 9]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -557,7 +557,7 @@ Internet-Draft             Timestamps Extended              January 2021
 
 
 
-Sharma                    Expires 24 July 2021                 [Page 10]
+Sharma                    Expires 25 July 2021                 [Page 10]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -593,7 +593,7 @@ Internet-Draft             Timestamps Extended              January 2021
    namespace-key  = 1*alphanum
    suffix-key     = namespace ["-" namespace-key]
 
-   suffix-value   = 1*VCHAR
+   suffix-value   = 1*alphanum
    suffix-values  = suffix-value *("-" suffix-value)
    suffix-tag     = "[" suffix-key "-" suffix-values "]"
    suffix         = [timezone] *suffix-tag
@@ -613,7 +613,7 @@ Internet-Draft             Timestamps Extended              January 2021
 
 
 
-Sharma                    Expires 24 July 2021                 [Page 11]
+Sharma                    Expires 25 July 2021                 [Page 11]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -669,7 +669,7 @@ Internet-Draft             Timestamps Extended              January 2021
 
 
 
-Sharma                    Expires 24 July 2021                 [Page 12]
+Sharma                    Expires 25 July 2021                 [Page 12]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -725,7 +725,7 @@ Internet-Draft             Timestamps Extended              January 2021
 
 
 
-Sharma                    Expires 24 July 2021                 [Page 13]
+Sharma                    Expires 25 July 2021                 [Page 13]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -781,7 +781,7 @@ Internet-Draft             Timestamps Extended              January 2021
 
 
 
-Sharma                    Expires 24 July 2021                 [Page 14]
+Sharma                    Expires 25 July 2021                 [Page 14]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -837,7 +837,7 @@ Internet-Draft             Timestamps Extended              January 2021
 
 
 
-Sharma                    Expires 24 July 2021                 [Page 15]
+Sharma                    Expires 25 July 2021                 [Page 15]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -893,7 +893,7 @@ Appendix A.  Day of the Week
 
 
 
-Sharma                    Expires 24 July 2021                 [Page 16]
+Sharma                    Expires 25 July 2021                 [Page 16]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -949,7 +949,7 @@ Appendix C.  Leap Seconds
 
 
 
-Sharma                    Expires 24 July 2021                 [Page 17]
+Sharma                    Expires 25 July 2021                 [Page 17]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -1005,7 +1005,7 @@ Internet-Draft             Timestamps Extended              January 2021
 
 
 
-Sharma                    Expires 24 July 2021                 [Page 18]
+Sharma                    Expires 25 July 2021                 [Page 18]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -1061,4 +1061,4 @@ Author's Address
 
 
 
-Sharma                    Expires 24 July 2021                 [Page 19]
+Sharma                    Expires 25 July 2021                 [Page 19]
