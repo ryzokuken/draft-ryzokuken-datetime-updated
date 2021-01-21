@@ -93,6 +93,9 @@ implementations to include an informative suffix at the end with as many
 tags as required, each with a hyphen separated key and value. The value
 can be a hyphen delimited list of multiple values.
 
+In case a key is repeated or conflicted, the implementations should give
+precedence to whichever value is positioned first.
+
 === Namespaced
 
 Since the suffix can include all sorts of additional information,
