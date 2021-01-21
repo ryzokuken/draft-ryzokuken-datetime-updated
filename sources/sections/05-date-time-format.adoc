@@ -372,6 +372,14 @@ time zone aware implementations to take into account.
 
 [%unnumbered]
 ----
+1996-12-19T16:39:57-08:00[America/Los_Angeles][u-ca-hebrew]
+----
+
+This represents the exact same instant but it informs calendar-aware
+implementations that they should project it to the Hebrew calendar.
+
+[%unnumbered]
+----
 1990-12-31T23:59:60Z
 ----
 
