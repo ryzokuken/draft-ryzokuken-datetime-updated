@@ -418,7 +418,7 @@ different interpretations.
 1937-01-01T12:00:27.87+00:19:32.130[x-foo-bar][x-baz-bat]
 ----
 
-This timestamp utilizes the generalized format to declare two additional
+This timestamp utilizes the private use namespace to declare two additional
 pieces of information in the suffix that can be interpreted by any
 compatible implementations and ignored otherwise.
 
