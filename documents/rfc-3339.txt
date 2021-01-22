@@ -10,7 +10,7 @@ Expires: 26 July 2021
 
 
  Date and Time on the Internet: Timestamps with additional information
-                  draft-ryzokuken-datetime-extended-00
+                  draft-ryzokuken-datetime-extended-01
 
 Abstract
 
