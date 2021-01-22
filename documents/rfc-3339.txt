@@ -4,9 +4,9 @@
 
 Calendaring Extensions Working Group                           U. Sharma
 Internet-Draft                                              Igalia, S.L.
-Obsoletes: 3339 (if approved)                            21 January 2021
+Obsoletes: 3339 (if approved)                            22 January 2021
 Intended status: Standards Track                                        
-Expires: 25 July 2021
+Expires: 26 July 2021
 
 
  Date and Time on the Internet: Timestamps with additional information
@@ -34,7 +34,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 25 July 2021.
+   This Internet-Draft will expire on 26 July 2021.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Sharma                    Expires 25 July 2021                  [Page 1]
+Sharma                    Expires 26 July 2021                  [Page 1]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Sharma                    Expires 25 July 2021                  [Page 2]
+Sharma                    Expires 26 July 2021                  [Page 2]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -165,7 +165,7 @@ Internet-Draft             Timestamps Extended              January 2021
 
 
 
-Sharma                    Expires 25 July 2021                  [Page 3]
+Sharma                    Expires 26 July 2021                  [Page 3]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -221,7 +221,7 @@ Internet-Draft             Timestamps Extended              January 2021
 
 
 
-Sharma                    Expires 25 July 2021                  [Page 4]
+Sharma                    Expires 26 July 2021                  [Page 4]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -277,7 +277,7 @@ Internet-Draft             Timestamps Extended              January 2021
 
 
 
-Sharma                    Expires 25 July 2021                  [Page 5]
+Sharma                    Expires 26 July 2021                  [Page 5]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -333,7 +333,7 @@ Internet-Draft             Timestamps Extended              January 2021
 
 
 
-Sharma                    Expires 25 July 2021                  [Page 6]
+Sharma                    Expires 26 July 2021                  [Page 6]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -383,13 +383,13 @@ Internet-Draft             Timestamps Extended              January 2021
    key and value.  The value can be a hyphen delimited list of multiple
    values.
 
+   In case a key is repeated or conflicted, the implementations should
+   give precedence to whichever value is positioned first.
 
 
 
 
-
-
-Sharma                    Expires 25 July 2021                  [Page 7]
+Sharma                    Expires 26 July 2021                  [Page 7]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -445,7 +445,7 @@ Internet-Draft             Timestamps Extended              January 2021
 
 
 
-Sharma                    Expires 25 July 2021                  [Page 8]
+Sharma                    Expires 26 July 2021                  [Page 8]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -501,7 +501,7 @@ Internet-Draft             Timestamps Extended              January 2021
 
 
 
-Sharma                    Expires 25 July 2021                  [Page 9]
+Sharma                    Expires 26 July 2021                  [Page 9]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -557,7 +557,7 @@ Internet-Draft             Timestamps Extended              January 2021
 
 
 
-Sharma                    Expires 25 July 2021                 [Page 10]
+Sharma                    Expires 26 July 2021                 [Page 10]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -613,7 +613,7 @@ Internet-Draft             Timestamps Extended              January 2021
 
 
 
-Sharma                    Expires 25 July 2021                 [Page 11]
+Sharma                    Expires 26 July 2021                 [Page 11]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -669,7 +669,7 @@ Internet-Draft             Timestamps Extended              January 2021
 
 
 
-Sharma                    Expires 25 July 2021                 [Page 12]
+Sharma                    Expires 26 July 2021                 [Page 12]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -725,7 +725,7 @@ Internet-Draft             Timestamps Extended              January 2021
 
 
 
-Sharma                    Expires 25 July 2021                 [Page 13]
+Sharma                    Expires 26 July 2021                 [Page 13]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -743,22 +743,29 @@ Internet-Draft             Timestamps Extended              January 2021
    additionally specifies the human time zone associated with it for
    time zone aware implementations to take into account.
 
-   1990-12-31T23:59:60Z
+   1996-12-19T16:39:57-08:00[America/Los_Angeles][u-ca-hebrew]
 
                                   Figure 7
+
+   This represents the exact same instant but it informs calendar-aware
+   implementations that they should project it to the Hebrew calendar.
+
+   1990-12-31T23:59:60Z
+
+                                  Figure 8
 
    This represents the leap second inserted at the end of 1990.
 
    1990-12-31T15:59:60-08:00
 
-                                  Figure 8
+                                  Figure 9
 
    This represents the same leap second in Pacific Standard Time, 8
    hours behind UTC.
 
    1937-01-01T12:00:27.87+00:19:32.130
 
-                                  Figure 9
+                                 Figure 10
 
    This represents the same instant of time as noon, January 1, 1937,
    Netherlands time.  Standard time in the Netherlands was exactly 19
@@ -767,7 +774,17 @@ Internet-Draft             Timestamps Extended              January 2021
 
    1937-01-01T12:00:27.87+00:19:32.130[u-ca-japanese]
 
-                                 Figure 10
+                                 Figure 11
+
+
+
+
+
+
+Sharma                    Expires 26 July 2021                 [Page 14]
+
+Internet-Draft             Timestamps Extended              January 2021
+
 
    This represents the exact same instant as the previous example but
    additionally specifies the human calendar associated with it for
@@ -775,16 +792,7 @@ Internet-Draft             Timestamps Extended              January 2021
 
    1937-01-01T12:00:27.87+00:19:32.130[u-ca-islamic-civil]
 
-                                 Figure 11
-
-
-
-
-
-Sharma                    Expires 25 July 2021                 [Page 14]
-
-Internet-Draft             Timestamps Extended              January 2021
-
+                                 Figure 12
 
    Since there's not a single agreed upon way to deal with dates in the
    Islamic calendar, it provides another value to disambiguate between
@@ -792,9 +800,9 @@ Internet-Draft             Timestamps Extended              January 2021
 
    1937-01-01T12:00:27.87+00:19:32.130[x-foo-bar][x-baz-bat]
 
-                                 Figure 12
+                                 Figure 13
 
-   This timestamp utilizes the generalized format to declare two
+   This timestamp utilizes the private use namespace to declare two
    additional pieces of information in the suffix that can be
    interpreted by any compatible implementations and ignored otherwise.
 
@@ -827,20 +835,17 @@ Internet-Draft             Timestamps Extended              January 2021
               1305, IETF RFC 1305, DOI 10.17487/RFC1305, March 1992,
               <https://www.rfc-editor.org/info/rfc1305>.
 
+
+
+Sharma                    Expires 26 July 2021                 [Page 15]
+
+Internet-Draft             Timestamps Extended              January 2021
+
+
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", IETF RFC 2119, IETF RFC 2119,
               DOI 10.17487/RFC2119, March 1997,
               <https://www.rfc-editor.org/info/rfc2119>.
-
-
-
-
-
-
-Sharma                    Expires 25 July 2021                 [Page 15]
-
-Internet-Draft             Timestamps Extended              January 2021
-
 
    [RFC5646]  Phillips, A., Ed. and M. Davis, Ed., "Tags for Identifying
               Languages", IETF RFC 5646, IETF RFC 5646,
@@ -888,12 +893,7 @@ Appendix A.  Day of the Week
 
 
 
-
-
-
-
-
-Sharma                    Expires 25 July 2021                 [Page 16]
+Sharma                    Expires 26 July 2021                 [Page 16]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -919,7 +919,7 @@ Internet-Draft             Timestamps Extended              January 2021
                        + year / 4 + cent / 4 + 5 * cent) % 7]);
    }
 
-                                 Figure 13
+                                 Figure 14
 
 Appendix B.  Leap Years
 
@@ -933,7 +933,7 @@ Appendix B.  Leap Years
        return (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0));
    }
 
-                                 Figure 14
+                                 Figure 15
 
 Appendix C.  Leap Seconds
 
@@ -949,7 +949,7 @@ Appendix C.  Leap Seconds
 
 
 
-Sharma                    Expires 25 July 2021                 [Page 17]
+Sharma                    Expires 26 July 2021                 [Page 17]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -1005,7 +1005,7 @@ Internet-Draft             Timestamps Extended              January 2021
 
 
 
-Sharma                    Expires 25 July 2021                 [Page 18]
+Sharma                    Expires 26 July 2021                 [Page 18]
 
 Internet-Draft             Timestamps Extended              January 2021
 
@@ -1061,4 +1061,4 @@ Author's Address
 
 
 
-Sharma                    Expires 25 July 2021                 [Page 19]
+Sharma                    Expires 26 July 2021                 [Page 19]
