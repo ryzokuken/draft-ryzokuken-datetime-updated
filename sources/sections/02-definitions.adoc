@@ -5,15 +5,27 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
 "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
 document are to be interpreted as described in <<RFC2119>>.
 
-UTC:: Coordinated Universal Time as maintained by the Bureau
-International des Poids et Mesures (BIPM).
+UTC:: Coordinated Universal Time as maintained since 1988 by the Bureau
+International des Poids et Mesures (BIPM) in conjunction with
+leap seconds as announced by the International Earth Rotation
+and Reference Frames Service (IERS). From 1972 through 1987
+UTC was maintained entirely by Bureau International de l'Heure (BIH).
+Before 1972 UTC was not generally recognized and 
+civil time was determined by individual jurisdictions
+using different techniques for attempting to follow
+Universal Time based on measuring the rotation of the earth.
 
-second:: A basic unit of measurement of time in the
-International System of Units.  It is defined as the
-duration of 9,192,631,770 cycles of microwave light
+second:: The unit of time in the
+International System of Units.  Since Resolution 1 of the 13th
+CGPM on 1967-10-13 the second is defined as the
+duration of 9,192,631,770 cycles of microwave radiation
 absorbed or emitted by the hyperfine transition of
 cesium-133 atoms in their ground state undisturbed by
-external fields.
+external fields, but this definition was not in practical
+use for civil time until 1972-01-01. Prior to 1972-01-01
+civil time was based on Universal Time which was measured by observations of the rotation
+of the earth, and the practical definition of the second 
+was 1/86400 of the mean solar day.
 
 minute:: A period of time of 60 seconds. However, see also the
 restrictions in section <<restrictions>> and <<annexC>> for how
@@ -21,7 +33,9 @@ leap seconds are denoted within minutes.
 
 hour:: A period of time of 60 minutes.
 
-day:: A period of time of 24 hours.
+day:: Starting 1972-01-01 a duration of 86400 SI seconds for the UTC time scale.
+In other contexts the duration of one mean solar day as agreed internationally by
+the 1884 International Meridian Conference and measured using Universal Time.
 
 leap year:: In the proleptic Gregorian calendar, a year which has
 366 days. A leap year is a year whose number is divisible by
