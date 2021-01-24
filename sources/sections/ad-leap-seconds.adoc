@@ -2,7 +2,16 @@
 [appendix]
 == Leap Seconds
 
-Information about leap seconds can be found at the
+In 1970 CCIR Recommendation 460 produced international agreement that starting on 1972-01-01 
+radio broadcast time signals should provide SI seconds with
+occasional leaps of 1 SI second as necessary to agree with Universal Time.
+The time scale in radio broadcasts became known as UTC, and the
+current version of that recommendation is 
+https://www.itu.int/rec/R-REC-TF.460/en[ITU-R TF.460-6].
+Since 1988 IERS has the 
+https://www.iers.org/SharedDocs/Publikationen/EN/IERS/Documents/IERS_Leap_Seconds.pdf?__blob=publicationFile&v=1[responsibility for announcing when leap seconds
+will be introduced into UTC].
+Further information about leap seconds can be found at the
 https://www.usno.navy.mil/USNO/time/master-clock/leap-seconds[US Navy Oceanography Portal].
 In particular, it notes that:
 
@@ -20,11 +29,12 @@ time zones, so that time zone relationships are not affected.  See
 section <<date-time-examples>> for some examples of leap second times.
 
 The following table is an excerpt from the table maintained by the
-United States Naval Observatory. The source data is located at the
-ftp://maia.usno.navy.mil/ser7/tai-utc.dat[US Navy Oceanography Portal].
+IERS.
+The source data are located at the
+https://hpiers.obspm.fr/eop-pc/index.php?index=TAI-UTC_tab&lang=en[Earth Orientation Parameters Product Centre at Observatoire de Paris].
 
-This table shows the date of the leap second, and the difference
-between the time standard TAI (which isn't adjusted by leap seconds)
+For dates after the initial adjustment on 1972-01-01 this table shows the date of the leap second, and the difference
+between the time scale TAI (which is not adjusted by leap seconds)
 and UTC after that leap second.
 
 .Historic leap seconds
