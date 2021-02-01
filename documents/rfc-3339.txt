@@ -4,9 +4,9 @@
 
 Calendaring Extensions Working Group                           U. Sharma
 Internet-Draft                                              Igalia, S.L.
-Obsoletes: 3339 (if approved)                            22 January 2021
+Obsoletes: 3339 (if approved)                            1 February 2021
 Intended status: Standards Track                                        
-Expires: 26 July 2021
+Expires: 5 August 2021
 
 
  Date and Time on the Internet: Timestamps with additional information
@@ -34,7 +34,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 26 July 2021.
+   This Internet-Draft will expire on 5 August 2021.
 
 Copyright Notice
 
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Sharma                    Expires 26 July 2021                  [Page 1]
+Sharma                    Expires 5 August 2021                 [Page 1]
 
-Internet-Draft             Timestamps Extended              January 2021
+Internet-Draft             Timestamps Extended             February 2021
 
 
 Table of Contents
@@ -64,8 +64,8 @@ Table of Contents
    2.  Definitions . . . . . . . . . . . . . . . . . . . . . . . . .   3
    3.  Two Digit Years . . . . . . . . . . . . . . . . . . . . . . .   4
    4.  Local Time  . . . . . . . . . . . . . . . . . . . . . . . . .   4
-     4.1.  Coordinated Universal Time (UTC)  . . . . . . . . . . . .   4
-     4.2.  Local Offsets . . . . . . . . . . . . . . . . . . . . . .   4
+     4.1.  Coordinated Universal Time (UTC)  . . . . . . . . . . . .   5
+     4.2.  Local Offsets . . . . . . . . . . . . . . . . . . . . . .   5
      4.3.  Unknown Local Offset Convention . . . . . . . . . . . . .   5
      4.4.  Unqualified Local Time  . . . . . . . . . . . . . . . . .   5
    5.  Date and Time format  . . . . . . . . . . . . . . . . . . . .   6
@@ -74,18 +74,18 @@ Table of Contents
      5.3.  Rarely Used Options . . . . . . . . . . . . . . . . . . .   7
      5.4.  Redundant Information . . . . . . . . . . . . . . . . . .   7
      5.5.  Simplicity  . . . . . . . . . . . . . . . . . . . . . . .   7
-     5.6.  Informative . . . . . . . . . . . . . . . . . . . . . . .   7
+     5.6.  Informative . . . . . . . . . . . . . . . . . . . . . . .   8
      5.7.  Namespaced  . . . . . . . . . . . . . . . . . . . . . . .   8
      5.8.  Internet Date/Time Format . . . . . . . . . . . . . . . .  11
      5.9.  Restrictions  . . . . . . . . . . . . . . . . . . . . . .  12
-     5.10. Examples  . . . . . . . . . . . . . . . . . . . . . . . .  13
-   6.  Security Considerations . . . . . . . . . . . . . . . . . . .  15
-   7.  Normative references  . . . . . . . . . . . . . . . . . . . .  15
-   8.  Bibliography  . . . . . . . . . . . . . . . . . . . . . . . .  16
-   Appendix A.  Day of the Week  . . . . . . . . . . . . . . . . . .  16
-   Appendix B.  Leap Years . . . . . . . . . . . . . . . . . . . . .  17
-   Appendix C.  Leap Seconds . . . . . . . . . . . . . . . . . . . .  17
-   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  19
+     5.10. Examples  . . . . . . . . . . . . . . . . . . . . . . . .  14
+   6.  Security Considerations . . . . . . . . . . . . . . . . . . .  16
+   7.  Normative references  . . . . . . . . . . . . . . . . . . . .  16
+   8.  Bibliography  . . . . . . . . . . . . . . . . . . . . . . . .  17
+   Appendix A.  Day of the Week  . . . . . . . . . . . . . . . . . .  17
+   Appendix B.  Leap Years . . . . . . . . . . . . . . . . . . . . .  18
+   Appendix C.  Leap Seconds . . . . . . . . . . . . . . . . . . . .  18
+   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  20
 
 1.  Introduction
 
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Sharma                    Expires 26 July 2021                  [Page 2]
+Sharma                    Expires 5 August 2021                 [Page 2]
 
-Internet-Draft             Timestamps Extended              January 2021
+Internet-Draft             Timestamps Extended             February 2021
 
 
    *  All times expressed have a stated relationship (offset) to
@@ -133,14 +133,26 @@ Internet-Draft             Timestamps Extended              January 2021
    "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
    document are to be interpreted as described in [RFC2119].
 
-   UTC  Coordinated Universal Time as maintained by the Bureau
-      International des Poids et Mesures (BIPM).
+   UTC  Coordinated Universal Time as maintained since 1988 by the
+      Bureau International des Poids et Mesures (BIPM) in conjunction
+      with leap seconds as announced by the International Earth Rotation
+      and Reference Frames Service (IERS).  From 1972 through 1987 UTC
+      was maintained entirely by Bureau International de l'Heure (BIH).
+      Before 1972 UTC was not generally recognized and civil time was
+      determined by individual jurisdictions using different techniques
+      for attempting to follow Universal Time based on measuring the
+      rotation of the earth.
 
-   second  A basic unit of measurement of time in the International
-      System of Units.  It is defined as the duration of 9,192,631,770
-      cycles of microwave light absorbed or emitted by the hyperfine
-      transition of cesium-133 atoms in their ground state undisturbed
-      by external fields.
+   second  The unit of time in the International System of Units.  Since
+      Resolution 1 of the 13th CGPM on 1967-10-13 the second is defined
+      as the duration of 9,192,631,770 cycles of microwave radiation
+      absorbed or emitted by the hyperfine transition of cesium-133
+      atoms in their ground state undisturbed by external fields, but
+      this definition was not in practical use for civil time until
+      1972-01-01.  Prior to 1972-01-01 civil time was based on Universal
+      Time which was measured by observations of the rotation of the
+      earth, and the practical definition of the second was 1/86400 of
+      the mean solar day.
 
    minute  A period of time of 60 seconds.  However, see also the
       restrictions in section Section 5.9 and Appendix C for how leap
@@ -148,7 +160,19 @@ Internet-Draft             Timestamps Extended              January 2021
 
    hour  A period of time of 60 minutes.
 
-   day  A period of time of 24 hours.
+   day  Starting 1972-01-01 a duration of 86400 SI seconds for the UTC
+
+
+
+
+Sharma                    Expires 5 August 2021                 [Page 3]
+
+Internet-Draft             Timestamps Extended             February 2021
+
+
+      time scale.  In other contexts the duration of one mean solar day
+      as agreed internationally by the 1884 International Meridian
+      Conference and measured using Universal Time.
 
    leap year  In the proleptic Gregorian calendar, a year which has 366
       days.  A leap year is a year whose number is divisible by four an
@@ -162,13 +186,6 @@ Internet-Draft             Timestamps Extended              January 2021
 
    Email Date/Time Format  The date/time format used by Internet Mail as
       defined by [RFC2822].
-
-
-
-Sharma                    Expires 26 July 2021                  [Page 3]
-
-Internet-Draft             Timestamps Extended              January 2021
-
 
    Internet Date/Time Format  The date/time format defined in section 5
       of this document.
@@ -184,7 +201,7 @@ Internet-Draft             Timestamps Extended              January 2021
       (often called "tz" or "zoneinfo") maintained by IANA.
 
    For more information about time scales, see Appendix E of [RFC1305],
-   Section 3 of [ISO8601], and the appropriate ITU documents (ITU-R-TF).
+   Section 3 of [ISO8601], and the appropriate ITU documents [ITU-R-TF].
 
 3.  Two Digit Years
 
@@ -196,6 +213,18 @@ Internet-Draft             Timestamps Extended              January 2021
    value with a sign.
 
 4.  Local Time
+
+
+
+
+
+
+
+
+Sharma                    Expires 5 August 2021                 [Page 4]
+
+Internet-Draft             Timestamps Extended             February 2021
+
 
 4.1.  Coordinated Universal Time (UTC)
 
@@ -215,16 +244,6 @@ Internet-Draft             Timestamps Extended              January 2021
    response.  Attempts to label local offsets with alphabetic strings
    have resulted in poor interoperability in the past [RFC1123].  As a
    result, RFC2822 [RFC2822] has made numeric offsets mandatory.
-
-
-
-
-
-
-Sharma                    Expires 26 July 2021                  [Page 4]
-
-Internet-Draft             Timestamps Extended              January 2021
-
 
    Numeric offsets are calculated as "local time minus UTC".  So the
    equivalent time in UTC can be determined by subtracting the offset
@@ -255,6 +274,14 @@ Internet-Draft             Timestamps Extended              January 2021
    specifications, this should not be done at the expense of
    interoperability.  Since interpretation of an unqualified local time
    zone will fail in approximately 23/24 of the globe, the
+
+
+
+Sharma                    Expires 5 August 2021                 [Page 5]
+
+Internet-Draft             Timestamps Extended             February 2021
+
+
    interoperability problems of unqualified local time are deemed
    unacceptable for the Internet.  Systems that are configured with a
    local time, are unaware of the corresponding UTC offset, and depend
@@ -270,17 +297,6 @@ Internet-Draft             Timestamps Extended              January 2021
 
    *  Prompt the user for the local time zone and daylight saving rule
       settings.
-
-
-
-
-
-
-
-Sharma                    Expires 26 July 2021                  [Page 5]
-
-Internet-Draft             Timestamps Extended              January 2021
-
 
 5.  Date and Time format
 
@@ -314,6 +330,14 @@ Internet-Draft             Timestamps Extended              January 2021
    when people assumed any text string was permitted and translated the
    three letter abbreviations to other languages or substituted date
    formats which were easier to generate (e.g. the format used by the C
+
+
+
+Sharma                    Expires 5 August 2021                 [Page 6]
+
+Internet-Draft             Timestamps Extended             February 2021
+
+
    function "ctime").  For this reason, a balance must be struck between
    human readability and interoperability.
 
@@ -322,21 +346,6 @@ Internet-Draft             Timestamps Extended              January 2021
    transform dates into a display format suitable for the locality.
    This may include translating UTC to local time as well as converting
    from the Gregorian calendar to the viewer's preferred calendar.
-
-
-
-
-
-
-
-
-
-
-
-Sharma                    Expires 26 July 2021                  [Page 6]
-
-Internet-Draft             Timestamps Extended              January 2021
-
 
 5.3.  Rarely Used Options
 
@@ -374,6 +383,17 @@ Internet-Draft             Timestamps Extended              January 2021
    optionally suffixed.  Simplicity is achieved by making most fields
    and punctuation mandatory.
 
+
+
+
+
+
+
+Sharma                    Expires 5 August 2021                 [Page 7]
+
+Internet-Draft             Timestamps Extended             February 2021
+
+
 5.6.  Informative
 
    The format should allow implementations to specify additional
@@ -385,14 +405,6 @@ Internet-Draft             Timestamps Extended              January 2021
 
    In case a key is repeated or conflicted, the implementations should
    give precedence to whichever value is positioned first.
-
-
-
-
-Sharma                    Expires 26 July 2021                  [Page 7]
-
-Internet-Draft             Timestamps Extended              January 2021
-
 
 5.7.  Namespaced
 
@@ -429,6 +441,15 @@ Internet-Draft             Timestamps Extended              January 2021
    email, and URL location of the registry, MUST be indicated clearly in
    the RFC.  The RFC MUST specify or include each of the following:
 
+
+
+
+
+Sharma                    Expires 5 August 2021                 [Page 8]
+
+Internet-Draft             Timestamps Extended             February 2021
+
+
    *  The specification MUST reference the specific version or revision
       of this document that governs its creation and MUST reference this
       section of this document.
@@ -440,15 +461,6 @@ Internet-Draft             Timestamps Extended              January 2021
       characters in length.
 
    *  The specification MUST specify a canonical representation.
-
-
-
-
-
-Sharma                    Expires 26 July 2021                  [Page 8]
-
-Internet-Draft             Timestamps Extended              January 2021
-
 
    *  The specification of valid keys MUST be available over the
       Internet and at no cost.
@@ -483,28 +495,22 @@ Internet-Draft             Timestamps Extended              January 2021
    changes.  Only the 'Comments', 'Contact_Email', 'Mailing_List', and
    'URL' fields MAY be modified in these updates.
 
+
+
+
+
+
+
+Sharma                    Expires 5 August 2021                 [Page 9]
+
+Internet-Draft             Timestamps Extended             February 2021
+
+
    Failure to maintain this record, maintain the corresponding registry,
    or meet other conditions imposed by this section of this document MAY
    be appealed to the IESG [RFC2028] under the same rules as other IETF
    decisions (see [RFC2026]) and MAY result in the authority to maintain
    the extension being withdrawn or reassigned by the IESG.
-
-
-
-
-
-
-
-
-
-
-
-
-
-Sharma                    Expires 26 July 2021                  [Page 9]
-
-Internet-Draft             Timestamps Extended              January 2021
-
 
    %%
    Identifier:
@@ -548,19 +554,18 @@ Internet-Draft             Timestamps Extended              January 2021
 
    'URL' contains the URL of the registry for this namespace.
 
+
+
+
+Sharma                    Expires 5 August 2021                [Page 10]
+
+Internet-Draft             Timestamps Extended             February 2021
+
+
    The determination of whether an Internet-Draft meets the above
    conditions and the decision to grant or withhold such authority rests
    solely with the IESG and is subject to the normal review and appeals
    process associated with the RFC process.
-
-
-
-
-
-Sharma                    Expires 26 July 2021                 [Page 10]
-
-Internet-Draft             Timestamps Extended              January 2021
-
 
 5.8.  Internet Date/Time Format
 
@@ -606,18 +611,17 @@ Internet-Draft             Timestamps Extended              January 2021
       |  in this syntax may alternatively be lower case "t" or "z"
       |  respectively.
 
+
+
+Sharma                    Expires 5 August 2021                [Page 11]
+
+Internet-Draft             Timestamps Extended             February 2021
+
+
    This date/time format may be used in some environments or contexts
    that distinguish between the upper- and lower-case letters 'A'-'Z'
    and 'a'-'z' (e.g.  XML).  Specifications that use this format in such
    environments MAY further limit the date/time syntax so that the
-
-
-
-Sharma                    Expires 26 July 2021                 [Page 11]
-
-Internet-Draft             Timestamps Extended              January 2021
-
-
    letters 'T' and 'Z' used in the date/time syntax must always be upper
    case.  Applications that generate this format SHOULD use upper case
    letters.
@@ -632,6 +636,43 @@ Internet-Draft             Timestamps Extended              January 2021
    The grammar element date-mday represents the day number within the
    current month.  The maximum value varies based on the month and year
    as follows:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sharma                    Expires 5 August 2021                [Page 12]
+
+Internet-Draft             Timestamps Extended             February 2021
+
 
     +==============+=====================+============================+
     | Month Number | Month/Year          | Maximum value of date-mday |
@@ -665,15 +706,6 @@ Internet-Draft             Timestamps Extended              January 2021
 
                         Table 1: Days in each month
 
-
-
-
-
-Sharma                    Expires 26 July 2021                 [Page 12]
-
-Internet-Draft             Timestamps Extended              January 2021
-
-
    Appendix B contains sample C code to determine if a year is a leap
    year.
 
@@ -686,6 +718,17 @@ Internet-Draft             Timestamps Extended              January 2021
    Further, in time zones other than "Z", the leap second point is
    shifted by the zone offset (so it happens at the same instant around
    the globe).
+
+
+
+
+
+
+
+Sharma                    Expires 5 August 2021                [Page 13]
+
+Internet-Draft             Timestamps Extended             February 2021
+
 
    Leap seconds cannot be predicted far into the future.  The
    International Earth Rotation Service publishes bulletins (IERS) that
@@ -719,17 +762,6 @@ Internet-Draft             Timestamps Extended              January 2021
 
                                   Figure 5
 
-
-
-
-
-
-
-Sharma                    Expires 26 July 2021                 [Page 13]
-
-Internet-Draft             Timestamps Extended              January 2021
-
-
    This represents 39 minutes and 57 seconds after the 16th hour of
    December 19th, 1996 with an offset of -08:00 from UTC (Pacific
    Standard Time).  Note that this is equivalent to 1996-12-20T00:39:57Z
@@ -746,6 +778,13 @@ Internet-Draft             Timestamps Extended              January 2021
    1996-12-19T16:39:57-08:00[America/Los_Angeles][u-ca-hebrew]
 
                                   Figure 7
+
+
+
+Sharma                    Expires 5 August 2021                [Page 14]
+
+Internet-Draft             Timestamps Extended             February 2021
+
 
    This represents the exact same instant but it informs calendar-aware
    implementations that they should project it to the Hebrew calendar.
@@ -776,16 +815,6 @@ Internet-Draft             Timestamps Extended              January 2021
 
                                  Figure 11
 
-
-
-
-
-
-Sharma                    Expires 26 July 2021                 [Page 14]
-
-Internet-Draft             Timestamps Extended              January 2021
-
-
    This represents the exact same instant as the previous example but
    additionally specifies the human calendar associated with it for
    calendar aware implementations to take into account.
@@ -805,6 +834,13 @@ Internet-Draft             Timestamps Extended              January 2021
    This timestamp utilizes the private use namespace to declare two
    additional pieces of information in the suffix that can be
    interpreted by any compatible implementations and ignored otherwise.
+
+
+
+Sharma                    Expires 5 August 2021                [Page 15]
+
+Internet-Draft             Timestamps Extended             February 2021
+
 
 6.  Security Considerations
 
@@ -835,13 +871,6 @@ Internet-Draft             Timestamps Extended              January 2021
               1305, IETF RFC 1305, DOI 10.17487/RFC1305, March 1992,
               <https://www.rfc-editor.org/info/rfc1305>.
 
-
-
-Sharma                    Expires 26 July 2021                 [Page 15]
-
-Internet-Draft             Timestamps Extended              January 2021
-
-
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", IETF RFC 2119, IETF RFC 2119,
               DOI 10.17487/RFC2119, March 1997,
@@ -861,6 +890,14 @@ Internet-Draft             Timestamps Extended              January 2021
               DOI 10.17487/RFC2028, October 1996,
               <https://www.rfc-editor.org/info/rfc2028>.
 
+
+
+
+Sharma                    Expires 5 August 2021                [Page 16]
+
+Internet-Draft             Timestamps Extended             February 2021
+
+
 8.  Bibliography
 
    [ISO8601]  International Organization for Standardization, "Data
@@ -872,31 +909,18 @@ Internet-Draft             Timestamps Extended              January 2021
               DOI 10.17487/RFC3339, July 2002,
               <https://www.rfc-editor.org/info/rfc3339>.
 
+   [ISO8601-2000]
+              International Organization for Standardization, "Data
+              elements and interchange formats", ISO 8601:2000, December
+              2000, <https://www.iso.org/standard/26780.html>.
+
+   [ITU-R-TF] "", ITU-R TF.460-6.
+
 Appendix A.  Day of the Week
 
    The following is a sample C subroutine loosely based on Zeller's
    Congruence (ZELLER) which may be used to obtain the day of the week
    for dates on or after 0000-03-01:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Sharma                    Expires 26 July 2021                 [Page 16]
-
-Internet-Draft             Timestamps Extended              January 2021
-
 
    char *day_of_week(int day, int month, int year)
    {
@@ -921,6 +945,15 @@ Internet-Draft             Timestamps Extended              January 2021
 
                                  Figure 14
 
+
+
+
+
+Sharma                    Expires 5 August 2021                [Page 17]
+
+Internet-Draft             Timestamps Extended             February 2021
+
+
 Appendix B.  Leap Years
 
    Here is a sample C subroutine to calculate if a year is a leap year:
@@ -937,7 +970,16 @@ Appendix B.  Leap Years
 
 Appendix C.  Leap Seconds
 
-   Information about leap seconds can be found at the US Navy
+   In 1970 CCIR Recommendation 460 produced international agreement that
+   starting on 1972-01-01 radio broadcast time signals should provide SI
+   seconds with occasional leaps of 1 SI second as necessary to agree
+   with Universal Time.  The time scale in radio broadcasts became known
+   as UTC, and the current version of that recommendation is [ITU-R-TF].
+   Since 1988 IERS has the responsibility for announcing when leap
+   seconds will be introduced into UTC
+   (https://www.iers.org/SharedDocs/Publikationen/EN/IERS/Documents/
+   IERS_Leap_Seconds.pdf?__blob=publicationFile&v=1).  Further
+   information about leap seconds can be found at the US Navy
    Oceanography Portal (https://www.usno.navy.mil/USNO/time/master-
    clock/leap-seconds).  In particular, it notes that:
 
@@ -947,13 +989,6 @@ Appendix C.  Leap Seconds
    |  the opportunities at the end of December and June, and second
    |  preference to those at the end of March and September.
 
-
-
-Sharma                    Expires 26 July 2021                 [Page 17]
-
-Internet-Draft             Timestamps Extended              January 2021
-
-
    When required, insertion of a leap second occurs as an extra second
    at the end of a day in UTC, represented by a timestamp of the form
    YYYY-MM-DDT23:59:60Z.  A leap second occurs simultaneously in all
@@ -961,13 +996,24 @@ Internet-Draft             Timestamps Extended              January 2021
    section Section 5.10 for some examples of leap second times.
 
    The following table is an excerpt from the table maintained by the
-   United States Naval Observatory.  The source data is located at the
-   US Navy Oceanography Portal (ftp://maia.usno.navy.mil/ser7/tai-
-   utc.dat).
+   IERS.  The source data are located at the Earth Orientation
+   Parameters Product Centre at Observatoire de Paris
+   (https://hpiers.obspm.fr/eop-pc/index.php?index=TAI-UTC_tab&lang=en).
 
-   This table shows the date of the leap second, and the difference
-   between the time standard TAI (which isn't adjusted by leap seconds)
-   and UTC after that leap second.
+
+
+
+
+
+Sharma                    Expires 5 August 2021                [Page 18]
+
+Internet-Draft             Timestamps Extended             February 2021
+
+
+   For dates after the initial adjustment on 1972-01-01 this table shows
+   the date of the leap second, and the difference between the time
+   scale TAI (which is not adjusted by leap seconds) and UTC after that
+   leap second.
 
                +============+=============================+
                | UTC Date   | TAI - UTC After Leap Second |
@@ -1002,14 +1048,6 @@ Internet-Draft             Timestamps Extended              January 2021
                +------------+-----------------------------+
                | 1989-12-31 | 25                          |
                +------------+-----------------------------+
-
-
-
-Sharma                    Expires 26 July 2021                 [Page 18]
-
-Internet-Draft             Timestamps Extended              January 2021
-
-
                | 1990-12-31 | 26                          |
                +------------+-----------------------------+
                | 1992-06-30 | 27                          |
@@ -1020,9 +1058,27 @@ Internet-Draft             Timestamps Extended              January 2021
                +------------+-----------------------------+
                | 1995-12-31 | 30                          |
                +------------+-----------------------------+
+
+
+
+Sharma                    Expires 5 August 2021                [Page 19]
+
+Internet-Draft             Timestamps Extended             February 2021
+
+
                | 1997-06-30 | 31                          |
                +------------+-----------------------------+
                | 1998-12-31 | 32                          |
+               +------------+-----------------------------+
+               | 2005-12-31 | 33                          |
+               +------------+-----------------------------+
+               | 2008-12-31 | 34                          |
+               +------------+-----------------------------+
+               | 2012-06-30 | 35                          |
+               +------------+-----------------------------+
+               | 2015-06-30 | 36                          |
+               +------------+-----------------------------+
+               | 2016-12-31 | 37                          |
                +------------+-----------------------------+
 
                       Table 2: Historic leap seconds
@@ -1061,4 +1117,4 @@ Author's Address
 
 
 
-Sharma                    Expires 26 July 2021                 [Page 19]
+Sharma                    Expires 5 August 2021                [Page 20]

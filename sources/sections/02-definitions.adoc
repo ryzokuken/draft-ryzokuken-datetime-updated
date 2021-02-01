@@ -10,7 +10,7 @@ International des Poids et Mesures (BIPM) in conjunction with
 leap seconds as announced by the International Earth Rotation
 and Reference Frames Service (IERS). From 1972 through 1987
 UTC was maintained entirely by Bureau International de l'Heure (BIH).
-Before 1972 UTC was not generally recognized and 
+Before 1972 UTC was not generally recognized and
 civil time was determined by individual jurisdictions
 using different techniques for attempting to follow
 Universal Time based on measuring the rotation of the earth.
@@ -24,7 +24,7 @@ cesium-133 atoms in their ground state undisturbed by
 external fields, but this definition was not in practical
 use for civil time until 1972-01-01. Prior to 1972-01-01
 civil time was based on Universal Time which was measured by observations of the rotation
-of the earth, and the practical definition of the second 
+of the earth, and the practical definition of the second
 was 1/86400 of the mean solar day.
 
 minute:: A period of time of 60 seconds. However, see also the
@@ -66,4 +66,4 @@ Time Zone:: A time zone that is a included in the Time Zone Database
 (often called `tz` or `zoneinfo`) maintained by IANA.
 
 For more information about time scales, see Appendix E of <<RFC1305>>,
-Section 3 of <<ISO8601>>, and the appropriate ITU documents (ITU-R-TF).
+Section 3 of <<ISO8601>>, and the appropriate ITU documents <<ITU-R-TF>>.

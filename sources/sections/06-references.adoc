@@ -16,8 +16,8 @@
 == Informative References
 * [[[ISO8601,ISO 8601:1988]]]
 * [[[RFC3339,RFC 3339]]]
-// * [[[ISO8601-2000,ISO 8601:2000]]]
-// * [[[ITU-R-TF,ITU-R TF.460-6]]]
+* [[[ISO8601-2000,ISO 8601:2000]]]
+* [[[ITU-R-TF,ITU-R TF.460-6]]]
 
 // [[ZELLER]]
 // [%bibitem]

@@ -2,13 +2,12 @@
 [appendix]
 == Leap Seconds
 
-In 1970 CCIR Recommendation 460 produced international agreement that starting on 1972-01-01 
+In 1970 CCIR Recommendation 460 produced international agreement that starting on 1972-01-01
 radio broadcast time signals should provide SI seconds with
 occasional leaps of 1 SI second as necessary to agree with Universal Time.
 The time scale in radio broadcasts became known as UTC, and the
-current version of that recommendation is 
-https://www.itu.int/rec/R-REC-TF.460/en[ITU-R TF.460-6].
-Since 1988 IERS has the 
+current version of that recommendation is <<ITU-R-TF>>.
+Since 1988 IERS has the
 https://www.iers.org/SharedDocs/Publikationen/EN/IERS/Documents/IERS_Leap_Seconds.pdf?__blob=publicationFile&v=1[responsibility for announcing when leap seconds
 will be introduced into UTC].
 Further information about leap seconds can be found at the
