@@ -16,7 +16,7 @@ In particular, it notes that:
 
 [quote]
 The decision to introduce a leap second in UTC is the
-responsibility of the International Earth Rotation Service (IERS).
+responsibility of the International Earth Rotation Service <<IERS>>.
 According to the CCIR Recommendation, first preference is given to
 the opportunities at the end of December and June, and second
 preference to those at the end of March and September.

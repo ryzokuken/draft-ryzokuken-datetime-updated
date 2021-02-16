@@ -18,17 +18,7 @@
 * [[[RFC3339,RFC 3339]]]
 * [[[ISO8601-2000,ISO 8601:2000]]]
 * [[[ITU-R-TF,ITU-R TF.460-6]]]
+* [[[CGPM,path:("https://www.bipm.org/en/CGPM/db/13/1/",1)]]] _Resolution 1 of the 13th CGPM, 1967_
+* [[[ZELLER,path:("https://projecteuclid.org/euclid.acta/1485888738",2)]]] _Zeller, Chr. Kalender-Formeln. Acta Math. 9 (1887), 131--136. doi:10.1007/BF02406733_
+* [[[IERS,path:("https://www.iers.org/IERS/EN/Publications/Bulletins/bulletins.html",3)]]] _International Earth Rotation Service Bulletins_
 
-// [[ZELLER]]
-// [%bibitem]
-// === Kalender-Formeln
-// contributor.role:: author
-// contributor.person.name.initial:: C.
-// contributor.person.name.surname:: Zeller
-// link:: https://doi.org/10.1007/BF02406733
-
-// [[IERS]]
-// [%bibitem]
-// === International Earth Rotation Service Bulletins
-// link:: https://www.iers.org/IERS/EN/Publications/Bulletins/bulletins.html
-// link:: https://hpiers.obspm.fr/iers/bul/bulc/bulletinc.dat
