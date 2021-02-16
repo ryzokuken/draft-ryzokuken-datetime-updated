@@ -1,13 +1,13 @@
-= Date and Time on the Internet: Timestamps with additional information
+= Date and Time on the Internet: Timestamps
 :doctype: internet-draft
-:abbrev: Timestamps Extended
-:docnumber: draft-ryzokuken-datetime-extended-01
+:abbrev: Timestamps
+:docnumber: draft-ryzokuken-datetime-updated-00
 :workgroup: Calendaring Extensions Working Group
 :obsoletes: 3339
-:revdate: 2020-10-21
-:uri: https://ryzokuken.dev/draft-ryzokuken-datetime-extended/
-:html-uri: https://ryzokuken.dev/draft-ryzokuken-datetime-extended/documents/rfc-3339.html
-:pdf-uri: https://ryzokuken.dev/draft-ryzokuken-datetime-extended/documents/rfc-3339.pdf
+:revdate: 2021-02-16
+:uri: https://ryzokuken.dev/draft-ryzokuken-datetime-updated/
+:html-uri: https://ryzokuken.dev/draft-ryzokuken-datetime-updated/documents/rfc-3339.html
+:pdf-uri: https://ryzokuken.dev/draft-ryzokuken-datetime-updated/documents/rfc-3339.pdf
 :fullname: Ujjwal Sharma
 :initials: U.
 :surname: Sharma
