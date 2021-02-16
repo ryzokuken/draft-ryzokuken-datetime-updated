@@ -62,8 +62,5 @@ Z:: A suffix which, when applied to a time, denotes a UTC
 offset of 00:00; often spoken "Zulu" from the ICAO
 phonetic alphabet representation of the letter "Z".
 
-Time Zone:: A time zone that is a included in the Time Zone Database
-(often called `tz` or `zoneinfo`) maintained by IANA.
-
 For more information about time scales, see Appendix E of <<RFC1305>>,
 Section 3 of <<ISO8601>>, and the appropriate ITU documents <<ITU-R-TF>>.

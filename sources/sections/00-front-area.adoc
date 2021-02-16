@@ -1,6 +1,5 @@
 [abstract]
 == Abstract
 This document defines a date and time format for use in Internet
-protocols for representation of dates and times using the proleptic
-Gregorian calendar, with optional extensions representing additional
-information including a time zone.
+protocols that is a profile of the ISO 8601 standard for representation of
+dates and times using the proleptic Gregorian calendar.

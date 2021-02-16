@@ -1,4 +1,3 @@
-// TODO: consider if this is still necessary to include.
 [[annexA]]
 [appendix]
 == ISO 8601 Collected ABNF

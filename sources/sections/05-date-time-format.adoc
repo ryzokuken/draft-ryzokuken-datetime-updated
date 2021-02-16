@@ -2,20 +2,18 @@
 == Date and Time format
 
 This section discusses desirable qualities of date and time formats
-and defines a format that extends the profile of ISO 8601 for use in
-Internet protocols.
+ and defines a profile of ISO 8601 for use in Internet protocols.
 
 === Ordering
 
 If date and time components are ordered from least precise to most
 precise, then a useful property is achieved. Assuming that the time
 zones of the dates and times are the same (e.g., all in UTC),
-expressed using the same string (e.g., all "Z" or all "+00:00"), all
-times have the same number of fractional second digits, and they all
-have the same suffix (or none), then the date and time strings may be
-sorted as strings (e.g., using the `strcmp()` function in C) and a
-time-ordered sequence will result. The presence of optional punctuation
-would violate this characteristic.
+expressed using the same string (e.g., all "Z" or all "+00:00"), and all
+times have the same number of fractional second digits then the date and
+time strings may be sorted as strings (e.g., using the `strcmp()` function
+in C) and a time-ordered sequence will result. The presence of optional
+punctuation would violate this characteristic.
 
 === Human Readability
 
@@ -37,8 +35,7 @@ readability and interoperability.
 Because no date and time format is readable according to the
 conventions of all countries, Internet clients SHOULD be prepared to
 transform dates into a display format suitable for the locality.
-This may include translating UTC to local time as well as converting
-from the Gregorian calendar to the viewer's preferred calendar.
+This may include translating UTC to local time.
 
 === Rarely Used Options
 
@@ -80,160 +77,20 @@ complete specification of data in order to achieve true interoperability.
 Therefore, the complete grammar for ISO 8601 is deemed too complex for
 most Internet protocols.
 
-The following section defines a format that in an extension of a profile
-of ISO 8601 for use on the Internet. It is a conformant subset of the ISO
-8601 extended format with additional information optionally suffixed.
-Simplicity is achieved by making most fields and punctuation mandatory.
-
-=== Informative
-
-The format should allow implementations to specify additional important
-information in addition to the bare timestamp. This is done by allowing
-implementations to include an informative suffix at the end with as many
-tags as required, each with a hyphen separated key and value. The value
-can be a hyphen delimited list of multiple values.
-
-In case a key is repeated or conflicted, the implementations should give
-precedence to whichever value is positioned first.
-
-=== Namespaced
-
-Since the suffix can include all sorts of additional information,
-different standards bodies/organizations need a way to identify which part
-adheres to their standards. For this, all information needs to be
-namespaced. Each key is therefore divided into two hyphen-separated
-sections: the namespace and the key. For example, the calendar as defined
-by the Unicode consortium could be included as `u-ca-<value>`.
-
-All single-character namespaces are reserved for BCP47 extensions recorded
-in the BCP47 extensions registry. For these namespaces:
-
-* Case differences are ignored.
-
-* The namespace is restricted to single alphanum, corresponding to
-extension singletons ('x' can be used for a private use extension).
-
-* In addition, for CLDR extensions:
-** There must be a `namespace-key` and it is restricted to 2 `alphanum`
-characters.
-** A `suffix-value` is limited to `3*8alphanum`.
-
-Multi-character namespaces can be registered specifically for use in this
-format. They are assigned by IANA using the "IETF Review" policy defined
-by [RFC5226]. This policy requires the development of an RFC, which SHALL
-define the name, purpose, processes, and procedures for maintaining the
-subtags. The maintaining or registering authority, including name, contact
-email, discussion list email, and URL location of the registry, MUST be
-indicated clearly in the RFC. The RFC MUST specify or include each of the
-following:
-
-* The specification MUST reference the specific version or revision of
-this document that governs its creation and MUST reference this section of
-this document.
-
-* The specification and all keys defined by the specification MUST
-follow the ABNF and other rules for the formation of keys as defined in
-this document. In particular, it MUST specify that case is not significant
-and that keys MUST NOT exceed eight characters in length.
-
-* The specification MUST specify a canonical representation.
-
-* The specification of valid keys MUST be available over the Internet
-and at no cost.
-
-* The specification MUST be in the public domain or available via a
-royalty-free license acceptable to the IETF and specified in the RFC.
-
-* The specification MUST be versioned, and each version of the
-specification MUST be numbered, dated, and stable.
-
-* The specification MUST be stable. That is, namespace keys, once defined
-by a specification, MUST NOT be retracted or change in meaning in any
-substantial way.
-
-* The specification MUST include, in a separate section, the registration
-form reproduced in this section (below) to be used in registering the
-namespace upon publication as an RFC.
-
-* IANA MUST be informed of changes to the contact information and URL for
-the specification.
-
-IANA will maintain a registry of allocated multi-character namespaces. This
-registry MUST use the record-jar format described by the ABNF in <<RFC5646,section=3.1.1>>.
-Upon publication of a namespace as an RFC, the maintaining
-authority defined in the RFC MUST forward this registration form to
-<iesg@ietf.org>, who MUST forward the request to <iana@iana.org>. The
-maintaining authority of the namespace MUST maintain the accuracy of the
-record by sending an updated full copy of the record to <iana@iana.org>
-with the subject line "TIMESTAMP FORMAT NAMESPACE UPDATE" whenever content
-changes. Only the 'Comments', 'Contact_Email', 'Mailing_List', and 'URL'
-fields MAY be modified in these updates.
-
-Failure to maintain this record, maintain the corresponding registry,
-or meet other conditions imposed by this section of this document MAY
-be appealed to the IESG <<RFC2028>> under the same rules as other IETF
-decisions (see <<RFC2026>>) and MAY result in the authority to maintain
-the extension being withdrawn or reassigned by the IESG.
-
-.Format of Records in the Timestamp Format Namespace Registry
-[source]
-----
-%%
-Identifier:
-Description:
-Comments:
-Added:
-RFC:
-Authority:
-Contact_Email:
-Mailing_List:
-URL:
-%%
-----
-
-'Identifier' contains the multi-character sequence assigned to the
-namespace. The Internet-Draft submitted to define the namespace SHOULD
-specify which sequence to use, although the IESG MAY change the assignment
-when approving the RFC.
-
-'Description' contains the name and description of the namespace.
-
-'Comments' is an OPTIONAL field and MAY contain a broader description
-of the namespace.
-
-'Added' contains the date the namespace's RFC was published in the
-"date-full" format specified in <<grammar>>.  For example: 2004-06-28
-represents June 28, 2004, in the Gregorian calendar.
-
-'RFC' contains the RFC number assigned to the namespace.
-
-'Authority' contains the name of the maintaining authority for the
-namespace.
-
-'Contact_Email' contains the email address used to contact the
-maintaining authority.
-
-'Mailing_List' contains the URL or subscription email address of the
-mailing list used by the maintaining authority.
-
-'URL' contains the URL of the registry for this namespace.
-
-The determination of whether an Internet-Draft meets the above
-conditions and the decision to grant or withhold such authority rests
-solely with the IESG and is subject to the normal review and appeals
-process associated with the RFC process.
+The following section defines a profile of ISO 8601 for use on the
+Internet. It is a conformant subset of the ISO 8601 extended format with
+additional information optionally suffixed. Simplicity is achieved by
+making most fields and punctuation mandatory.
 
 === Internet Date/Time Format
 
-The following extension of a profile of <<ISO8601>> dates SHOULD be
-used in new protocols on the Internet. This is specified using the
-syntax description notation defined in <<RFC2234>>.
+The following profile of <<ISO8601>> dates SHOULD be used in new protocols
+on the Internet. This is specified using the syntax description notation
+defined in <<RFC2234>>.
 
 [[grammar]]
 [source]
 ----
-alphanum       = ALPHA / DIGIT
-
 date-year      = 4DIGIT / ("+" / "-") 6DIGIT
 date-month     = 2DIGIT ; 01-12
 date-mday      = 2DIGIT ; 01-28, 01-29, 01-30, 01-31 based on month/year
@@ -248,21 +105,7 @@ time-numoffset = ("+" / "-") time-partial
 time-offset    = "Z" / time-numoffset
 time-full      = time-partial time-offset
 
-time-zone-char = ALPHA / "." / "_"
-time-zone-part = time-zone-char *13(time-zone-char / DIGIT / "-" / "+") ; but not "." or ".."
-time-zone-id   = time-zone-part *("/" time-zone-part)
-time-zone      = "[" time-zone-id "]"
-
-namespace      = 1*alphanum
-namespace-key  = 1*alphanum
-suffix-key     = namespace ["-" namespace-key]
-
-suffix-value   = 1*alphanum
-suffix-values  = suffix-value *("-" suffix-value)
-suffix-tag     = "[" suffix-key "-" suffix-values "]"
-suffix         = [timezone] *suffix-tag
-
-date-time      = date-full "T" time-full suffix
+date-time      = date-full "T" time-full
 ----
 
 NOTE: Per <<RFC2234>> and ISO8601, the "T" and "Z" characters in this
@@ -321,14 +164,14 @@ shifted by the zone offset (so it happens at the same instant around
 the globe).
 
 Leap seconds cannot be predicted far into the future. The
-International Earth Rotation Service publishes bulletins (IERS) that
+International Earth Rotation Service publishes bulletins <<IERS>> that
 announce leap seconds with a few weeks' warning. Applications should
 not generate timestamps involving inserted leap seconds until after
 the leap seconds are announced.
 
-Although ISO 8601 permits the hour to be "24", this extension of a profile
-of ISO 8601 only allows values between "00" and "23" for the hour in order
-to reduce confusion.
+Although ISO 8601 permits the hour to be "24", this profile of ISO 8601
+only allows values between "00" and "23" for the hour in order to reduce
+confusion.
 
 [[date-time-examples]]
 === Examples
@@ -363,23 +206,6 @@ in UTC.
 
 [%unnumbered]
 ----
-1996-12-19T16:39:57-08:00[America/Los_Angeles]
-----
-
-This represents the exact same instant as the previous example but
-additionally specifies the human time zone associated with it for
-time zone aware implementations to take into account.
-
-[%unnumbered]
-----
-1996-12-19T16:39:57-08:00[America/Los_Angeles][u-ca-hebrew]
-----
-
-This represents the exact same instant but it informs calendar-aware
-implementations that they should project it to the Hebrew calendar.
-
-[%unnumbered]
-----
 1990-12-31T23:59:60Z
 ----
 
@@ -402,31 +228,3 @@ This represents the same instant of time as noon, January 1, 1937,
 Netherlands time. Standard time in the Netherlands was exactly 19
 minutes and 32.13 seconds ahead of UTC by law from 1909-05-01 through
 1937-06-30.
-
-[%unnumbered]
-----
-1937-01-01T12:00:27.87+00:19:32.130[u-ca-japanese]
-----
-
-This represents the exact same instant as the previous example but
-additionally specifies the human calendar associated with it for
-calendar aware implementations to take into account.
-
-[%unnumbered]
-----
-1937-01-01T12:00:27.87+00:19:32.130[u-ca-islamic-civil]
-----
-
-Since there's not a single agreed upon way to deal with dates in the
-Islamic calendar, it provides another value to disambiguate between the
-different interpretations.
-
-[%unnumbered]
-----
-1937-01-01T12:00:27.87+00:19:32.130[x-foo-bar][x-baz-bat]
-----
-
-This timestamp utilizes the private use namespace to declare two additional
-pieces of information in the suffix that can be interpreted by any
-compatible implementations and ignored otherwise.
-

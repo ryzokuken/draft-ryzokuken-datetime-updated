@@ -6,19 +6,16 @@
 Because the daylight saving rules for local time zones are so
 convoluted and can change based on local law at unpredictable times,
 true interoperability is best achieved by using Coordinated Universal
-Time (UTC). This specification by itself does not cater to local
-time zone rules. However, certain implementations may be expected to.
-For these situations, a timestamp may additionally include a local time
-zone that the implementations can take into account.
+Time (UTC). This specification does not cater to local time zone rules.
 
 === Local Offsets
 
 The offset between local time and UTC is often useful information.
-For example, in electronic mail (RFC2822, <<RFC2822>>) the local
+For example, in electronic mail (<<RFC2822>>) the local
 offset provides a useful heuristic to determine the probability of a
 prompt response. Attempts to label local offsets with alphabetic
 strings have resulted in poor interoperability in the past <<RFC1123>>.
-As a result, RFC2822 <<RFC2822>> has made numeric offsets mandatory.
+As a result, <<RFC2822>> has made numeric offsets mandatory.
 
 Numeric offsets are calculated as "local time minus UTC".  So the
 equivalent time in UTC can be determined by subtracting the offset
