@@ -1,11 +1,11 @@
 <bibdata type="standard">
-<title language="en" format="text/plain" type="main">Date and Time on the Internet: Timestamps with additional information</title>
-<title language="en" format="text/plain" type="abbrev">Timestamps Extended</title>
-<uri>https://ryzokuken.dev/draft-ryzokuken-datetime-extended/</uri>
-<uri type="html">https://ryzokuken.dev/draft-ryzokuken-datetime-extended/documents/rfc-3339.html</uri>
-<uri type="pdf">https://ryzokuken.dev/draft-ryzokuken-datetime-extended/documents/rfc-3339.pdf</uri>
-<docidentifier>draft-ryzokuken-datetime-extended-01</docidentifier>
-<docnumber>draft-ryzokuken-datetime-extended-01</docnumber>
+<title language="en" format="text/plain" type="main">Date and Time on the Internet: Timestamps</title>
+<title language="en" format="text/plain" type="abbrev">Timestamps</title>
+<uri>https://ryzokuken.dev/draft-ryzokuken-datetime-updated/</uri>
+<uri type="html">https://ryzokuken.dev/draft-ryzokuken-datetime-updated/documents/rfc-3339.html</uri>
+<uri type="pdf">https://ryzokuken.dev/draft-ryzokuken-datetime-updated/documents/rfc-3339.pdf</uri>
+<docidentifier>draft-ryzokuken-datetime-updated-00</docidentifier>
+<docnumber>draft-ryzokuken-datetime-updated-00</docnumber>
 <contributor>
 <role type="author"/>
 <person>
@@ -28,14 +28,13 @@
 </organization>
 </contributor>
 <version>
-<revision-date>2020-10-21</revision-date>
+<revision-date>2021-02-16</revision-date>
 </version>
 <language>en</language>
 <script>Latn</script><abstract>
 <p>This document defines a date and time format for use in Internet
-protocols for representation of dates and times using the proleptic
-Gregorian calendar, with optional extensions representing additional
-information including a time zone.</p>
+protocols that is a profile of the ISO 8601 standard for representation of
+dates and times using the proleptic Gregorian calendar.</p>
 </abstract>
 <status>
 <stage>published</stage>
