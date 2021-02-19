@@ -6,15 +6,15 @@ sources/rfc-3339.err errors
 (XML Line 000200): Hanging paragraph in clause
 	<clause id="local-time" inline-header="false" obligation="normative"><title>Local Time</title><clause id="_coordinated_universal_time_utc" inline-header="false" obligation="normative">
 	<title>Coordinated Universal Time (UTC)</title>
-	<p id="_98763d78-80a6-489d-9f05-355627eb176c">Because the daylight saving rules for local time zones are so
+	<p id="_56eaaad2-a614-4db1-a3f3-7871f572efc2">Because the daylight saving rules for local time zones are so
 	convoluted and can change based on local law at unpredictable times,
 	true interoperability is best achieved by using Coordinated Universal
 (XML Line 000257): Hanging paragraph in clause
-	<clause id="date-time-format" inline-header="false" obligation="normative"><title>Date and Time format</title><p id="_435508dc-96bf-457b-8f15-a1133bf202d5">This section discusses desirable qualities of date and time formats
+	<clause id="date-time-format" inline-header="false" obligation="normative"><title>Date and Time format</title><p id="_72102955-a004-4235-876e-e2ae1e7ad73e">This section discusses desirable qualities of date and time formats
 	 and defines a profile of ISO 8601 for use in Internet protocols.</p>
 	<clause id="_ordering" inline-header="false" obligation="normative">
 	<title>Ordering</title>
-	<p id="_ed9e2fba-1500-4d4b-ac01-6befd1cb5ad2">If date and time components are ordered from least precise to most
+	<p id="_152387c5-dffb-41d4-b29b-717c242aafa8">If date and time components are ordered from least precise to most
 
 
 == Metanorma XML Syntax

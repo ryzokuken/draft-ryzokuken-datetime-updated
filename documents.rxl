@@ -1,4 +1,4 @@
-<relaton-collection xmlns="https://open.ribose.com/relaton-xml"><title>IETF Draft Timestamps Updated</title><contributor><role type='author'/><organization><name>Internet Engineering Task Force</name></organization></contributor><relation type='partOf'><bibdata type="standard">
+<relaton-collection xmlns="https://open.ribose.com/relaton-xml"><title></title><contributor><role type='author'/><organization><name></name></organization></contributor><relation type='partOf'><bibdata type="standard">
   <title type="main" format="text/plain" language="en">Date and Time on the Internet: Timestamps</title>
   <title type="abbrev" format="text/plain" language="en">Timestamps</title>
   <uri>https://ryzokuken.dev/draft-ryzokuken-datetime-updated/</uri>
