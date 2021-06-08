@@ -1,7 +1,7 @@
 = Date and Time on the Internet: Timestamps
 :doctype: internet-draft
 :abbrev: Timestamps
-:docnumber: draft-ryzokuken-datetime-updated-00
+:docnumber: draft-ryzokuken-datetime-updated-01
 :workgroup: Calendaring Extensions Working Group
 :obsoletes: 3339
 :revdate: 2021-02-16
